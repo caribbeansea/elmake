@@ -1,0 +1,21 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+/out
+/.idea
+/target
+/.gradle
+/build
+/.project
+/.classpath
+/.settings
+/.vs
+/Debug
+/applog
+/LOG_HOME_IS_UNDEFINED
+/var
+
+*.log
+*.tmp
+~$*.docx
+*.iml
+*.lnk
