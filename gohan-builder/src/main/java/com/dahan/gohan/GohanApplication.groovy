@@ -1,4 +1,4 @@
-package com.dahan.carving
+package com.dahan.gohan
 
 import org.apache.commons.cli.*
 
@@ -10,7 +10,7 @@ import org.apache.commons.cli.*
  * 命令行解析
  * @author kevin
  */
-class CarvingApplication {
+class GohanApplication {
 
     private static Options options
 

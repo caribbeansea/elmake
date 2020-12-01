@@ -1,4 +1,4 @@
-package com.dahan.carving.buildscript
+package com.dahan.gohan.buildscript
 
 /*
  * Creates on 2020/12/1.
@@ -7,25 +7,13 @@ package com.dahan.carving.buildscript
 /**
  * @author kevin
  */
-class Optional {
+class ProjectInformation {
 
     private String groupId
 
     private String artifactId
 
     private String version
-
-    private LinkedHashMap<String, String> settings
-
-    Optional() {
-
-    }
-
-    Optional(String groupId, String artifactId, String version) {
-        this.groupId = groupId
-        this.artifactId = artifactId
-        this.version = version
-    }
 
     String getGroupId() {
         return groupId
@@ -50,13 +38,4 @@ class Optional {
     void setVersion(String version) {
         this.version = version
     }
-
-    LinkedHashMap<String, String> getSettings() {
-        return settings
-    }
-
-    void setSettings(LinkedHashMap<String, String> settings) {
-        this.settings = settings
-    }
-
 }

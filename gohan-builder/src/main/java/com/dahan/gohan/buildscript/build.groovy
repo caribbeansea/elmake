@@ -1,6 +1,6 @@
-package com.dahan.carving.buildscript
+package com.dahan.gohan.buildscript
 
-class build extends BuildCarving {
+class build extends GohanBuilder {
 
     static void main(String[] args) {
 
@@ -10,7 +10,7 @@ class build extends BuildCarving {
 
     void init() {
         groupId 'com.dahan'
-        artifactId 'carving'
+        artifactId 'gohan'
         version '1.0.0.CARVING'
 
         optionals {

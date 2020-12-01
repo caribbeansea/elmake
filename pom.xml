@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dahan</groupId>
-    <artifactId>carving</artifactId>
+    <artifactId>gohan</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0.BETA</version>
 
     <modules>
-        <module>carving-builder</module>
+        <module>gohan-builder</module>
     </modules>
 
     <repositories>

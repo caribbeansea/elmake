@@ -1,4 +1,4 @@
-package com.dahan.carving.buildscript
+package com.dahan.gohan.buildscript
 
 /*
  * Creates on 2020/12/1.
@@ -7,7 +7,7 @@ package com.dahan.carving.buildscript
 /**
  * @author kevin
  */
-class BuildCarving {
+class GohanBuilder {
 
     /**
      * 当前项目依赖项
