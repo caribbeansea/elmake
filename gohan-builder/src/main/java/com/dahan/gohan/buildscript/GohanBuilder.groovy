@@ -59,7 +59,7 @@ class GohanBuilder {
      * 例如pom.xml中dependency节点下的scpoe、type、compile等字段。
      */
     def optional(LinkedHashMap<String, String> settings) {
-        def optionObject = new Dependency(settings.group, settings.artifact, settings.version)
+        def optionObject = new Dependency(settings.group, settings.name, settings.version)
         optionObject.settings = settings
         jarArray.add(optionObject)
     }
