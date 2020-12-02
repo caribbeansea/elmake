@@ -11,6 +11,7 @@
 
     <modules>
         <module>gohan-builder</module>
+        <module>gohan-commons</module>
     </modules>
 
     <repositories>
@@ -23,6 +24,8 @@
 
     <properties>
         <command.cli.version>1.4</command.cli.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.1.11</logback.version>
     </properties>
 
     <profiles>
@@ -96,6 +99,28 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>gohan-commons</artifactId>
+            <version>1.0.0.BETA</version>
+        </dependency>
+        <!-- logback日志框架 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>

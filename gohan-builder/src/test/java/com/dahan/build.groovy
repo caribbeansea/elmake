@@ -1,4 +1,6 @@
-package com.dahan.gohan.buildscript
+package com.dahan
+
+import com.dahan.gohan.buildscript.GohanBuilder
 
 class build extends GohanBuilder {
 

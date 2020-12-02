@@ -1,4 +1,4 @@
-package com.dahan.gohan.buildscript
+package com.dahan.gohan.repository
 
 /*
  * Creates on 2020/12/1.
@@ -7,24 +7,42 @@ package com.dahan.gohan.buildscript
 /**
  * @author kevin
  */
-class Optional {
+class Dependency {
 
+    /** groupId **/
     private String groupId
 
+    /** artifactId **/
     private String artifactId
 
+    /** 版本好 **/
     private String version
 
+    /** 运行返回 **/
+    private Scope scope
+
+    /** 其他配置信息 **/
     private LinkedHashMap<String, String> settings
 
-    Optional() {
+    Dependency() {
 
     }
 
-    Optional(String groupId, String artifactId, String version) {
+    /**
+     * 提供最基本的依赖信息
+     */
+    Dependency(String groupId, String artifactId, String version) {
+        this(groupId, artifactId, version, Scope.COMPILE)
+    }
+
+    /**
+     * 提供依赖范围信息
+     */
+    Dependency(String groupId, String artifactId, String version, Scope scope) {
         this.groupId = groupId
         this.artifactId = artifactId
         this.version = version
+        this.scope = scope
     }
 
     String getGroupId() {
@@ -49,6 +67,14 @@ class Optional {
 
     void setVersion(String version) {
         this.version = version
+    }
+
+    Scope getScope() {
+        return scope
+    }
+
+    void setScope(Scope scope) {
+        this.scope = scope
     }
 
     LinkedHashMap<String, String> getSettings() {

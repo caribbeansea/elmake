@@ -1,5 +1,7 @@
 package com.dahan.gohan.buildscript
 
+import com.dahan.gohan.repository.Dependency
+
 /*
  * Creates on 2020/12/1.
  */
@@ -12,7 +14,7 @@ class GohanBuilder {
     /**
      * 当前项目依赖项
      */
-    private List<Optional> jarArray = []
+    private List<Dependency> jarArray = []
 
     /**
      * 模块信息
@@ -57,7 +59,7 @@ class GohanBuilder {
      * 例如pom.xml中dependency节点下的scpoe、type、compile等字段。
      */
     def optional(LinkedHashMap<String, String> settings) {
-        def optionObject = new Optional(settings.group, settings.artifact, settings.version)
+        def optionObject = new Dependency(settings.group, settings.artifact, settings.version)
         optionObject.settings = settings
         jarArray.add(optionObject)
     }
