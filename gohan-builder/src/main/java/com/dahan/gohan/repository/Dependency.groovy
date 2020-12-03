@@ -84,7 +84,7 @@ class Dependency {
     }
 
     void setSettings(LinkedHashMap<String, String> settings) {
-        this.settings = settings
+        this.settings.putAll(settings)
     }
 
     void putSettings(String key, String value) {

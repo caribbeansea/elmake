@@ -1,6 +1,8 @@
 package com.dahan.gohan.buildscript
 
+import com.dahan.gohan.StringUtils
 import com.dahan.gohan.repository.Dependency
+import com.dahan.gohan.repository.Scope
 
 /*
  * Creates on 2020/12/1.
@@ -59,9 +61,15 @@ class GohanBuilder {
      * 例如pom.xml中dependency节点下的scpoe、type、compile等字段。
      */
     def optional(LinkedHashMap<String, String> settings) {
-        def optionObject = new Dependency(settings.group, settings.name, settings.version)
-        optionObject.settings = settings
-        jarArray.add(optionObject)
+        def dependency = null
+        if (settings.scope) {
+            dependency = new Dependency(settings.group, settings.name, settings.version,
+                    Scope.valueOf(StringUtils.toUpperCase(settings.scope)))
+        } else {
+            dependency = new Dependency(settings.group, settings.name, settings.version)
+        }
+        dependency.settings = settings
+        jarArray.add(dependency)
     }
 
     /**
