@@ -8,8 +8,8 @@ package com.dahan.gohan
  * @author kevin
  */
 Formprint formprint = new Formprint("name", "age", "poorgay", "bool")
-formprint.setFormContent("a", "29", "YES", "falsessss")
-formprint.setFormContent("b", "36", "NO", "falsessss")
-formprint.setFormContent("c", "21", "YES", "falsessss")
-formprint.setFormContent("d", "21", "YES", "falsessss")
+formprint.addFormContent("a", "29", "YES", "falsessss")
+formprint.addFormContent("b", "36", "NO", "falsessss")
+formprint.addFormContent("c", "21", "YES", "falsessss")
+formprint.addFormContent("d", "21", "YES", "falsessss")
 formprint.printf()

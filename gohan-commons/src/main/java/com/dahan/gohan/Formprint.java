@@ -27,6 +27,8 @@ public class Formprint {
 
     private int count = 1;
 
+    private String spli = "";
+
     public Formprint() {
     }
 
@@ -37,7 +39,7 @@ public class Formprint {
     /**
      * 设置表格内容
      */
-    public void setFormContent(String... content) {
+    public void addFormContent(String... content) {
         formcontent.add(Lists.of(content));
         count++;
     }
@@ -94,12 +96,16 @@ public class Formprint {
             }
             String concat = start.concat(builder.toString());
             if (i == 1) {
-                finalform.append(StringUtils.getSpaceOfSize(concat.length(), "#").concat("\n"));
+                finalform.append("|".concat(StringUtils.getSpaceOfSize(concat.length()-2, "+").concat("|\n")));
             } else {
-                finalform.append(StringUtils.getSpaceOfSize(concat.length(), "-").concat("\n"));
+                if(StringUtils.isEmpty(spli)) {
+                    spli = StringUtils.getSpaceOfSize(concat.length(), "-").concat("\n");
+                }
+                finalform.append(spli);
             }
             finalform.append(concat.concat("\n"));
         }
+        finalform.append(spli);
         System.out.println(finalform.toString());
     }
 
@@ -108,10 +114,7 @@ public class Formprint {
      */
     static class Row {
 
-        private String value;
-
-        Row() {
-        }
+        private final String value;
 
         Row(String value) {
             this.value = value;

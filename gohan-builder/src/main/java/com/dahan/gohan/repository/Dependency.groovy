@@ -1,5 +1,7 @@
 package com.dahan.gohan.repository
 
+import com.dahan.gohan.collect.Maps
+
 /*
  * Creates on 2020/12/1.
  */
@@ -18,11 +20,11 @@ class Dependency {
     /** 版本好 **/
     private String version
 
-    /** 运行返回 **/
+    /** 运行范围 **/
     private Scope scope
 
     /** 其他配置信息 **/
-    private LinkedHashMap<String, String> settings
+    private LinkedHashMap<String, String> settings = Maps.newLinkedHashMap()
 
     Dependency() {
 
@@ -83,6 +85,10 @@ class Dependency {
 
     void setSettings(LinkedHashMap<String, String> settings) {
         this.settings = settings
+    }
+
+    void putSettings(String key, String value) {
+        this.settings.put(key, value)
     }
 
 }
