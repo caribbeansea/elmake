@@ -6,7 +6,7 @@ package com.dahan.gohan.collection.exception;
 
 import com.dahan.gohan.Formprint;
 import com.dahan.gohan.exception.GohanException;
-import com.dahan.gohan.repository.Dependency;
+import com.dahan.gohan.repository.dependency.Dependency;
 
 /**
  * @author kevin

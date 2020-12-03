@@ -10,7 +10,7 @@ import org.apache.commons.cli.*
  * 命令行解析
  * @author kevin
  */
-class GohanApplication {
+class GohanMain {
 
     private static Options options
 

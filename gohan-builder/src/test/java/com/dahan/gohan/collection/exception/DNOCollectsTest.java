@@ -4,8 +4,7 @@ package com.dahan.gohan.collection.exception;
  * Creates on 2020/12/3.
  */
 
-import com.dahan.gohan.exception.ErrorCollects;
-import com.dahan.gohan.repository.Dependency;
+import com.dahan.gohan.repository.dependency.Dependency;
 
 /**
  * DependencyNotObtained异常收集器

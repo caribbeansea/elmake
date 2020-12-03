@@ -1,0 +1,2 @@
+# 设置本地仓库储存地址
+gohan.repository.location = ./repository

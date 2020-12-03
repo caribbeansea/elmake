@@ -574,5 +574,12 @@ class StringUtils {
         return builder.toString();
     }
 
+    public static String append(String... values) {
+        final StringBuilder builder = new StringBuilder();
+        for (String value : values) {
+            builder.append(value);
+        }
+        return builder.toString();
+    }
 }
 

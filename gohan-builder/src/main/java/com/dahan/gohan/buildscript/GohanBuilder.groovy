@@ -1,8 +1,8 @@
 package com.dahan.gohan.buildscript
 
 import com.dahan.gohan.StringUtils
-import com.dahan.gohan.repository.Dependency
-import com.dahan.gohan.repository.Scope
+import com.dahan.gohan.repository.dependency.Dependency
+import com.dahan.gohan.repository.dependency.Scope
 
 /*
  * Creates on 2020/12/1.

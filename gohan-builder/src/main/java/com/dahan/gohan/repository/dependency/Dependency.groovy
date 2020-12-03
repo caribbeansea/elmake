@@ -1,5 +1,6 @@
-package com.dahan.gohan.repository
+package com.dahan.gohan.repository.dependency
 
+import com.dahan.gohan.StringUtils
 import com.dahan.gohan.collect.Maps
 
 /*
@@ -23,8 +24,19 @@ class Dependency {
     /** 运行范围 **/
     private Scope scope
 
+    /** 依赖jar包 **/
+    private File jarfile
+
     /** 其他配置信息 **/
     private LinkedHashMap<String, String> settings = Maps.newLinkedHashMap()
+
+    /** 依赖路径 **/
+    private String localDirectory
+
+    /** 依赖文件名称格式 **/
+    private String dependencyName
+
+    static final int JAR = 0, POM = 1
 
     Dependency() {
 
@@ -45,6 +57,10 @@ class Dependency {
         this.artifactId = artifactId
         this.version = version
         this.scope = scope
+        // 生成依赖的本地路径
+        this.localDirectory = StringUtils.append(groupId.replaceAll("\\.", "/"), "/",
+                artifactId, "/", version, "/")
+        this.dependencyName = artifactId + "-" + version
     }
 
     String getGroupId() {
@@ -90,5 +106,29 @@ class Dependency {
     void putSettings(String key, String value) {
         this.settings.put(key, value)
     }
+
+    File getJarfile() {
+        return jarfile
+    }
+
+    void setJarfile(File jarfile) {
+        this.jarfile = jarfile
+    }
+
+    String getLocalDirectory() {
+        return localDirectory
+    }
+
+    String getDependencyName() {
+        return dependencyName
+    }
+
+    void setDependencyName(String dependencyName) {
+        this.dependencyName = dependencyName
+    }
+
+    String pom() { localDirectory + dependencyName + ".pom" }
+
+    String jar() { localDirectory + dependencyName + ".jar" }
 
 }

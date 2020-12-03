@@ -1,4 +1,4 @@
-package com.dahan.gohan.repository
+package com.dahan.gohan.repository.dependency
 
 /*
  * Creates on 2020/12/2.
