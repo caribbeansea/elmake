@@ -10,8 +10,8 @@ import com.dahan.gohan.Assert;
 import com.dahan.gohan.FastJsonHelper;
 import com.dahan.gohan.MultiLanguage;
 import com.dahan.gohan.collect.Maps;
+import com.dahan.gohan.exception.DownloadException;
 import okhttp3.*;
-import org.apache.tools.ant.taskdefs.email.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -267,22 +267,32 @@ public class Areyouok {
      * @param directory 存储目录
      * @param filename  文件名
      */
-    public static void download(String url, String directory, String filename) {
+    public static boolean download(String url, String directory, String filename) {
+        Result result = new Result();
         Request request = new Request.Builder().url(url).build();
         mOkHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                logger.error(MultiLanguage.INFO_DOWNLOAD_FAILURE + url);
+                logger.error(MultiLanguage.INFO_DOWNLOAD_FAILURE.concat(url));
+                result.successful = false;
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
                     writeFile(response, directory, filename);
-                    logger.info(MultiLanguage.INFO_DOWNLOAD_SUCCESS + url);
+                    logger.info(MultiLanguage.INFO_DOWNLOAD_SUCCESS.concat(url));
+                    result.successful = true;
+                } else {
+                    onFailure(call, null);
                 }
             }
         });
+        return result.successful;
+    }
+
+    static class Result {
+        boolean successful;
     }
 
     private static void writeFile(Response response, String directory, String filename) {

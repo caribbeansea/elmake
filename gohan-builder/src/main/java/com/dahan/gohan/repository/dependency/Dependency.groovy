@@ -1,6 +1,7 @@
 package com.dahan.gohan.repository.dependency
 
 import com.dahan.gohan.StringUtils
+import com.dahan.gohan.collect.Lists
 import com.dahan.gohan.collect.Maps
 
 /*
@@ -35,6 +36,9 @@ class Dependency {
 
     /** 依赖文件名称格式 **/
     private String dependencyName
+
+    /** 当前依赖使用的其他依赖 **/
+    private List<Dependency> dependencies = Lists.newArrayList()
 
     static final int JAR = 0, POM = 1
 

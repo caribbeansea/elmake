@@ -6,6 +6,9 @@ package com.dahan.gohan.collection.exception;
 
 import com.dahan.gohan.Formprint;
 import com.dahan.gohan.exception.ErrorCollects;
+import com.dahan.gohan.repository.dependency.Dependency;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.util.Map;
@@ -17,14 +20,19 @@ import java.util.Map;
  */
 public class DNOCollects extends ErrorCollects<DependencyNotObtained> {
 
+    private static final Logger logger = LoggerFactory.getLogger(DNOCollects.class);
+
     @Override
-    public void rollout(String... values) {
-        Formprint formprint = new Formprint("groupId", "name", "version", "cause");
-        for (DependencyNotObtained dependencyNotObtained : stack) {
-            formprint.addFormContent(dependencyNotObtained.getGroupId(), dependencyNotObtained.getName(),
-                    dependencyNotObtained.getVersion(), dependencyNotObtained.getSelfCause());
+    public void rollout() {
+        if (!stack.isEmpty()) {
+            Formprint formprint = new Formprint("groupId", "name", "type", "version", "cause");
+            for (DependencyNotObtained dependencyNotObtained : stack) {
+                formprint.addFormContent(dependencyNotObtained.getGroupId(), dependencyNotObtained.getName(),
+                        dependencyNotObtained.getVersion(),
+                        dependencyNotObtained.getType() == Dependency.getJAR() ? "jar" : "pom", dependencyNotObtained.getSelfCause());
+            }
+            logger.error(formprint.printf());
         }
-        formprint.printf();
     }
 
 }

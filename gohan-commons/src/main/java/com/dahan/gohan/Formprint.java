@@ -56,7 +56,7 @@ public class Formprint {
      * |          |            |          |
      * |----------|------------|----------|
      */
-    public void printf() {
+    public String printf() {
         // 最长的长度
         int[] longests = new int[titleArray.size()];
         List<List<Row>> rows = Lists.newLinkedList();
@@ -106,7 +106,7 @@ public class Formprint {
             finalform.append(concat.concat("\n"));
         }
         finalform.append(spli);
-        System.out.println(finalform.toString());
+        return finalform.toString();
     }
 
     /**

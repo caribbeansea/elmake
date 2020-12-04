@@ -14,7 +14,7 @@ import com.dahan.gohan.repository.dependency.Scope
  * 仓库对象
  * @author kevin
  */
-abstract class Repository {
+class Repository {
 
     // 仓库名称
     private String name
@@ -97,10 +97,6 @@ abstract class Repository {
 
     int getType() {
         return type
-    }
-
-    void setType(int type) {
-        this.type = type
     }
 
     /**

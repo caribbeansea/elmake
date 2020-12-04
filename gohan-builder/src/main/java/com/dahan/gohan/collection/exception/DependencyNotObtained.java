@@ -5,6 +5,8 @@ package com.dahan.gohan.collection.exception;
  */
 
 import com.dahan.gohan.Formprint;
+import com.dahan.gohan.MultiLanguage;
+import com.dahan.gohan.StringUtils;
 import com.dahan.gohan.exception.GohanException;
 import com.dahan.gohan.repository.dependency.Dependency;
 
@@ -13,13 +15,22 @@ import com.dahan.gohan.repository.dependency.Dependency;
  */
 public class DependencyNotObtained extends GohanException {
 
-    private Dependency dependency;
+    private final Dependency dependency;
 
-    public DependencyNotObtained(Dependency dependency, String message) {
+    private final int type;
+
+    private final String selfCause;
+
+    public DependencyNotObtained(Dependency dependency, int type) {
+        this(dependency, type, MultiLanguage.ERROR_DEPENDENCY_CANNOT_IMPORT);
+    }
+
+    public DependencyNotObtained(Dependency dependency, int type, String message) {
         super(dependency.getGroupId().concat(":").concat(dependency.getArtifactId())
                 .concat(":").concat(dependency.getVersion()).concat(" ").concat(message));
         this.dependency = dependency;
-        dependency.putSettings("cause", message);
+        this.type = type;
+        this.selfCause = message;
     }
 
     public void addToForm(Formprint formprint) {
@@ -39,7 +50,10 @@ public class DependencyNotObtained extends GohanException {
     }
 
     public String getSelfCause() {
-        return dependency.getSettings().get("cause");
+        return selfCause;
     }
 
+    public int getType() {
+        return type;
+    }
 }
