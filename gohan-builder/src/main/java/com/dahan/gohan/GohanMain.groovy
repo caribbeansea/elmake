@@ -10,7 +10,8 @@ import org.apache.commons.cli.*
  * 命令行解析
  * @author kevin
  */
-class GohanMain {
+class GohanMain
+{
 
     private static Options options
 
@@ -26,7 +27,8 @@ class GohanMain {
      * 入口函数
      * @param args 参数命令
      */
-    static void main(String[] args) {
+    static void main(String[] args)
+    {
         run(args)
     }
 
@@ -34,12 +36,15 @@ class GohanMain {
      * 解析命令
      * @param args 命令参数
      */
-    static void run(String[] args) {
+    static void run(String[] args)
+    {
         loadCommandOptions()
         def commandLineParser = new DefaultParser()
-        try {
+        try
+        {
             execute(commandLineParser.parse(options, args))
-        } catch (Throwable ignore) {
+        } catch (Throwable ignore)
+        {
             new HelpFormatter().printHelp('命令解析有误，请查看帮助', options)
         }
     }
@@ -48,8 +53,10 @@ class GohanMain {
      * 解析命令
      * @param commandLine 判断当前执行命令
      */
-    static void execute(CommandLine cli) {
-        if (cli.hasOption(getCommandKey(commandArgs.RUN))) {
+    static void execute(CommandLine cli)
+    {
+        if (cli.hasOption(getCommandKey(commandArgs.RUN)))
+        {
             // TODO 构建当前项目
         }
     }
@@ -63,13 +70,15 @@ class GohanMain {
      * @param description 介绍
      * @return Option对象实例
      */
-    static Option opt(String longOpt, String shortOpt, boolean hasArgs, String description) {
+    static Option opt(String longOpt, String shortOpt, boolean hasArgs, String description)
+    {
         def option = new Option(longOpt, shortOpt, hasArgs, description)
         return option
     }
 
     /** 加载命令行 **/
-    static void loadCommandOptions() {
+    static void loadCommandOptions()
+    {
         options = new Options()
         commandArgs.each { K, V ->
             options.addOption(V)
@@ -80,7 +89,8 @@ class GohanMain {
     static String getCommandKey(Option hasOpt) { hasOpt.getLongOpt() }
 
     /** 退出程序 **/
-    static void exit() {
+    static void exit()
+    {
         System.exit(0)
     }
 

@@ -33,4 +33,6 @@ enum Scope {
      */
     EXLOCAL,
 
+    PROVIDED,
+
 }

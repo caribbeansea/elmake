@@ -15,7 +15,11 @@
         <dependency>
             <groupId>com.dahan</groupId>
             <artifactId>gohan-commons</artifactId>
-            <version>1.0.0.BETA</version>
+        </dependency>
+        <!-- dom4j -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-cli</groupId>

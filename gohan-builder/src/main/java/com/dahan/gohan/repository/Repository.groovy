@@ -14,7 +14,8 @@ import com.dahan.gohan.repository.dependency.Scope
  * 仓库对象
  * @author kevin
  */
-class Repository {
+class Repository
+{
 
     // 仓库名称
     private String name
@@ -46,18 +47,23 @@ class Repository {
 
     Repository() {}
 
-    Repository(String name, String address) {
+    Repository(String name, String address)
+    {
         this.name = name
         this.address = address
 
         // 如果是URL
-        if (address.startsWith("http://") || address.startsWith("https://")) {
+        if (address.startsWith("http://") || address.startsWith("https://"))
+        {
             type = REMOTE
-        } else {
+        } else
+        {
             def fileAddress = new File(address)
-            if (fileAddress.isDirectory()) {
+            if (fileAddress.isDirectory())
+            {
                 type = LOCAL
-            } else {
+            } else
+            {
                 throw new UnknownHostException(address)
             }
         }
@@ -68,42 +74,72 @@ class Repository {
     /**
      * 仓库URL，可以是本地也可以是远程
      */
-    void setRepository(String address) {
+    void setRepository(String address)
+    {
         this.address = address
     }
 
-    Dependency getDependency(String groupId, String artifactId, String version) {
+    Dependency getDependency(String groupId, String artifactId, String version)
+    {
         return getDependency(groupId, artifactId, version, null)
     }
 
     /**
      * 获取仓库中的依赖包
      */
-    Dependency getDependency(String groupId, String artifactId, String version, Scope scope) {
+    Dependency getDependency(String groupId, String artifactId, String version, Scope scope)
+    {
         Dependency dependency = new Dependency(groupId, artifactId, version, scope)
         // 如果本地仓库没有当前依赖的文件目录就创建
         Files.mkdirsNotExist(localDirectory + dependency.getLocalDirectory())
         def jarfile = getLocalJarfile(dependency)
-        // 如果没有jar就去当前仓库目录下载
-        if (!jarfile.exists()) {
+        def pomxml = getLocalPomxml(dependency)
+        // 如果没有pom就去当前仓库目录下载
+        if (!pomxml.exists())
+        {
             RepositoryUtils.downloadDependency(dependency, this)
+            // 下载完了后再进行一次判断
+            if (pomxml.exists())
+            {
+                dependency.setPomobj(pomxml)
+            }
+        } else
+        {
+            dependency.setPomobj(pomxml)
         }
+
+        if (jarfile.exists())
+        {
+            dependency.setJarfile(jarfile)
+        }
+
         return dependency
     }
 
-    String getDownloadAddress(Dependency dependency, int downloadType) {
+    String getDownloadAddress(Dependency dependency, int downloadType)
+    {
         return address + (downloadType == Dependency.JAR ? dependency.jar() : dependency.pom())
     }
 
-    int getType() {
+    int getType()
+    {
         return type
     }
 
     /**
      * 获取本地的Jar文件
      */
-    protected static File getLocalJarfile(Dependency dependency) {
+    protected static File getLocalJarfile(Dependency dependency)
+    {
         return new File(localDirectory + dependency.jar())
+    }
+
+    /**
+     * 获取本地的pom文件
+     */
+    protected static File getLocalPomxml(Dependency dependency)
+    {
+        return new File(localDirectory + dependency.pom())
     }
 
 }

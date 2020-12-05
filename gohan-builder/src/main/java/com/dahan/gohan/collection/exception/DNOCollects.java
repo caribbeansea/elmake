@@ -10,9 +10,6 @@ import com.dahan.gohan.repository.dependency.Dependency;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.swing.*;
-import java.util.Map;
-
 /**
  * DependencyNotObtained异常收集器
  *

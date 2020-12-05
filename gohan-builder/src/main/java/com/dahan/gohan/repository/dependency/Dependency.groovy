@@ -3,6 +3,7 @@ package com.dahan.gohan.repository.dependency
 import com.dahan.gohan.StringUtils
 import com.dahan.gohan.collect.Lists
 import com.dahan.gohan.collect.Maps
+import com.dahan.gohan.repository.pom.POMObject
 
 /*
  * Creates on 2020/12/1.
@@ -11,7 +12,8 @@ import com.dahan.gohan.collect.Maps
 /**
  * @author kevin
  */
-class Dependency {
+class Dependency
+{
 
     /** groupId **/
     private String groupId
@@ -28,6 +30,9 @@ class Dependency {
     /** 依赖jar包 **/
     private File jarfile
 
+    /** pom文件 **/
+    private POMObject pomobj
+
     /** 其他配置信息 **/
     private LinkedHashMap<String, String> settings = Maps.newLinkedHashMap()
 
@@ -42,21 +47,24 @@ class Dependency {
 
     static final int JAR = 0, POM = 1
 
-    Dependency() {
+    Dependency()
+    {
 
     }
 
     /**
      * 提供最基本的依赖信息
      */
-    Dependency(String groupId, String artifactId, String version) {
+    Dependency(String groupId, String artifactId, String version)
+    {
         this(groupId, artifactId, version, Scope.COMPILE)
     }
 
     /**
      * 提供依赖范围信息
      */
-    Dependency(String groupId, String artifactId, String version, Scope scope) {
+    Dependency(String groupId, String artifactId, String version, Scope scope)
+    {
         this.groupId = groupId
         this.artifactId = artifactId
         this.version = version
@@ -67,67 +75,93 @@ class Dependency {
         this.dependencyName = artifactId + "-" + version
     }
 
-    String getGroupId() {
+    String getGroupId()
+    {
         return groupId
     }
 
-    void setGroupId(String groupId) {
+    void setGroupId(String groupId)
+    {
         this.groupId = groupId
     }
 
-    String getArtifactId() {
+    String getArtifactId()
+    {
         return artifactId
     }
 
-    void setArtifactId(String artifactId) {
+    void setArtifactId(String artifactId)
+    {
         this.artifactId = artifactId
     }
 
-    String getVersion() {
+    String getVersion()
+    {
         return version
     }
 
-    void setVersion(String version) {
+    void setVersion(String version)
+    {
         this.version = version
     }
 
-    Scope getScope() {
+    Scope getScope()
+    {
         return scope
     }
 
-    void setScope(Scope scope) {
+    void setScope(Scope scope)
+    {
         this.scope = scope
     }
 
-    LinkedHashMap<String, String> getSettings() {
+    LinkedHashMap<String, String> getSettings()
+    {
         return settings
     }
 
-    void setSettings(LinkedHashMap<String, String> settings) {
+    void setSettings(LinkedHashMap<String, String> settings)
+    {
         this.settings.putAll(settings)
     }
 
-    void putSettings(String key, String value) {
+    void putSettings(String key, String value)
+    {
         this.settings.put(key, value)
     }
 
-    File getJarfile() {
+    File getJarfile()
+    {
         return jarfile
     }
 
-    void setJarfile(File jarfile) {
+    void setJarfile(File jarfile)
+    {
         this.jarfile = jarfile
     }
 
-    String getLocalDirectory() {
+    String getLocalDirectory()
+    {
         return localDirectory
     }
 
-    String getDependencyName() {
+    String getDependencyName()
+    {
         return dependencyName
     }
 
-    void setDependencyName(String dependencyName) {
+    POMObject getPomobj()
+    {
+        return pomobj
+    }
+
+    void setPomobj(File pomfile)
+    {
+        this.pomobj = new POMObject(pomfile, this)
+    }
+
+    void setDependencyName(String dependencyName)
+    {
         this.dependencyName = dependencyName
     }
 

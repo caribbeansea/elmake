@@ -291,8 +291,8 @@ public class Areyouok {
         return result.successful;
     }
 
-    static class Result {
-        boolean successful;
+    public static class Result {
+        public boolean successful;
     }
 
     private static void writeFile(Response response, String directory, String filename) {
@@ -301,6 +301,12 @@ public class Areyouok {
         File file = new File(directory, filename);
         try {
             fos = new FileOutputStream(file);
+            byte[] bytes = new byte[1024];
+            //获取下载的文件的大小
+            int len;
+            while ((len = is.read(bytes, 0, bytes.length)) != -1) {
+                fos.write(bytes, 0, len);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

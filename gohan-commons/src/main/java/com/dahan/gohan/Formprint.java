@@ -106,7 +106,7 @@ public class Formprint {
             finalform.append(concat.concat("\n"));
         }
         finalform.append(spli);
-        return finalform.toString();
+        return "\n".concat(finalform.toString());
     }
 
     /**
