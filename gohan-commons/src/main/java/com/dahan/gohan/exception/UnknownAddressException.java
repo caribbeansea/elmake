@@ -1,10 +1,7 @@
-package com.dahan.gohan.repository
-
-import com.dahan.gohan.repository.dependency.Dependency
-
+package com.dahan.gohan.exception;
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,23 +18,36 @@ import com.dahan.gohan.repository.dependency.Dependency
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/4.
+ * Creates on 2020/12/5.
  */
 
 /**
  * @author kevin
  */
-class DependencyUtils
+public class UnknownAddressException extends GohanException
 {
 
-    static boolean isJar(int type) { return Dependency.JAR == type }
-
-    /**
-     * 匹配子依赖
-     * @param dependency 依赖信息
-     */
-    static void matchChildrenDependency(Dependency dependency)
+    public UnknownAddressException()
     {
     }
 
+    public UnknownAddressException(String message)
+    {
+        super(message);
+    }
+
+    public UnknownAddressException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+    public UnknownAddressException(Throwable cause)
+    {
+        super(cause);
+    }
+
+    public UnknownAddressException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }

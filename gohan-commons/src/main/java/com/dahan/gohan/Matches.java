@@ -23,8 +23,11 @@ package com.dahan.gohan;
  */
 
 import com.dahan.gohan.collect.Lists;
+import com.dahan.gohan.collect.Maps;
+import groovy.lang.Closure;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -70,6 +73,33 @@ public class Matches {
             }
         }
         return groups.toArray(new String[groups.size()]);
+    }
+
+    public static String findAndReplace(String s, String r, Callback<String> closure) {
+        Result result = new Result(s);
+        find(s, r, o -> {
+            String value = closure.accept(o);
+            result.sourceString = result.sourceString.replaceAll("\\$\\{".concat(o).concat("}"), value);
+            return null;
+        });
+        return result.sourceString;
+    }
+
+    private static class Result {
+        public String sourceString;
+
+        public Result(String sourceString) {
+            this.sourceString = sourceString;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Map<String, String> map = Maps.newHashMap();
+        map.put("name", "张三");
+        map.put("age", "18");
+        String s = findAndReplace("aa ${name} ${age} xx", "\\$\\{(.*?)}", map::get);
+        System.out.println(s);
     }
 
 }

@@ -69,9 +69,9 @@ public class Files {
      * @param path 文件路径
      * @return 文件内容
      */
-    public static String readString(String path) throws IOException {
-        return java.nio.file.Files.readString(Paths.get(path), Charsets.UTF_8);
-    }
+    // public static String readString(String path) throws IOException {
+    //     return java.nio.file.Files.readString(Paths.get(path), Charsets.UTF_8);
+    // }
 
     /**
      * 如果目录不存在就去创建

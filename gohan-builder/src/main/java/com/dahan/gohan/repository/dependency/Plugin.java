@@ -1,4 +1,6 @@
-package com.dahan.gohan.buildscript
+package com.dahan.gohan.repository.dependency;
+
+import java.util.Map;
 
 /* ************************************************************************
  *
@@ -19,41 +21,24 @@ package com.dahan.gohan.buildscript
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/1.
+ * Creates on 2020/12/3.
  */
 
 /**
+ * 插件
+ *
  * @author kevin
  */
-class ProjectInformation {
+public class Plugin
+{
+    /**
+     * 插件依赖
+     **/
+    private Dependency dependency;
 
-    private String groupId
+    /**
+     * configuration配置
+     **/
+    private Map<String, String> settings;
 
-    private String artifactId
-
-    private String version
-
-    String getGroupId() {
-        return groupId
-    }
-
-    void setGroupId(String groupId) {
-        this.groupId = groupId
-    }
-
-    String getArtifactId() {
-        return artifactId
-    }
-
-    void setArtifactId(String artifactId) {
-        this.artifactId = artifactId
-    }
-
-    String getVersion() {
-        return version
-    }
-
-    void setVersion(String version) {
-        this.version = version
-    }
 }

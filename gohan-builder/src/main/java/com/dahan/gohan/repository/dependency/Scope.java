@@ -1,4 +1,4 @@
-package com.dahan.gohan.repository.dependency
+package com.dahan.gohan.repository.dependency;
 
 /* ************************************************************************
  *
@@ -19,7 +19,7 @@ package com.dahan.gohan.repository.dependency
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/2.
+ * Creates on 2020/12/3.
  */
 
 /**
@@ -27,12 +27,8 @@ package com.dahan.gohan.repository.dependency
  *
  * @author kevin
  */
-enum Scope {
-
-    /**
-     * 编译时存在, 如果没有设置默认COMPILE范围。此范围会将依赖打包
-     * 到classpath下去。与jar包一起打包。
-     */
+public enum Scope
+{
     COMPILE,
 
     /**
