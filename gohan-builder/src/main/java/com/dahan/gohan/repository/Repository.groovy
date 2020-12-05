@@ -6,6 +6,24 @@ import com.dahan.gohan.collection.exception.DNOCollects
 import com.dahan.gohan.repository.dependency.Dependency
 import com.dahan.gohan.repository.dependency.Scope
 
+/* ************************************************************************
+ *
+ * Copyright (C) 2020 2B键盘 All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * ************************************************************************/
+
 /*
  * Creates on 2020/12/2.
  */
@@ -81,13 +99,15 @@ class Repository
 
     Dependency getDependency(String groupId, String artifactId, String version)
     {
-        return getDependency(groupId, artifactId, version, null)
+        return getDependency(groupId, artifactId, version, null, null)
     }
 
     /**
      * 获取仓库中的依赖包
+     *
+     * @param from 依赖的下载是因为来自其他依赖的引用
      */
-    Dependency getDependency(String groupId, String artifactId, String version, Scope scope)
+    Dependency getDependency(String groupId, String artifactId, String version, Scope scope, Dependency from)
     {
         Dependency dependency = new Dependency(groupId, artifactId, version, scope)
         // 如果本地仓库没有当前依赖的文件目录就创建
@@ -97,15 +117,15 @@ class Repository
         // 如果没有pom就去当前仓库目录下载
         if (!pomxml.exists())
         {
-            RepositoryUtils.downloadDependency(dependency, this)
+            RepositoryUtils.downloadDependency(dependency, this, from)
             // 下载完了后再进行一次判断
             if (pomxml.exists())
             {
-                dependency.setPomobj(pomxml)
+                dependency.setProjectObjectModel(pomxml)
             }
         } else
         {
-            dependency.setPomobj(pomxml)
+            dependency.setProjectObjectModel(pomxml)
         }
 
         if (jarfile.exists())

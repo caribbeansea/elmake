@@ -1,4 +1,4 @@
-package com.dahan.gohan;
+package com.dahan.gohan
 
 /* ************************************************************************
  *
@@ -19,34 +19,33 @@ package com.dahan.gohan;
  * ************************************************************************/
 
 /*
- * Creates on 2020/5/11.
+ * Creates on 2020/12/3.
  */
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 
 /**
  * @author kevin
  */
-public class UrlTools {
+class Langs
+{
 
-  public static String DEFAULT_FORMAT = Charsets.UTF_8.name();
-
-  public static String encode(String input) {
-    try {
-      return URLEncoder.encode(input, DEFAULT_FORMAT);
-    } catch (UnsupportedEncodingException e) {
-      return input;
+    static String INFO_DOWNLOAD_SUCCESS(String... values)
+    {
+        return StringUtils.format("[SUCCESS] - 依赖【 {} 】下载成功，从【{}】仓库。来自【{}】依赖引用。下载到【 {} 】", values)
     }
-  }
 
-  public static String decode(String input) {
-    try {
-      return URLDecoder.decode(input, DEFAULT_FORMAT);
-    } catch (UnsupportedEncodingException e) {
-      return input;
+    static String INFO_DOWNLOAD_FAILURE(String... values)
+    {
+        return StringUtils.format("[FAILURE] - 依赖【 {} 】下载失败，从【 {} 】。来自【 {} 】依赖引用 ", values)
     }
-  }
+
+    static String ERROR_DEPENDENCY_DOWNLOAD_FAILURE()
+    {
+        return "依赖下载是失败"
+    }
+
+    static String ERROR_DEPENDENCY_CANNOT_IMPORT()
+    {
+        return "下载失败，请检查依赖坐标是否正确"
+    }
 
 }

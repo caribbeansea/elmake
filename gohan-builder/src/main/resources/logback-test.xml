@@ -6,64 +6,71 @@
 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-  <!-- 定义日志文件根目录 -->
-  <property name="LOG_HOME" value="log"/>
+    <!-- 定义日志文件根目录 -->
+    <property name="LOG_HOME" value="log"/>
 
-  <!-- 定义日志文件名称 -->
-  <property name="APP_NAME" value="${logger.filename}"/>
+    <!-- 定义日志文件名称 -->
+    <property name="APP_NAME" value="${logger.filename}"/>
 
-  <property name="PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] in %logger.%thread\\(%file:%line\\) - %msg%n"/>
+<!--    <property name="PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] in %logger.%thread\\(%file:%line\\) - %msg%n"/>-->
+    <property name="PATTERN" value="[%-5level] - %msg%n"/>
 
-  <!-- ch.qos.logback.core.ConsoleAppender 表示控制台输出 -->
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <!-- 日志输出格式 -->
-    <layout class="ch.qos.logback.classic.PatternLayout">
-      <pattern>${PATTERN}</pattern>
-    </layout>
-  </appender>
+    <!-- ch.qos.logback.core.ConsoleAppender 表示控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!--只输出INFO-->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>-->
+        <!-- 日志输出格式 -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>${PATTERN}</pattern>
+        </layout>
+    </appender>
 
-  <!-- ####################################################################################### -->
+    <!-- ####################################################################################### -->
 
-  <!-- 滚动记录日志到文件，先将日志记录到指定文件。当符合某个条件时记录到其他文件 -->
-  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <!-- 指定日志文件名 -->
-    <file>${LOG_HOME}/${APP_NAME}.log</file>
-    <!--
-      当发生滚动时决定RollingFileAppender行为，涉及到文件的移动和
-      重命名。
-      TimeBasedRollingPolicy：最常用的滚动策略，它根据时间来指定滚动策略，
-      即负责滚动，也负责发出滚动。
-    -->
-    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <!--
-        滚动时产生的文件存放位置以及文件名称%d{yyyy-MM-dd}: 按天进行日志滚动。
-        %i: 当文件大小超过maxFileSize时，按照i进行滚动。
-      -->
-      <fileNamePattern>${LOG_HOME}/${APP_NAME}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-      <!--
-        可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件。假设设置每天滚动，
-        且maxHistory是365，则只保存最近365天的文件，删除之前的旧文件。注意，删除旧文件是，
-        那些为了归档而创建的目录也会被删除。
-      -->
-      <MaxHistory>15</MaxHistory>
-      <!--
-        当日志文件超过maxFileSize指定的大小是，根据上面提到的%i进行日志文件滚动 注意此处配置SizeBasedTriggeringPolicy是无法实现按文件大小进行滚动的，
-        必须配置timeBasedFileNamingAndTriggeringPolicy
-      -->
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-        <maxFileSize>1MB</maxFileSize>
-      </timeBasedFileNamingAndTriggeringPolicy>
-    </rollingPolicy>
-    <encoder>
-      <pattern>${PATTERN}</pattern>
-    </encoder>
-  </appender>
-  
-  <!-- ####################################################################################### -->
+    <!-- 滚动记录日志到文件，先将日志记录到指定文件。当符合某个条件时记录到其他文件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 指定日志文件名 -->
+        <file>${LOG_HOME}/${APP_NAME}.log</file>
+        <!--
+          当发生滚动时决定RollingFileAppender行为，涉及到文件的移动和
+          重命名。
+          TimeBasedRollingPolicy：最常用的滚动策略，它根据时间来指定滚动策略，
+          即负责滚动，也负责发出滚动。
+        -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--
+              滚动时产生的文件存放位置以及文件名称%d{yyyy-MM-dd}: 按天进行日志滚动。
+              %i: 当文件大小超过maxFileSize时，按照i进行滚动。
+            -->
+            <fileNamePattern>${LOG_HOME}/${APP_NAME}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!--
+              可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件。假设设置每天滚动，
+              且maxHistory是365，则只保存最近365天的文件，删除之前的旧文件。注意，删除旧文件是，
+              那些为了归档而创建的目录也会被删除。
+            -->
+            <MaxHistory>15</MaxHistory>
+            <!--
+              当日志文件超过maxFileSize指定的大小是，根据上面提到的%i进行日志文件滚动 注意此处配置SizeBasedTriggeringPolicy是无法实现按文件大小进行滚动的，
+              必须配置timeBasedFileNamingAndTriggeringPolicy
+            -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
 
-  <root level="INFO">
-<!--    <appender-ref ref="FILE"/>-->
-    <appender-ref ref="STDOUT"/>
-  </root>
+    <!-- ####################################################################################### -->
+
+    <root level="INFO">
+        <!--    <appender-ref ref="FILE"/>-->
+        <appender-ref ref="STDOUT"/>
+    </root>
 
 </configuration>

@@ -3,7 +3,25 @@ package com.dahan.gohan.repository.dependency
 import com.dahan.gohan.StringUtils
 import com.dahan.gohan.collect.Lists
 import com.dahan.gohan.collect.Maps
-import com.dahan.gohan.repository.pom.POMObject
+import com.dahan.gohan.repository.pom.ProjectObjectModel
+
+/* ************************************************************************
+ *
+ * Copyright (C) 2020 2B键盘 All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * ************************************************************************/
 
 /*
  * Creates on 2020/12/1.
@@ -31,7 +49,7 @@ class Dependency
     private File jarfile
 
     /** pom文件 **/
-    private POMObject pomobj
+    private ProjectObjectModel projectObjectModel
 
     /** 其他配置信息 **/
     private LinkedHashMap<String, String> settings = Maps.newLinkedHashMap()
@@ -73,6 +91,16 @@ class Dependency
         this.localDirectory = StringUtils.append(groupId.replaceAll("\\.", "/"), "/",
                 artifactId, "/", version, "/")
         this.dependencyName = artifactId + "-" + version
+    }
+
+    ProjectObjectModel getProjectObjectModel()
+    {
+        return projectObjectModel
+    }
+
+    void setProjectObjectModel(File pomxml)
+    {
+        this.projectObjectModel = new ProjectObjectModel(pomxml, this)
     }
 
     String getGroupId()
@@ -150,16 +178,6 @@ class Dependency
         return dependencyName
     }
 
-    POMObject getPomobj()
-    {
-        return pomobj
-    }
-
-    void setPomobj(File pomfile)
-    {
-        this.pomobj = new POMObject(pomfile, this)
-    }
-
     void setDependencyName(String dependencyName)
     {
         this.dependencyName = dependencyName
@@ -168,5 +186,7 @@ class Dependency
     String pom() { localDirectory + dependencyName + ".pom" }
 
     String jar() { localDirectory + dependencyName + ".jar" }
+
+    String getCoordinate() { groupId + ":" + artifactId + ":" + version }
 
 }
