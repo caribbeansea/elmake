@@ -1,16 +1,15 @@
 package com.dahan.gohan.repository;
 
 import com.dahan.gohan.Files;
-import com.dahan.gohan.collect.Maps;
+import com.dahan.gohan.collect.Lists;
 import com.dahan.gohan.collection.exception.DNOCollects;
 import com.dahan.gohan.exception.UnknownAddressException;
 import com.dahan.gohan.repository.dependency.Dependency;
 import com.dahan.gohan.repository.dependency.Scope;
+import com.dahan.gohan.repository.initialize.alibaba.AlibabaCenter;
 
 import java.io.File;
-import java.net.UnknownHostException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /* ************************************************************************
  *
@@ -41,7 +40,6 @@ import java.util.Map;
  */
 public class Repository
 {
-    private String name;
     private String address;
     private static final String USER_DIR = System.getProperty("user.dir");
     private static String localDirectory = USER_DIR + "/repository/";
@@ -50,7 +48,7 @@ public class Repository
     /**
      * 所有可用的仓库对象
      */
-    private static final Map<String, Repository> repositories = Maps.newHashMap();
+    private static final List<Repository> repositories = Lists.newArrayList();
 
     private static final DNOCollects collects = new DNOCollects();
 
@@ -60,9 +58,13 @@ public class Repository
     {
     }
 
-    public Repository(String name, String address)
+    public Repository(String address)
     {
-        this.name = name;
+        if (!address.endsWith("/"))
+        {
+            address = address.concat("/");
+        }
+
         this.address = address;
 
         // 如果是URL
@@ -82,8 +84,7 @@ public class Repository
 
         }
 
-
-        repositories.put(name, this);
+        repositories.add(this);
     }
 
     /**
@@ -113,7 +114,7 @@ public class Repository
     public Dependency getDependency(String groupId, String artifactId, String version, Scope scope, Dependency from,
                                     boolean dependencyManager)
     {
-        Dependency dependency = new Dependency(groupId, artifactId, version, scope);
+        Dependency dependency = new Dependency(groupId, artifactId, version, scope, this);
 
         // 查找已加载的依赖是否存在
         if (DependencyUtils.contains(dependency))
@@ -203,7 +204,7 @@ public class Repository
         return REMOTE;
     }
 
-    public static Map<String, Repository> getRepositories()
+    public static List<Repository> getRepositories()
     {
         return repositories;
     }

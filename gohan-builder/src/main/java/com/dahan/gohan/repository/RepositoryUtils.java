@@ -5,7 +5,7 @@ import com.dahan.gohan.Langs;
 import com.dahan.gohan.collection.exception.DependencyNotObtained;
 import com.dahan.gohan.repository.dependency.Dependency;
 import com.dahan.gohan.repository.dependency.Scope;
-import com.dahan.gohan.repository.initialize.alibaba.MavenOfAlibaba;
+import com.dahan.gohan.repository.initialize.alibaba.AlibabaCenter;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -27,7 +27,7 @@ public class RepositoryUtils
 
     private static final Logger logger = LoggerFactory.getLogger(RepositoryUtils.class);
 
-    private static MavenOfAlibaba maven = new MavenOfAlibaba();
+    private static AlibabaCenter maven = new AlibabaCenter();
 
     /**
      * 下载依赖
@@ -141,12 +141,12 @@ public class RepositoryUtils
         return maven.getDependency(groupId, artifactId, version, scope, from, dm);
     }
 
-    public static MavenOfAlibaba getMaven()
+    public static AlibabaCenter getMaven()
     {
         return maven;
     }
 
-    public static void setMaven(MavenOfAlibaba maven)
+    public static void setMaven(AlibabaCenter maven)
     {
         RepositoryUtils.maven = maven;
     }

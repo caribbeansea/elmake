@@ -7,10 +7,10 @@ import com.dahan.gohan.repository.Repository;
  *
  * @author kevin
  */
-public class MavenOfAlibaba extends Repository
+public class AlibabaCenter extends Repository
 {
-    public MavenOfAlibaba()
+    public AlibabaCenter()
     {
-        super("alibaba-public", "https://maven.aliyun.com/repository/public/");
+        super("https://maven.aliyun.com/repository/public");
     }
 }

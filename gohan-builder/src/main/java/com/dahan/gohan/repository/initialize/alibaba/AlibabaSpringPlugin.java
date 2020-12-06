@@ -1,11 +1,7 @@
-package com.dahan.gohan.repository
-
-
-import org.junit.Test
-
+package com.dahan.gohan.repository.initialize.alibaba;
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,19 +18,20 @@ import org.junit.Test
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/4.
+ * Creates on 2020/12/6.
  */
+
+import com.dahan.gohan.repository.Repository;
 
 /**
  * @author kevin
  */
-class RepositoryTest
+public class AlibabaSpringPlugin extends Repository
 {
 
-    @Test
-    void importDependency()
+    public AlibabaSpringPlugin()
     {
-        RepositoryUtils.getDependency("com.alibaba", "fastjson", "1.2.66")
+        super("https://maven.aliyun.com/repository/spring-plugin");
     }
 
 }

@@ -1,14 +1,12 @@
 package com.dahan.gohan.repository.dependency;
 
 import com.dahan.gohan.StringUtils;
-import com.dahan.gohan.collect.Lists;
 import com.dahan.gohan.collect.Maps;
+import com.dahan.gohan.repository.Repository;
 import com.dahan.gohan.repository.pom.ProjectObjectModel;
-import org.dom4j.DocumentException;
 
 import java.io.File;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 /* ************************************************************************
  *
@@ -83,6 +81,11 @@ public class Dependency
      **/
     private String dependencyName;
 
+    /**
+     * 当前依赖来自来个仓库
+     */
+    private Repository fromRepository;
+
     private static final int JAR = 0, POM = 1;
 
     public Dependency()
@@ -90,23 +93,26 @@ public class Dependency
 
     }
 
-    /**
-     * 提供最基本的依赖信息
-     */
     public Dependency(String groupId, String artifactId, String version)
     {
-        this(groupId, artifactId, version, Scope.COMPILE);
+        this(groupId, artifactId, version, Scope.COMPILE, null);
+    }
+
+    public Dependency(String groupId, String artifactId, String version, Repository repository)
+    {
+        this(groupId, artifactId, version, Scope.COMPILE, repository);
     }
 
     /**
      * 提供依赖范围信息
      */
-    public Dependency(String groupId, String artifactId, String version, Scope scope)
+    public Dependency(String groupId, String artifactId, String version, Scope scope, Repository repository)
     {
         this.groupId = groupId;
         this.artifactId = artifactId;
         this.version = version;
         this.scope = scope;
+        this.fromRepository = repository;
         // 生成依赖的本地路径
         this.localDirectory = StringUtils.append(groupId.replaceAll("\\.", "/"), "/", artifactId, "/", version, "/");
         this.dependencyName = artifactId.concat("-").concat(version);
@@ -226,4 +232,25 @@ public class Dependency
     {
         return POM;
     }
+
+    public void setProjectObjectModel(ProjectObjectModel projectObjectModel)
+    {
+        this.projectObjectModel = projectObjectModel;
+    }
+
+    public void setLocalDirectory(String localDirectory)
+    {
+        this.localDirectory = localDirectory;
+    }
+
+    public Repository getFromRepository()
+    {
+        return fromRepository;
+    }
+
+    public void setFromRepository(Repository fromRepository)
+    {
+        this.fromRepository = fromRepository;
+    }
+
 }
