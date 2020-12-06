@@ -1,5 +1,6 @@
 package com.dahan.gohan.repository.pom;
 
+import com.dahan.gohan.StringUtils;
 import com.dahan.gohan.collect.Maps;
 import com.dahan.gohan.repository.dependency.Dependency;
 import com.dahan.gohan.repository.dependency.Plugin;
@@ -79,11 +80,33 @@ public class ProjectObjectModel
     {
     }
 
-    public ProjectObjectModel(File file, Dependency self) throws DocumentException
+    public ProjectObjectModel(File file, Dependency self)
     {
         this.self = self;
-        // 解析pom.xml
-        ProjectObjectModelParses.parse(file, this);
+        try
+        {
+            // 解析pom.xml
+            ProjectObjectModelParses.parse(file, this);
+        } catch (DocumentException e)
+        {
+            if (file.exists())
+            {
+                file.delete();
+            }
+        }
+    }
+
+    /**
+     * 查找依赖关系中的property
+     */
+    public String findProperty(String key)
+    {
+        String value = selfProperties.get(key);
+        if (StringUtils.isEmpty(value) && parent != null)
+        {
+            value = parent.getProjectObjectModel().findProperty(key);
+        }
+        return value;
     }
 
     /**

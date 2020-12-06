@@ -1,8 +1,7 @@
 package com.dahan.gohan.exception;
-
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,44 +18,41 @@ package com.dahan.gohan.exception;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/2.
+ * Creates on 2020/12/6.
  */
-
-import com.dahan.gohan.StringUtils;
 
 /**
  * @author kevin
  */
-public class GohanException extends RuntimeException
+public class PropertyNotFoundException extends GohanException
 {
 
-    public GohanException()
+    public PropertyNotFoundException()
     {
     }
 
-    public GohanException(String... message)
-    {
-        super(StringUtils.append(message));
-    }
-
-    public GohanException(String message)
+    public PropertyNotFoundException(String... message)
     {
         super(message);
     }
 
-    public GohanException(String message, Throwable cause)
+    public PropertyNotFoundException(String message)
+    {
+        super(message);
+    }
+
+    public PropertyNotFoundException(String message, Throwable cause)
     {
         super(message, cause);
     }
 
-    public GohanException(Throwable cause)
+    public PropertyNotFoundException(Throwable cause)
     {
         super(cause);
     }
 
-    public GohanException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    public PropertyNotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
     {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-
 }

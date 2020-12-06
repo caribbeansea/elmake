@@ -3,17 +3,19 @@ package com.dahan.gohan.repository.pom;
 import com.dahan.gohan.Assert;
 import com.dahan.gohan.Matches;
 import com.dahan.gohan.StringUtils;
+import com.dahan.gohan.exception.PropertyNotFoundException;
 import com.dahan.gohan.repository.RepositoryUtils;
 import com.dahan.gohan.repository.dependency.Dependency;
 import com.dahan.gohan.repository.dependency.Scope;
-import org.codehaus.groovy.runtime.DefaultGroovyMethods;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /* ************************************************************************
@@ -57,14 +59,15 @@ public class ProjectObjectModelParses
         Document document = reader.read(file);
         Element rootNode = document.getRootElement();
 
-        pom.setSelf(Assert.requiredNonNull(parseDependencyNode(rootNode, pom, false, true)));
-
         // 获取pom中的parent节点
         Element parentNode = rootNode.element("parent");
         if (parentNode != null)
         {
             pom.setParent(parseDependencyNode(parentNode, pom));
         }
+
+        // 解析自生
+        pom.setSelf(Assert.requiredNonNull(parseDependencyNode(rootNode, pom, false, true)));
 
         // 获取pom中定义的properties
         Element propertiesNode = rootNode.element("properties");
@@ -133,10 +136,21 @@ public class ProjectObjectModelParses
     {
         try
         {
-            String groupId = el.element("groupId").getText();
+
+            String groupId;
             String artifactId = el.element("artifactId").getText();
 
-            String versionText = null;
+            Element groupIdNode = el.element("groupId");
+
+            if(groupIdNode != null)
+            {
+                groupId = groupIdNode.getText();
+            } else
+            {
+                groupId = pom.getParent().getGroupId();
+            }
+
+            String versionText;
             Element versionNode = el.element("version");
 
             if (versionNode != null)
@@ -183,18 +197,29 @@ public class ProjectObjectModelParses
         {
             versionText = Matches.findAndReplace(versionText, "\\$\\{(.*?)}", it ->
             {
-                String versionString = pom.getSelfProperties(it);
+                String versionString = pom.findProperty(it);
                 if (StringUtils.isEmpty(versionString))
                 {
-
+                    throw new PropertyNotFoundException("(", groupId, ":", artifactId, ":", versionString, ")", "中的版本属性未找到");
                 }
 
                 return versionString;
             });
+        } else
+        {
+            if (versionText.contains("[") || versionText.contains(")") || versionText.contains(","))
+            {
+                @NotNull
+                String parseArgs = Arrays.stream(versionText.split("\\),")).findFirst().orElseGet(null);
+                if (parseArgs.contains(","))
+                {
+                    parseArgs = parseArgs.split(",")[0];
+                }
+                versionText = StringUtils.replaceEmpty(parseArgs, '[', ']', '(', ')', ',');
+            }
         }
 
-
-        return ((String) (versionText));
+        return versionText;
     }
 
     /**

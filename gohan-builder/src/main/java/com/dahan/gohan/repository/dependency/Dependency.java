@@ -119,13 +119,7 @@ public class Dependency
 
     public void setProjectObjectModel(File pomxml)
     {
-        try
-        {
-            this.projectObjectModel = new ProjectObjectModel(pomxml, this);
-        } catch (DocumentException e)
-        {
-            e.printStackTrace();
-        }
+        this.projectObjectModel = new ProjectObjectModel(pomxml, this);
     }
 
     public String getGroupId()
