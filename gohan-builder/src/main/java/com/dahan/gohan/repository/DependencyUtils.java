@@ -28,6 +28,11 @@ public class DependencyUtils
         dependencyMap.put(dependency.getCoordinate(), dependency);
     }
 
+    public static Map<String, Dependency> getDependencyMap()
+    {
+        return dependencyMap;
+    }
+
     public static Dependency getLoadedDependency(Dependency dependency)
     {
         return dependencyMap.get(dependency.getCoordinate());

@@ -86,6 +86,8 @@ public class Dependency
      */
     private Repository fromRepository;
 
+    private boolean resolve = true;
+
     private static final int JAR = 0, POM = 1;
 
     public Dependency()
@@ -208,17 +210,27 @@ public class Dependency
         this.dependencyName = dependencyName;
     }
 
+    public String basePath()
+    {
+        return localDirectory.concat(dependencyName);
+    }
+
     public String pom()
     {
-        return localDirectory.concat(dependencyName).concat(".pom");
+        return basePath().concat(".pom");
     }
 
     public String jar()
     {
-        return localDirectory.concat(dependencyName).concat(".jar");
+        return basePath().concat(".jar");
     }
 
     public String getCoordinate()
+    {
+        return groupId.concat(":").concat(artifactId).concat(":").concat(version);
+    }
+
+    public static String getCoordinate(String groupId, String artifactId, String version)
     {
         return groupId.concat(":").concat(artifactId).concat(":").concat(version);
     }
@@ -253,4 +265,13 @@ public class Dependency
         this.fromRepository = fromRepository;
     }
 
+    public boolean isResolve()
+    {
+        return resolve;
+    }
+
+    public void setResolve(boolean resolve)
+    {
+        this.resolve = resolve;
+    }
 }

@@ -30,12 +30,12 @@ class Langs
 
     static String INFO_DOWNLOAD_SUCCESS(String... values)
     {
-        return StringUtils.format("[SUCCESS] - 依赖【 {} 】下载成功，从【{}】仓库。来自【{}】依赖引用。下载到【 {} 】", values)
+        return StringUtils.format("[SUCCESS] - 依赖【{}】下载成功，从【{}】仓库。来自【{}】依赖引用。从【{}】", values)
     }
 
     static String INFO_DOWNLOAD_FAILURE(String... values)
     {
-        return StringUtils.format("[FAILURE] - 依赖【 {} 】下载失败，从【 {} 】。来自【 {} 】依赖引用 ", values)
+        return StringUtils.format("[FAILURE] - 依赖【{}】下载失败，从【{}】。来自【{}】依赖引用。", values)
     }
 
     static String ERROR_DEPENDENCY_DOWNLOAD_FAILURE()

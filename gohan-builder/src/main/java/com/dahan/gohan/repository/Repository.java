@@ -1,15 +1,13 @@
 package com.dahan.gohan.repository;
 
 import com.dahan.gohan.Files;
-import com.dahan.gohan.collect.Lists;
 import com.dahan.gohan.collection.exception.DNOCollects;
+import com.dahan.gohan.exception.DownloadException;
 import com.dahan.gohan.exception.UnknownAddressException;
 import com.dahan.gohan.repository.dependency.Dependency;
 import com.dahan.gohan.repository.dependency.Scope;
-import com.dahan.gohan.repository.initialize.alibaba.AlibabaCenter;
 
 import java.io.File;
-import java.util.List;
 
 /* ************************************************************************
  *
@@ -45,11 +43,6 @@ public class Repository
     private static String localDirectory = USER_DIR + "/repository/";
     private static final int LOCAL = 0, REMOTE = 1;
 
-    /**
-     * 所有可用的仓库对象
-     */
-    private static final List<Repository> repositories = Lists.newArrayList();
-
     private static final DNOCollects collects = new DNOCollects();
 
     private int type;
@@ -81,10 +74,8 @@ public class Repository
             {
                 throw new UnknownAddressException(address);
             }
-
         }
 
-        repositories.add(this);
     }
 
     /**
@@ -134,24 +125,26 @@ public class Repository
         // 如果没有pom就去当前仓库目录下载
         if (!pomxml.exists())
         {
-            RepositoryUtils.downloadDependency(dependency, this, from);
+            if (!RepositoryUtils.downloadDependency(dependency, this, from))
+            {
+                dependency.setResolve(false);
+                return dependency;
+            }
+
             // 下载完了后再进行一次判断
             if (pomxml.exists())
             {
                 dependency.setProjectObjectModel(pomxml);
             }
-
         } else
         {
             dependency.setProjectObjectModel(pomxml);
         }
 
-
         if (jarfile.exists())
         {
             dependency.setJarfile(jarfile);
         }
-
 
         DependencyUtils.loaded(dependency);
 
@@ -202,11 +195,6 @@ public class Repository
     public static int getREMOTE()
     {
         return REMOTE;
-    }
-
-    public static List<Repository> getRepositories()
-    {
-        return repositories;
     }
 
     public static DNOCollects getCollects()

@@ -34,7 +34,22 @@ class RepositoryTest
     @Test
     void importDependency()
     {
+        def s = System.currentTimeMillis()
         RepositoryUtils.getDependency("com.alibaba", "fastjson", "1.2.66")
+        RepositoryUtils.getDependency("org.springframework.boot", "spring-boot-starter-web", "2.1.4.RELEASE")
+        RepositoryUtils.getDependency("org.springframework.boot", "spring-boot-starter-tomcat", "2.1.4.RELEASE")
+        RepositoryUtils.getDependency("org.springframework.boot", "spring-boot-starter-aop", "2.1.4.RELEASE")
+        RepositoryUtils.getDependency("com.baomidou", "mybatis-plus-boot-starter", "3.4.0")
+        RepositoryUtils.getDependency("com.github.pagehelper", "pagehelper", "5.1.11")
+        RepositoryUtils.getDependency("io.springfox", "springfox-swagger2", "2.9.2")
+        RepositoryUtils.getDependency("commons-net", "commons-net", "3.7")
+        def e = System.currentTimeMillis()
+        println "已加载的依赖数量: ${DependencyUtils.getDependencyMap().size()}"
+
+        println "加载失败的依赖数量: ${RepositoryUtils.getDownloadFailure().size()}"
+
+        println "耗时：${e - s}ms"
+
     }
 
 }

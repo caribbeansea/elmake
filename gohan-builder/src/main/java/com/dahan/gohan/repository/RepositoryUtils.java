@@ -2,10 +2,11 @@ package com.dahan.gohan.repository;
 
 import com.dahan.gohan.Closes;
 import com.dahan.gohan.Langs;
+import com.dahan.gohan.collect.Lists;
+import com.dahan.gohan.collect.Sets;
 import com.dahan.gohan.collection.exception.DependencyNotObtained;
 import com.dahan.gohan.repository.dependency.Dependency;
 import com.dahan.gohan.repository.dependency.Scope;
-import com.dahan.gohan.repository.initialize.alibaba.AlibabaCenter;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -13,7 +14,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * 仓库工具类
@@ -27,27 +30,52 @@ public class RepositoryUtils
 
     private static final Logger logger = LoggerFactory.getLogger(RepositoryUtils.class);
 
-    private static AlibabaCenter maven = new AlibabaCenter();
+    /**
+     * 所有可用的仓库对象
+     */
+    private static final List<Repository> repositories = Lists.newArrayList();
+
+    static
+    {
+
+        String[] repositoryAddresses = new String[]{
+                "https://maven.aliyun.com/repository/central",
+                "https://maven.aliyun.com/repository/public",
+                "https://maven.aliyun.com/repository/public",
+                "https://maven.aliyun.com/repository/google",
+                "https://maven.aliyun.com/repository/gradle-plugin",
+                "https://maven.aliyun.com/repository/spring",
+                "https://maven.aliyun.com/repository/spring-plugin",
+                "https://maven.aliyun.com/repository/grails-core",
+                "https://maven.aliyun.com/repository/apache-snapshots",
+                "http://repo1.maven.org"
+        };
+
+        for (String repositoryAddress : repositoryAddresses)
+        {
+            repositories.add(new Repository(repositoryAddress));
+        }
+
+    }
+
+    /**
+     * 所有下载失败的依赖坐标，避免重复下载
+     */
+    private static final Set<String> downloadFailure = Sets.newHashSet();
 
     /**
      * 下载依赖
      *
      * @param dependency 依赖信息
      */
-    public static void downloadDependency(Dependency dependency, Repository repository, Dependency from)
+    public static boolean downloadDependency(Dependency dependency, Repository repository, Dependency from)
     {
-        if (repository.getType() == Repository.getREMOTE())
-        {
-            String downloadPomUrl = repository.getDownloadAddress(dependency, Dependency.getPOM());
-            String downloadJarUrl = repository.getDownloadAddress(dependency, Dependency.getJAR());
-            // 只要能下载下来POM就算是成功的
-            if (download(downloadPomUrl, Repository.getLocalDirectory(), Dependency.getPOM(), dependency, from))
-            {
-                download(downloadJarUrl, Repository.getLocalDirectory(), Dependency.getJAR(), dependency, from);
-            }
+        String downloadPomUrl = repository.getDownloadAddress(dependency, Dependency.getPOM());
+        String downloadJarUrl = repository.getDownloadAddress(dependency, Dependency.getJAR());
+        // 只要能下载下来POM就算是成功的
 
-        }
-
+        return download(downloadPomUrl, Repository.getLocalDirectory(), Dependency.getPOM(), dependency, from)
+                || download(downloadJarUrl, Repository.getLocalDirectory(), Dependency.getJAR(), dependency, from);
     }
 
     /**
@@ -72,7 +100,6 @@ public class RepositoryUtils
             } else
             {
                 Repository.getCollects().push(new DependencyNotObtained(dependency, type, url));
-                logger.error(Langs.INFO_DOWNLOAD_FAILURE(dependency.getCoordinate(), url, from == null ? "ROOT" : from.getCoordinate()));
                 response.body().close();
                 return false;
             }
@@ -138,17 +165,39 @@ public class RepositoryUtils
 
     public static Dependency getDependency(String groupId, String artifactId, String version, Scope scope, Dependency from, boolean dm)
     {
-        return maven.getDependency(groupId, artifactId, version, scope, from, dm);
+
+        Dependency dependency = null;
+
+        // 当前下载依赖是否已经下载失败过，如果是的话则直接返回NULL。避免重复下载
+        if (downloadFailure.contains(Dependency.getCoordinate(groupId, artifactId, version)))
+        {
+            return null;
+        }
+
+        for (Repository repository : repositories)
+        {
+            dependency = repository.getDependency(groupId, artifactId, version, scope, from, dm);
+            if (dependency.isResolve())
+            {
+                break;
+            }
+        }
+
+        if (dependency != null)
+        {
+            if (!dependency.isResolve())
+            {
+                downloadFailure.add(dependency.getCoordinate());
+                logger.error(Langs.INFO_DOWNLOAD_FAILURE(dependency.getCoordinate(),
+                        dependency.basePath(), from == null ? "ROOT" : from.getCoordinate()));
+            }
+        }
+
+        return dependency;
     }
 
-    public static AlibabaCenter getMaven()
+    public static Set<String> getDownloadFailure()
     {
-        return maven;
+        return downloadFailure;
     }
-
-    public static void setMaven(AlibabaCenter maven)
-    {
-        RepositoryUtils.maven = maven;
-    }
-
 }
