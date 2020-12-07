@@ -1,11 +1,13 @@
-package com.dahan.skate.repository
+package com.dahan.skate.objects
 
-import com.dahan.skate.repository.dependency.Dependency
+import com.dahan.skate.StringUtils
 import org.junit.Test
+import org.openjdk.jol.info.ClassLayout
+import org.openjdk.jol.vm.VM
 
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,28 +24,24 @@ import org.junit.Test
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/4.
+ * Creates on 2020/12/7.
  */
 
 /**
  * @author kevin
  */
-class RepositoryTest
+class ObjectLayoutInMemory
 {
 
     @Test
-    void importDependency()
+    void printLayout()
     {
-        def s = System.currentTimeMillis()
-        Dependency dependency = RepositoryUtils.getDependency("com.alibaba", "fastjson", "1.2.66")
-        def e = System.currentTimeMillis()
-        println "已加载的依赖数量: ${DependencyUtils.getDependencyMap().size()}"
+        println VM.current().details()
 
-        println "加载失败的依赖数量: ${RepositoryUtils.getDownloadFailure().size()}"
+        println(StringUtils.getSpaceOfSize(64, "-") + "\n")
 
-        println "耗时：${e - s}ms"
-
-        println()
+        println("对象头布局")
+        println(ClassLayout.parseInstance(new Object()).toPrintable())
 
     }
 

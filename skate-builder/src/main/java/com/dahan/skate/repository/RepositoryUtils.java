@@ -48,7 +48,6 @@ public class RepositoryUtils
                 "https://maven.aliyun.com/repository/spring-plugin",
                 "https://maven.aliyun.com/repository/grails-core",
                 "https://maven.aliyun.com/repository/apache-snapshots",
-                "http://repo1.maven.org"
         };
 
         for (String repositoryAddress : repositoryAddresses)
