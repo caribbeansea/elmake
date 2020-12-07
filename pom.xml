@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dahan</groupId>
-    <artifactId>gohan</artifactId>
+    <artifactId>skate</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0.BETA</version>
 
     <modules>
-        <module>gohan-builder</module>
-        <module>gohan-commons</module>
+        <module>skate-builder</module>
+        <module>skate-commons</module>
     </modules>
 
     <repositories>
@@ -28,7 +28,7 @@
         <logback.version>1.1.11</logback.version>
         <fastjson.version>1.2.66</fastjson.version>
         <okhttp.version>4.8.0</okhttp.version>
-        <gohan-common.version>1.0.0.BETA</gohan-common.version>
+        <skate-common.version>1.0.0.BETA</skate-common.version>
         <dom4j.version>1.6.1</dom4j.version>
     </properties>
 
@@ -106,8 +106,8 @@
         <dependencies>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>gohan-commons</artifactId>
-                <version>${gohan-common.version}</version>
+                <artifactId>skate-commons</artifactId>
+                <version>${skate-common.version}</version>
             </dependency>
             <dependency>
                 <groupId>dom4j</groupId>
