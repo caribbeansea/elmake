@@ -13,7 +13,7 @@
 /applog
 /LOG_HOME_IS_UNDEFINED
 /var
-/repository-discard
+/repository
 /log
 
 *.log
