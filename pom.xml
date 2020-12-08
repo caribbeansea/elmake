@@ -30,6 +30,9 @@
         <okhttp.version>4.8.0</okhttp.version>
         <skate-common.version>1.0.0.BETA</skate-common.version>
         <dom4j.version>1.6.1</dom4j.version>
+        <aetherVersion>1.0.0.v20140518</aetherVersion>
+        <mavenVersion>3.1.0</mavenVersion>
+        <wagonVersion>1.0</wagonVersion>
     </properties>
 
     <profiles>

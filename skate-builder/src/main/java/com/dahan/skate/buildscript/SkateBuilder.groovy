@@ -1,9 +1,5 @@
 package com.dahan.skate.buildscript
 
-import com.dahan.skate.StringUtils
-import com.dahan.skate.repository.dependency.Dependency
-import com.dahan.skate.repository.dependency.Scope
-
 /* ************************************************************************
  *
  * Copyright (C) 2020 2B键盘 All rights reserved.
@@ -31,11 +27,6 @@ import com.dahan.skate.repository.dependency.Scope
  */
 class SkateBuilder
 {
-
-    /**
-     * 当前项目依赖项
-     */
-    private List<Dependency> jarArray = []
 
     /**
      * 模块信息
@@ -80,15 +71,6 @@ class SkateBuilder
      * 例如pom.xml中dependency节点下的scpoe、type、compile等字段。
      */
     def optional(LinkedHashMap<String, String> settings) {
-        def dependency = null
-        if (settings.scope) {
-            dependency = new Dependency(settings.group, settings.name, settings.version,
-                    Scope.valueOf(StringUtils.toUpperCase(settings.scope)))
-        } else {
-            dependency = new Dependency(settings.group, settings.name, settings.version)
-        }
-        dependency.settings = settings
-        jarArray.add(dependency)
     }
 
     /**
