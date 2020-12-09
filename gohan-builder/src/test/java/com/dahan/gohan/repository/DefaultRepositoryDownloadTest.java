@@ -21,6 +21,7 @@ package com.dahan.gohan.repository;
  * Creates on 2020/12/8.
  */
 
+import com.dahan.gohan.collect.Lists;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
@@ -88,7 +89,8 @@ public class DefaultRepositoryDownloadTest
                 new RemoteRepository.Builder("central", "default", "https://maven.aliyun.com/repository/central").build();
 
         CollectRequest request = new CollectRequest();
-        request.setRoot(dependency);
+        // request.setRoot(dependency);
+        request.setDependencies(Lists.of(dependency));
         request.addRepository(central);
 
         DependencyNode dependencyNode = repositorySystem.collectDependencies(repositorySystemSession, request).getRoot();

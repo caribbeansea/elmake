@@ -16,6 +16,9 @@ class build extends SkateBuilder {
         artifactId 'gohan'
         version '1.0.0.CARVING'
 
+        repository {
+        }
+
         optionals {
             optional group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.4'
         }

@@ -54,6 +54,15 @@ class SkateBuilder
      */
     def version(String version) { projectInformationNotNull(version, VERSION) }
 
+    /**
+     * 仓库节点
+     */
+    def repository(Closure closure) {};
+
+    /**
+     * 添加仓库信息
+     */
+    def maven(String name, String address){}
 
     /**
      * 模块引用的依赖包

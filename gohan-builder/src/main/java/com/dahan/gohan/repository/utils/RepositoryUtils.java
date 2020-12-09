@@ -1,4 +1,4 @@
-package com.dahan.gohan.repository;
+package com.dahan.gohan.repository.utils;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -21,17 +21,28 @@ package com.dahan.gohan.repository;
  * Creates on 2020/12/9.
  */
 
+import com.dahan.gohan.collect.Lists;
+import com.dahan.gohan.collect.Maps;
+import com.dahan.gohan.repository.GohanDependency;
+import com.dahan.gohan.repository.GohanRepository;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
+import org.eclipse.aether.collection.DependencyCollectionException;
 import org.eclipse.aether.connector.basic.BasicRepositoryConnectorFactory;
 import org.eclipse.aether.impl.DefaultServiceLocator;
 import org.eclipse.aether.repository.LocalRepository;
+import org.eclipse.aether.resolution.DependencyRequest;
+import org.eclipse.aether.resolution.DependencyResolutionException;
+import org.eclipse.aether.resolution.DependencyResult;
 import org.eclipse.aether.spi.connector.RepositoryConnectorFactory;
 import org.eclipse.aether.spi.connector.transport.TransporterFactory;
 import org.eclipse.aether.transport.file.FileTransporterFactory;
 import org.eclipse.aether.transport.http.HttpTransporterFactory;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 工件储存库工具类
@@ -40,6 +51,17 @@ import org.eclipse.aether.transport.http.HttpTransporterFactory;
  */
 public final class RepositoryUtils
 {
+
+    //
+    // 当前项目支持使用的储存库集合。
+    // 如果需要使用其他的仓库的话请在 build 脚本下添加 repository {} 节点。
+    //
+    private static final Map<String, GohanRepository> repositorys = Maps.newHashMap(
+            // 默认使用阿里云中央仓库
+            "default", new GohanRepository("alibaba-central", "https://maven.aliyun.com/repository/central")
+    );
+
+    private static final GohanRepository defaultRepository = getDefaultRepository();
 
     /**
      * @return RepositorySystem接口实例
@@ -67,6 +89,32 @@ public final class RepositoryUtils
         LocalRepository localRepository = new LocalRepository(localRepositoryPath);
         session.setLocalRepositoryManager(repositorySystem.newLocalRepositoryManager(session, localRepository));
         return session;
+    }
+
+    /**
+     * @return 默认工件储存库
+     */
+    public static GohanRepository getDefaultRepository()
+    {
+        return repositorys.get("default");
+    }
+
+    public static DependencyResult resolveDependencies(GohanDependency gohanDependency)
+            throws DependencyCollectionException, DependencyResolutionException
+    {
+        return resolveDependencies(Lists.of(gohanDependency));
+    }
+
+    /**
+     * 下载所需依赖
+     */
+    public static DependencyResult resolveDependencies(List<GohanDependency> gohanDependencies)
+            throws DependencyCollectionException, DependencyResolutionException
+    {
+        DependencyRequest dependencyRequest
+                = RequestUtils.newDependencyRequest(gohanDependencies, Lists.newArrayList(repositorys.values()), defaultRepository);
+
+        return defaultRepository.resolveDependencies(dependencyRequest);
     }
 
 }

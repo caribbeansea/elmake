@@ -28,7 +28,7 @@ import org.apache.commons.cli.*
  * 命令行解析
  * @author kevin
  */
-class SkateMain
+class GohanMain
 {
 
     private static Options options
