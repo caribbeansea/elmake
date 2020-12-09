@@ -29,7 +29,7 @@ import java.util.Stack;
  *
  * @author kevin
  */
-public abstract class ErrorCollects<E extends SkateException> {
+public abstract class ErrorCollects<E extends GohanException> {
 
     /**
      * 异常栈

@@ -24,7 +24,7 @@ package com.dahan.gohan.exception;
 /**
  * @author kevin
  */
-public class UnknownAddressException extends SkateException
+public class UnknownAddressException extends GohanException
 {
 
     public UnknownAddressException()

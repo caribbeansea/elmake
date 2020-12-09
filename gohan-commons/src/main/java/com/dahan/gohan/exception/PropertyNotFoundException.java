@@ -24,7 +24,7 @@ package com.dahan.gohan.exception;
 /**
  * @author kevin
  */
-public class PropertyNotFoundException extends SkateException
+public class PropertyNotFoundException extends GohanException
 {
 
     public PropertyNotFoundException()

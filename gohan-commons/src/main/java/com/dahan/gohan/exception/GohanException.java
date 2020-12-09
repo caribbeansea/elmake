@@ -27,34 +27,34 @@ import com.dahan.gohan.StringUtils;
 /**
  * @author kevin
  */
-public class SkateException extends RuntimeException
+public class GohanException extends RuntimeException
 {
 
-    public SkateException()
+    public GohanException()
     {
     }
 
-    public SkateException(String... message)
+    public GohanException(String... message)
     {
         super(StringUtils.append(message));
     }
 
-    public SkateException(String message)
+    public GohanException(String message)
     {
         super(message);
     }
 
-    public SkateException(String message, Throwable cause)
+    public GohanException(String message, Throwable cause)
     {
         super(message, cause);
     }
 
-    public SkateException(Throwable cause)
+    public GohanException(Throwable cause)
     {
         super(cause);
     }
 
-    public SkateException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    public GohanException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
     {
         super(message, cause, enableSuppression, writableStackTrace);
     }

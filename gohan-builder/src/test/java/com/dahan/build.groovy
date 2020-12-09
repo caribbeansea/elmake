@@ -1,8 +1,8 @@
 package com.dahan
 
-import com.dahan.gohan.buildscript.SkateBuilder
+import com.dahan.gohan.buildscript.GohanBuilder
 
-class build extends SkateBuilder {
+class build extends GohanBuilder {
 
     static void main(String[] args) {
 

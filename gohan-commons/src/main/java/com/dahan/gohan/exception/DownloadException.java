@@ -25,7 +25,7 @@ package com.dahan.gohan.exception;
 /**
  * @author kevin
  */
-public class DownloadException extends SkateException
+public class DownloadException extends GohanException
 {
 
     public DownloadException() {

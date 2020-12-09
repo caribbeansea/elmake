@@ -25,7 +25,7 @@ package com.dahan.gohan.buildscript
 /**
  * @author kevin
  */
-class SkateBuilder
+class GohanBuilder
 {
 
     /**
