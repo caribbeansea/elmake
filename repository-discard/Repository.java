@@ -1,11 +1,11 @@
-package com.dahan.skate.repository;
+package com.dahan.gohan.repository;
 
-import com.dahan.skate.Files;
-import com.dahan.skate.collection.exception.DNOCollects;
-import com.dahan.skate.exception.DownloadException;
-import com.dahan.skate.exception.UnknownAddressException;
-import com.dahan.skate.repository.dependency.Dependency;
-import com.dahan.skate.repository.dependency.Scope;
+import com.dahan.gohan.Files;
+import com.dahan.gohan.collection.exception.DNOCollects;
+import com.dahan.gohan.exception.DownloadException;
+import com.dahan.gohan.exception.UnknownAddressException;
+import com.dahan.gohan.repository.dependency.Dependency;
+import com.dahan.gohan.repository.dependency.Scope;
 
 import java.io.File;
 

@@ -1,4 +1,4 @@
-package com.dahan.skate.repository.dependency;
+package com.dahan.gohan.repository.dependency;
 
 /* ************************************************************************
  *

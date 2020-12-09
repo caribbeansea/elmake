@@ -1,10 +1,10 @@
-package com.dahan.skate.repository.dependency;
+package com.dahan.gohan.repository.dependency;
 
-import com.dahan.skate.StringUtils;
-import com.dahan.skate.collect.Arrays;
-import com.dahan.skate.collect.Maps;
-import com.dahan.skate.repository.Repository;
-import com.dahan.skate.repository.pom.ProjectObjectModel;
+import com.dahan.gohan.StringUtils;
+import com.dahan.gohan.collect.Arrays;
+import com.dahan.gohan.collect.Maps;
+import com.dahan.gohan.repository.Repository;
+import com.dahan.gohan.repository.pom.ProjectObjectModel;
 
 import java.io.File;
 import java.util.LinkedHashMap;

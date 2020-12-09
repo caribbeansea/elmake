@@ -1,7 +1,7 @@
-package com.dahan.skate.repository;
+package com.dahan.gohan.repository;
 
-import com.dahan.skate.collect.Maps;
-import com.dahan.skate.repository.dependency.Dependency;
+import com.dahan.gohan.collect.Maps;
+import com.dahan.gohan.repository.dependency.Dependency;
 
 import java.util.Map;
 

@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan;
 
 /* ************************************************************************
  *
@@ -21,24 +19,13 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2019/11/13.
  */
 
 /**
- * 插件
- *
- * @author kevin
+ * @author lts
+ * @email jiakesiws@gmail.com
  */
-public class Plugin
-{
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
-
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
-
+public interface Callback<T> {
+    T accept(T o);
 }

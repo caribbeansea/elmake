@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan;
 
 /* ************************************************************************
  *
@@ -21,24 +19,34 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/5/11.
  */
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
-{
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
+public class UrlTools {
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+  public static String DEFAULT_FORMAT = Charsets.UTF_8.name();
+
+  public static String encode(String input) {
+    try {
+      return URLEncoder.encode(input, DEFAULT_FORMAT);
+    } catch (UnsupportedEncodingException e) {
+      return input;
+    }
+  }
+
+  public static String decode(String input) {
+    try {
+      return URLDecoder.decode(input, DEFAULT_FORMAT);
+    } catch (UnsupportedEncodingException e) {
+      return input;
+    }
+  }
 
 }

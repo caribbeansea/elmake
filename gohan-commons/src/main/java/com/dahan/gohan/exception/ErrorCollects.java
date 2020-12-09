@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan.exception;
 
 /* ************************************************************************
  *
@@ -21,24 +19,53 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/1.
  */
 
+import java.util.Stack;
+
 /**
- * 插件
+ * 错误收集器
  *
  * @author kevin
  */
-public class Plugin
-{
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
+public abstract class ErrorCollects<E extends SkateException> {
 
     /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+     * 异常栈
+     */
+    protected final Stack<E> stack = new Stack<>();
+
+    /**
+     * 添加一个异常信息
+     */
+    public void push(E ex) {
+        stack.push(ex);
+    }
+
+    /**
+     * 弹出栈顶的异常
+     */
+    public E pop() {
+        return stack.pop();
+    }
+
+    /**
+     * 将收集的异常信息打印出去
+     */
+    public void rollout() {
+        for (E e : stack) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    /**
+     * 将收集的异常信息打印出去
+     *
+     * @param values 配置信息
+     */
+    public void rollout(String... values) {
+        rollout();
+    }
 
 }

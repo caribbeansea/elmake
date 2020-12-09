@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan.exception;
 
 /* ************************************************************************
  *
@@ -21,24 +19,44 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/2.
  */
+
+import com.dahan.gohan.StringUtils;
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
+public class SkateException extends RuntimeException
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+    public SkateException()
+    {
+    }
+
+    public SkateException(String... message)
+    {
+        super(StringUtils.append(message));
+    }
+
+    public SkateException(String message)
+    {
+        super(message);
+    }
+
+    public SkateException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+    public SkateException(Throwable cause)
+    {
+        super(cause);
+    }
+
+    public SkateException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 
 }

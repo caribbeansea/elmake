@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan.http;
 
 /* ************************************************************************
  *
@@ -21,24 +19,36 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/5/14.
  */
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
-{
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
+public enum HttpHeaderType {
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+  /**
+   * 配置下载文件名
+   */
+  CONTENT_DISPOSITION {
+    @Override
+    public String getKey() {
+      return "Content-Disposition";
+    }
+
+    @Override
+    public String getValue() {
+      return null;
+    }
+
+    @Override
+    public String getValue(String param) {
+      return "attachment;fileName=".concat(param);
+    }
+  };
+
+  public abstract String getKey();
+  public abstract String getValue();
+  public abstract String getValue(String param);
 
 }

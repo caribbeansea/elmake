@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan.exception;
 
 /* ************************************************************************
  *
@@ -21,24 +19,31 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/4.
  */
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
+public class DownloadException extends SkateException
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+    public DownloadException() {
+    }
 
+    public DownloadException(String message) {
+        super(message);
+    }
+
+    public DownloadException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public DownloadException(Throwable cause) {
+        super(cause);
+    }
+
+    public DownloadException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }

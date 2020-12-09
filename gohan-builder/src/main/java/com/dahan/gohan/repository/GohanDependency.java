@@ -1,10 +1,7 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
-
+package com.dahan.gohan.repository;
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,24 +18,20 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/9.
  */
 
 /**
- * 插件
- *
+ * 依赖基础信息类
  * @author kevin
  */
-public class Plugin
+public final class GohanDependency
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+    private String groupId;
+
+    private String artifactId;
+
+    private String version;
 
 }

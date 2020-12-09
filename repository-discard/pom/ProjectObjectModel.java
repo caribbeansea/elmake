@@ -1,9 +1,9 @@
-package com.dahan.skate.repository.pom;
+package com.dahan.gohan.repository.pom;
 
-import com.dahan.skate.StringUtils;
-import com.dahan.skate.collect.Maps;
-import com.dahan.skate.repository.dependency.Dependency;
-import com.dahan.skate.repository.dependency.Plugin;
+import com.dahan.gohan.StringUtils;
+import com.dahan.gohan.collect.Maps;
+import com.dahan.gohan.repository.dependency.Dependency;
+import com.dahan.gohan.repository.dependency.Plugin;
 import org.dom4j.DocumentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

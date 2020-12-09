@@ -1,2 +1,2 @@
 # 设置本地仓库储存地址
-skate.repository.location = ./repository
+gohan.repository.location = ./repository

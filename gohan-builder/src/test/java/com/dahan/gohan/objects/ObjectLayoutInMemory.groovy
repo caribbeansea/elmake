@@ -1,10 +1,13 @@
-package com.dahan.gohan.repository.dependency;
+package com.dahan.gohan.objects
 
-import java.util.Map;
+import com.dahan.gohan.StringUtils
+import org.junit.Test
+import org.openjdk.jol.info.ClassLayout
+import org.openjdk.jol.vm.VM
 
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,24 +24,25 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/7.
  */
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
+class ObjectLayoutInMemory
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+    @Test
+    void printLayout()
+    {
+        println VM.current().details()
+
+        println(StringUtils.getSpaceOfSize(64, "-") + "\n")
+
+        println("对象头布局")
+        println(ClassLayout.parseInstance(new Object()).toPrintable())
+
+    }
 
 }

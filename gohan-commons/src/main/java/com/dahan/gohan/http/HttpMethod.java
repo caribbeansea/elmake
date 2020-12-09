@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan.http;
 
 /* ************************************************************************
  *
@@ -21,24 +19,15 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/5/11.
  */
 
 /**
- * 插件
- *
- * @author kevin
+ * @author wyz
  */
-public class Plugin
+public enum HttpMethod
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+  GET, PUT, POST, DELETE
 
 }

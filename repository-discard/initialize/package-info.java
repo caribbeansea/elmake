@@ -3,4 +3,4 @@
  *
  * @author kevin
  */
-package com.dahan.skate.repository.initialize;
+package com.dahan.gohan.repository.initialize;

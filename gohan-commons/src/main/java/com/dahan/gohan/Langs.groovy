@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan
 
 /* ************************************************************************
  *
@@ -25,20 +23,29 @@ import java.util.Map;
  */
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
+class Langs
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+    static String INFO_DOWNLOAD_SUCCESS(String... values)
+    {
+        return StringUtils.format("[SUCCESS] - 依赖【{}】下载成功，从【{}】仓库。来自【{}】依赖引用。从【{}】", values)
+    }
+
+    static String INFO_DOWNLOAD_FAILURE(String... values)
+    {
+        return StringUtils.format("[FAILURE] - 依赖【{}】下载失败，从【{}】。来自【{}】依赖引用。", values)
+    }
+
+    static String ERROR_DEPENDENCY_DOWNLOAD_FAILURE()
+    {
+        return "依赖下载是失败"
+    }
+
+    static String ERROR_DEPENDENCY_CANNOT_IMPORT()
+    {
+        return "下载失败，请检查依赖坐标是否正确"
+    }
 
 }

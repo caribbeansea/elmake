@@ -1,6 +1,4 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
+package com.dahan.gohan
 
 /* ************************************************************************
  *
@@ -21,24 +19,15 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/2.
  */
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
-{
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
-
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
-
-}
+Formprint formprint = new Formprint("name", "age", "poorgay", "bool")
+formprint.addFormContent("a", "29", "YES", "falsessss")
+formprint.addFormContent("b", "36", "NO", "falsessss")
+formprint.addFormContent("c", "21", "YES", "falsessss")
+formprint.addFormContent("d", "21", "YES", "falsessss")
+formprint.printf()

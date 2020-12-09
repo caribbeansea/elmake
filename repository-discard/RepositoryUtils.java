@@ -1,12 +1,12 @@
-package com.dahan.skate.repository;
+package com.dahan.gohan.repository;
 
-import com.dahan.skate.Closes;
-import com.dahan.skate.Langs;
-import com.dahan.skate.collect.Lists;
-import com.dahan.skate.collect.Sets;
-import com.dahan.skate.collection.exception.DependencyNotObtained;
-import com.dahan.skate.repository.dependency.Dependency;
-import com.dahan.skate.repository.dependency.Scope;
+import com.dahan.gohan.Closes;
+import com.dahan.gohan.Langs;
+import com.dahan.gohan.collect.Lists;
+import com.dahan.gohan.collect.Sets;
+import com.dahan.gohan.collection.exception.DependencyNotObtained;
+import com.dahan.gohan.repository.dependency.Dependency;
+import com.dahan.gohan.repository.dependency.Scope;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

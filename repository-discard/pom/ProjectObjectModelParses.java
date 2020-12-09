@@ -1,12 +1,12 @@
-package com.dahan.skate.repository.pom;
+package com.dahan.gohan.repository.pom;
 
-import com.dahan.skate.Assert;
-import com.dahan.skate.Matches;
-import com.dahan.skate.StringUtils;
-import com.dahan.skate.exception.PropertyNotFoundException;
-import com.dahan.skate.repository.RepositoryUtils;
-import com.dahan.skate.repository.dependency.Dependency;
-import com.dahan.skate.repository.dependency.Scope;
+import com.dahan.gohan.Assert;
+import com.dahan.gohan.Matches;
+import com.dahan.gohan.StringUtils;
+import com.dahan.gohan.exception.PropertyNotFoundException;
+import com.dahan.gohan.repository.RepositoryUtils;
+import com.dahan.gohan.repository.dependency.Dependency;
+import com.dahan.gohan.repository.dependency.Scope;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;

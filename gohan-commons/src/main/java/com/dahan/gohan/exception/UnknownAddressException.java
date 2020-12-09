@@ -1,10 +1,7 @@
-package com.dahan.gohan.repository.dependency;
-
-import java.util.Map;
-
+package com.dahan.gohan.exception;
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,24 +18,36 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/5.
  */
 
 /**
- * 插件
- *
  * @author kevin
  */
-public class Plugin
+public class UnknownAddressException extends SkateException
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+    public UnknownAddressException()
+    {
+    }
 
+    public UnknownAddressException(String message)
+    {
+        super(message);
+    }
+
+    public UnknownAddressException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+    public UnknownAddressException(Throwable cause)
+    {
+        super(cause);
+    }
+
+    public UnknownAddressException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }

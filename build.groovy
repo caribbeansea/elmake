@@ -1,5 +1,5 @@
 groupId 'com.dahan'
-artifactId 'skate'
+artifactId 'gohan'
 version '1.0.0.CARVING'
 
 jars {
