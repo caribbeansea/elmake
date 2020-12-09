@@ -54,7 +54,7 @@ public final class GohanRepository
     //
     // 本地储存路径
     //
-    private static final String localDirectory = System.getProperty("user.dir") + "/repository/";
+    private static final String localDirectory = System.getProperty("user.dir") + "/repository-test/";
 
     //
     // 仓库名称
