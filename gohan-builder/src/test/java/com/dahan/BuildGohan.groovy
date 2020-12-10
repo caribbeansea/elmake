@@ -2,7 +2,7 @@ package com.dahan
 
 import com.dahan.gohan.buildscript.GohanBuilder
 
-class BuildScript extends GohanBuilder
+class BuildGohan extends GohanBuilder
 {
     def buildscript = {
 
@@ -85,7 +85,7 @@ class BuildScript extends GohanBuilder
 
     static void main(String[] args)
     {
-        new BuildScript().buildscript.call()
+        new BuildGohan().buildscript.call()
     }
 
 }
