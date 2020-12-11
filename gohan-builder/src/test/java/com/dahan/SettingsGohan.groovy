@@ -30,4 +30,34 @@ import com.dahan.gohan.buildscript.GohanSettings
 class SettingsGohan extends GohanSettings
 {
 
+    def buildscript = {
+
+        //
+        // 属性列表，可以使用 ${xx} 来引用, 这里是使用Groovy原生的DSL来做的。
+        // 后续会将 def 关键字去掉，引用时的 ${exts.xx} 去掉。
+        //
+        exts {
+
+            def springbootVersion = "1.0.0.RELEASE"
+            def groovyVersion = "3.0.4"
+
+        }
+
+        /**
+         * 定义子模块
+         */
+        subprojects = [
+                "subprojects/modules-a",
+                "subprojects/modules-b",
+                "subprojects/modules-c",
+                "subprojects/modules-d"
+        ]
+
+    }
+
+    static void main(String[] args)
+    {
+        new SettingsGohan().buildscript.call()
+    }
+
 }

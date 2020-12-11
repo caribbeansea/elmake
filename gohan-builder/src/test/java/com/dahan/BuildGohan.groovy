@@ -14,17 +14,6 @@ class BuildGohan extends GohanBuilder
         version "1.0.0.CARVING"
 
         //
-        // 属性列表，可以使用 ${xx} 来引用, 这里是使用Groovy原生的DSL来做的。
-        // 后续会将 def 关键字去掉，引用时的 ${exts.xx} 去掉。
-        //
-        exts {
-
-            def springbootVersion = "1.0.0.RELEASE"
-            def groovyVersion = "3.0.4"
-
-        }
-
-        //
         // 添加Maven储存库，这里以阿里巴巴为例。
         //
         repositories {

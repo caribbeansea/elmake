@@ -48,18 +48,6 @@ class GohanBuilder
     def projectInformation = new ProjectInformation()
 
     /**
-     * 属性，相当于pom中的properties
-     */
-    Map<String, String> exts = new HashMap<>()
-
-    /**
-     * 属性
-     */
-    Map<String, String> exts(Closure closure) {
-        return this.exts
-    }
-
-    /**
      * 模块groupId
      */
     void groupId(String group) { projectInformationNotNull(group, GROUP) }
