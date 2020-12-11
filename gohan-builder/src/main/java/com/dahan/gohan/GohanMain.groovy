@@ -34,11 +34,11 @@ class GohanMain
     private static Options options
 
     private static def commandArgs = [
-            BUILD: opt('build', 'build', true, '构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。'),
-            CLEAN: opt('clean', 'clean', true, '清空编译缓存'),
-            RUN  : opt('run', 'run', true, '使用普通模式运行项目，参数为入口函数所存在的类全名。'),
-            DEBUG: opt('debug', 'debug', true, '使用DEBUG模式运行项目，参数为入口函数所存在的类全名。'),
-            HELP : opt('help', 'h', true, '查看帮助'),
+            build: opt('build', 'build', false, '构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。'),
+            clean: opt('clean', 'clean', false, '清空编译缓存'),
+            run  : opt('run', 'run', true, '使用普通模式运行项目，参数为入口函数所存在的类全名。'),
+            debug: opt('debug', 'debug', true, '使用DEBUG模式运行项目，参数为入口函数所存在的类全名。'),
+            help : opt('help', 'h', false, '查看帮助'),
     ]
 
     /**
@@ -47,7 +47,7 @@ class GohanMain
      */
     static void main(String[] args)
     {
-        run(args)
+        run(parseCommands(args))
     }
 
     /**
@@ -73,8 +73,9 @@ class GohanMain
      */
     static void execute(CommandLine cli)
     {
-        if (cli.hasOption(getCommandKey(commandArgs.RUN)))
+        if (cli.hasOption(getCommandKey(commandArgs.run)))
         {
+            println("-----run")
             // TODO 构建当前项目
         }
     }
@@ -100,6 +101,18 @@ class GohanMain
         options = new Options()
         commandArgs.each { K, V ->
             options.addOption(V)
+        }
+    }
+
+    /** 解析命令行 **/
+    static String[] parseCommands(String[] args)
+    {
+        args.eachWithIndex { String entry, int i ->
+            def option = commandArgs.get(entry)
+            if (option != null)
+            {
+                args[i] = "-" + args[i]
+            }
         }
     }
 
