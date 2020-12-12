@@ -33,6 +33,7 @@ class C_Clean extends GohanOption
     C_Clean()
     {
         this("clean", "clean", false, "清空编译缓存")
+        setOrder(1)
     }
 
     private C_Clean(String opt, String description) throws IllegalArgumentException
@@ -51,9 +52,8 @@ class C_Clean extends GohanOption
     }
 
     @Override
-    boolean exec(Object... values)
+    void exec(String... args)
     {
-        return false
     }
 
 }

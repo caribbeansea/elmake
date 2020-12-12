@@ -1,11 +1,8 @@
 package com.dahan.gohan
 
+import com.dahan.gohan.collect.Lists
+import com.dahan.gohan.collect.Maps
 import com.dahan.gohan.option.GohanOption
-import com.dahan.gohan.option.command.C_Build
-import com.dahan.gohan.option.command.C_Clean
-import com.dahan.gohan.option.command.C_Debug
-import com.dahan.gohan.option.command.C_Help
-import com.dahan.gohan.option.command.C_Run
 import com.dahan.gohan.reflect.ClassUtils
 import org.apache.commons.cli.*
 
@@ -38,15 +35,38 @@ import org.apache.commons.cli.*
 class GohanMain
 {
 
-    private static Options options
+    public static Options options
 
-    private static def commandArgs = [
+    private static def commands = {
+
+        def c_home = "com/dahan/gohan/option/command"
+        def source = GohanMain.classLoader.getResource(c_home)
+        def classfiles = new File(source.path)
+
+        def map = Maps.newHashMap()
+
+        classfiles.listFiles().each {
+            def path = it.path.replaceAll("/Users/wuyanzu/project/IdeaProjects/gohan/gohan-builder/target/classes/", "")
+                    .replaceAll("/", ".")
+                    .replaceAll(".class", "")
+
+            def option = ClassUtils.newInstance(Class.forName(path)) as GohanOption
+            map.put(option.getLongOpt(), option)
+        }
+
+        println()
+
+        return map
+    }.call() as Map<String, GohanOption>
+
+    /*[
             build: opt(C_Build.class),
             clean: opt(C_Clean.class),
             run  : opt(C_Run.class),
             debug: opt(C_Debug.class),
             help : opt(C_Help.class),
-    ]
+            lvar : opt(C_Help.class),
+    ]*/
 
     /**
      * 入口函数
@@ -68,45 +88,40 @@ class GohanMain
         try
         {
             execute(commandLineParser.parse(options, args))
-        } catch (Throwable ignore)
+        } catch (Throwable e)
         {
-            commandArgs.help.exec(options)
+            commands.help.exec(e.getMessage())
+            e.printStackTrace()
         }
     }
 
     /**
-     * 解析命令
-     * @param commandLine 判断当前执行命令
+     * 执行命令
      */
     static void execute(CommandLine cli)
     {
-
-        if (cli.hasOption(getCommandKey(commandArgs.run)))
-        {
-            commandArgs.run.exec(cli.getOptionValue(getCommandKey(commandArgs.run)))
+        List<GohanOption> inputOptions = Lists.newArrayList()
+        commands.each { String key, GohanOption value ->
+            if (cli.hasOption(getCommandKey(value)))
+            {
+                value.setParams(getOptionValueMap(cli, value))
+                inputOptions.add(value)
+            }
         }
 
-        if (cli.hasOption(getCommandKey(commandArgs.help)))
-        {
-            commandArgs.help.exec()
-            exit()
+        Collections.sort(inputOptions)
+
+        inputOptions.each {
+            it.exec(getOptionValueMap(cli, it))
         }
 
-    }
-
-    /**
-     * 创建{@code Option}参数
-     */
-    static <T extends GohanOption> GohanOption opt(Class<T> clazz)
-    {
-        return ClassUtils.newInstance(clazz)
     }
 
     /** 加载命令行 **/
     static void loadCommandOptions()
     {
         options = new Options()
-        commandArgs.each { K, V ->
+        commands.each { K, V ->
             options.addOption(V)
         }
     }
@@ -115,21 +130,23 @@ class GohanMain
     static String[] parseCommands(String[] args)
     {
         args.eachWithIndex { String entry, int i ->
-            def option = commandArgs.get(entry)
+            def option = commands.get(entry)
+
             if (option != null)
             {
                 args[i] = "-" + args[i]
             }
         }
+        return args
     }
 
     /** 只获取longOpt，也就是长命令。为了统一不使用短命令行 **/
     static String getCommandKey(Option hasOpt) { hasOpt.getLongOpt() }
 
-    /** 退出程序 **/
-    static void exit()
+    /** 获取命令参数 **/
+    static String[] getOptionValueMap(CommandLine cli, GohanOption option)
     {
-        System.exit(0)
+        return cli.getOptionValues(getCommandKey(option))
     }
 
 }

@@ -22,12 +22,25 @@ package com.dahan.gohan.option;
  */
 
 import org.apache.commons.cli.Option;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 /**
  * @author kevin
  */
-public abstract class GohanOption extends Option
+public abstract class GohanOption extends Option implements Comparable<GohanOption>
 {
+
+    /**
+     * 操作命令执行顺序（ 优先级，比如 lvar > clean > build > run -h ）
+     */
+    private int order;
+
+    /**
+     * 参数列表
+     */
+    private String[] params;
 
     public GohanOption(String opt, String description) throws IllegalArgumentException
     {
@@ -44,6 +57,31 @@ public abstract class GohanOption extends Option
         super(opt, longOpt, hasArg, description);
     }
 
-    public abstract boolean exec(Object... values);
+    public int getOrder()
+    {
+        return order;
+    }
 
+    public void setOrder(int order)
+    {
+        this.order = order;
+    }
+
+    public String[] getParams()
+    {
+        return params;
+    }
+
+    public void setParams(String... params)
+    {
+        this.params = params;
+    }
+
+    public abstract void exec(String... args);
+
+    @Override
+    public int compareTo(@NotNull GohanOption o)
+    {
+        return this.order - o.order;
+    }
 }

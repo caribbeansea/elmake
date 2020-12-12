@@ -1,5 +1,6 @@
 package com.dahan.gohan.option.command
 
+import com.dahan.gohan.GohanMain
 import com.dahan.gohan.option.GohanOption
 import org.apache.commons.cli.HelpFormatter
 import org.apache.commons.cli.Options
@@ -36,7 +37,8 @@ class C_Help extends GohanOption
 
     C_Help()
     {
-        this("help", "h", false, "查看帮助")
+        this("help", "help", false, "查看帮助")
+        setOrder(10)
     }
 
     private C_Help(String opt, String description) throws IllegalArgumentException
@@ -55,10 +57,9 @@ class C_Help extends GohanOption
     }
 
     @Override
-    boolean exec(Object... values)
+    void exec(String... args)
     {
-        new HelpFormatter().printHelp("命令解析有误，请查看帮助", values[0] as Options)
-        return false
+        new HelpFormatter().printHelp("命令解析有误，原因：${args[0]}", GohanMain.options)
     }
 
 }

@@ -31,10 +31,10 @@ import com.dahan.gohan.option.GohanOption
  */
 class C_Build extends GohanOption
 {
-
     C_Build()
     {
         this("build", "build", false, "构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。")
+        setOrder(2)
     }
 
     private C_Build(String opt, String description) throws IllegalArgumentException
@@ -53,9 +53,8 @@ class C_Build extends GohanOption
     }
 
     @Override
-    boolean exec(Object... values)
+    void exec(String... args)
     {
-        return false
     }
 
 }

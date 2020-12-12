@@ -1,6 +1,6 @@
-package com.dahan.gohan.option.command
+package com.dahan
 
-import com.dahan.gohan.option.GohanOption
+import com.dahan.gohan.GohanMain
 
 /* ************************************************************************
  *
@@ -25,37 +25,12 @@ import com.dahan.gohan.option.GohanOption
  */
 
 /**
- * 构建命令
- *
  * @author kevin
  */
-class C_Debug extends GohanOption
-{
+def projectHome = "/Users/wuyanzu/project/IdeaProjects/gohan/debugging/subprojects/gohan-build-test"
 
-    C_Debug()
-    {
-        this("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。")
-        setOrder(5)
-    }
+def commandline = "build lvar projectHome=${projectHome}"
 
-    private C_Debug(String opt, String description) throws IllegalArgumentException
-    {
-        super(opt, description)
-    }
+println(commandline)
 
-    private C_Debug(String opt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, hasArg, description)
-    }
-
-    private C_Debug(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, longOpt, hasArg, description)
-    }
-
-    @Override
-    void exec(String... args)
-    {
-    }
-
-}
+GohanMain.main(commandline.split(" "))

@@ -35,6 +35,7 @@ class C_Run extends GohanOption
     C_Run()
     {
         this("run", "run", true, "使用普通模式运行项目，参数为入口函数所存在的类全名。")
+        setOrder(5)
     }
 
     private C_Run(String opt, String description) throws IllegalArgumentException
@@ -53,10 +54,9 @@ class C_Run extends GohanOption
     }
 
     @Override
-    boolean exec(Object... values)
+    void exec(String... args)
     {
         println("run:" + values[0])
-        return false
     }
 
 }

@@ -29,26 +29,26 @@ import com.dahan.gohan.option.GohanOption
  *
  * @author kevin
  */
-class C_Debug extends GohanOption
+class C_LocalVariable extends GohanOption
 {
 
-    C_Debug()
+    C_LocalVariable()
     {
-        this("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。")
-        setOrder(5)
+        this("lvar", "lvar", true, "设置局部变量")
+        setOrder(0)
     }
 
-    private C_Debug(String opt, String description) throws IllegalArgumentException
+    private C_LocalVariable(String opt, String description) throws IllegalArgumentException
     {
         super(opt, description)
     }
 
-    private C_Debug(String opt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_LocalVariable(String opt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, hasArg, description)
     }
 
-    private C_Debug(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_LocalVariable(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, longOpt, hasArg, description)
     }
@@ -56,6 +56,7 @@ class C_Debug extends GohanOption
     @Override
     void exec(String... args)
     {
+        println(args)
     }
 
 }
