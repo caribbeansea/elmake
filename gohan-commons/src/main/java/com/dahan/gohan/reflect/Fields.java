@@ -4,8 +4,8 @@ package com.dahan.gohan.reflect;
  * Creates on 2020/3/21.
  */
 
-import com.kevin.framework.utils.Objects;
-import com.kevin.framework.utils.collect.Lists;
+import com.dahan.gohan.Objects;
+import com.dahan.gohan.collect.Lists;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

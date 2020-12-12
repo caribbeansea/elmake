@@ -32,30 +32,28 @@ import com.dahan.gohan.option.GohanOption
 class C_Build extends GohanOption
 {
 
+    C_Build()
     {
-
-        setLongOpt("build")
-        setOptionalArg(true)
-        setDescription("构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。")
+        this("build", "build", false, "构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。")
     }
 
-    C_Build(String opt, String description) throws IllegalArgumentException
+    private C_Build(String opt, String description) throws IllegalArgumentException
     {
         super(opt, description)
     }
 
-    C_Build(String opt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Build(String opt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, hasArg, description)
     }
 
-    C_Build(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Build(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, longOpt, hasArg, description)
     }
 
     @Override
-    boolean exec(String... args)
+    boolean exec(Object... values)
     {
         return false
     }

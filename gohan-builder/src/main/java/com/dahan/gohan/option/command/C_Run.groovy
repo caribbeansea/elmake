@@ -32,24 +32,30 @@ import com.dahan.gohan.option.GohanOption
 class C_Run extends GohanOption
 {
 
+    C_Run()
+    {
+        this("run", "run", true, "使用普通模式运行项目，参数为入口函数所存在的类全名。")
+    }
 
-    C_Run(String opt, String description) throws IllegalArgumentException
+    private C_Run(String opt, String description) throws IllegalArgumentException
     {
         super(opt, description)
     }
 
-    C_Run(String opt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Run(String opt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, hasArg, description)
     }
 
-    C_Run(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Run(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, longOpt, hasArg, description)
     }
 
     @Override
-    boolean exec(String... args) {
+    boolean exec(Object... values)
+    {
+        println("run:" + values[0])
         return false
     }
 

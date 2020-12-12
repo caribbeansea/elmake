@@ -32,24 +32,28 @@ import com.dahan.gohan.option.GohanOption
 class C_Debug extends GohanOption
 {
 
+    C_Debug()
+    {
+        this("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。")
+    }
 
-    C_Debug(String opt, String description) throws IllegalArgumentException
+    private C_Debug(String opt, String description) throws IllegalArgumentException
     {
         super(opt, description)
     }
 
-    C_Debug(String opt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Debug(String opt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, hasArg, description)
     }
 
-    C_Debug(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Debug(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, longOpt, hasArg, description)
     }
 
     @Override
-    boolean exec(String... args) {
+    boolean exec(Object... values) {
         return false
     }
 

@@ -42,10 +42,10 @@ class GohanMain
 
     private static def commandArgs = [
             build: opt(C_Build.class),
-            clean: opt("clean", "clean", false, "清空编译缓存", C_Clean.class),
-            run  : opt("run", "run", true, "使用普通模式运行项目，参数为入口函数所存在的类全名。", C_Run.class),
-            debug: opt("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。", C_Debug.class),
-            help : opt("help", "h", false, "查看帮助", C_Help.class),
+            clean: opt(C_Clean.class),
+            run  : opt(C_Run.class),
+            debug: opt(C_Debug.class),
+            help : opt(C_Help.class),
     ]
 
     /**
@@ -70,7 +70,7 @@ class GohanMain
             execute(commandLineParser.parse(options, args))
         } catch (Throwable ignore)
         {
-            new HelpFormatter().printHelp("命令解析有误，请查看帮助", options)
+            commandArgs.help.exec(options)
         }
     }
 
@@ -80,11 +80,18 @@ class GohanMain
      */
     static void execute(CommandLine cli)
     {
+
         if (cli.hasOption(getCommandKey(commandArgs.run)))
         {
-            println("-----run")
-            // TODO 构建当前项目
+            commandArgs.run.exec(cli.getOptionValue(getCommandKey(commandArgs.run)))
         }
+
+        if (cli.hasOption(getCommandKey(commandArgs.help)))
+        {
+            commandArgs.help.exec()
+            exit()
+        }
+
     }
 
     /**

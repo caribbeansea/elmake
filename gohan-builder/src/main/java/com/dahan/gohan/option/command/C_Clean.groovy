@@ -30,23 +30,28 @@ import com.dahan.gohan.option.GohanOption
 class C_Clean extends GohanOption
 {
 
-    C_Clean(String opt, String description) throws IllegalArgumentException
+    C_Clean()
+    {
+        this("clean", "clean", false, "清空编译缓存")
+    }
+
+    private C_Clean(String opt, String description) throws IllegalArgumentException
     {
         super(opt, description)
     }
 
-    C_Clean(String opt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Clean(String opt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, hasArg, description)
     }
 
-    C_Clean(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
+    private C_Clean(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
     {
         super(opt, longOpt, hasArg, description)
     }
 
     @Override
-    boolean exec(String... args)
+    boolean exec(Object... values)
     {
         return false
     }

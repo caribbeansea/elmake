@@ -44,12 +44,6 @@ public abstract class GohanOption extends Option
         super(opt, longOpt, hasArg, description);
     }
 
-    /**
-     * 执行命令
-     *
-     * @param args 参数
-     * @return true代表执行成功
-     */
-    public abstract boolean exec(String... args);
+    public abstract boolean exec(Object... values);
 
 }
