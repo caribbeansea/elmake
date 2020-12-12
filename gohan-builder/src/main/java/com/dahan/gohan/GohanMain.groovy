@@ -1,5 +1,12 @@
 package com.dahan.gohan
 
+import com.dahan.gohan.option.GohanOption
+import com.dahan.gohan.option.command.C_Build
+import com.dahan.gohan.option.command.C_Clean
+import com.dahan.gohan.option.command.C_Debug
+import com.dahan.gohan.option.command.C_Help
+import com.dahan.gohan.option.command.C_Run
+import com.dahan.gohan.reflect.ClassUtils
 import org.apache.commons.cli.*
 
 /* ************************************************************************
@@ -34,11 +41,11 @@ class GohanMain
     private static Options options
 
     private static def commandArgs = [
-            build: opt('build', 'build', false, '构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。'),
-            clean: opt('clean', 'clean', false, '清空编译缓存'),
-            run  : opt('run', 'run', true, '使用普通模式运行项目，参数为入口函数所存在的类全名。'),
-            debug: opt('debug', 'debug', true, '使用DEBUG模式运行项目，参数为入口函数所存在的类全名。'),
-            help : opt('help', 'h', false, '查看帮助'),
+            build: opt(C_Build.class),
+            clean: opt("clean", "clean", false, "清空编译缓存", C_Clean.class),
+            run  : opt("run", "run", true, "使用普通模式运行项目，参数为入口函数所存在的类全名。", C_Run.class),
+            debug: opt("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。", C_Debug.class),
+            help : opt("help", "h", false, "查看帮助", C_Help.class),
     ]
 
     /**
@@ -63,7 +70,7 @@ class GohanMain
             execute(commandLineParser.parse(options, args))
         } catch (Throwable ignore)
         {
-            new HelpFormatter().printHelp('命令解析有误，请查看帮助', options)
+            new HelpFormatter().printHelp("命令解析有误，请查看帮助", options)
         }
     }
 
@@ -82,17 +89,10 @@ class GohanMain
 
     /**
      * 创建{@code Option}参数
-     *
-     * @param longOpt 完整命令
-     * @param shortOpt 精简的命令
-     * @param hasArgs 是否有参数
-     * @param description 介绍
-     * @return Option对象实例
      */
-    static Option opt(String longOpt, String shortOpt, boolean hasArgs, String description)
+    static <T extends GohanOption> GohanOption opt(Class<T> clazz)
     {
-        def option = new Option(longOpt, shortOpt, hasArgs, description)
-        return option
+        return ClassUtils.newInstance(clazz)
     }
 
     /** 加载命令行 **/
