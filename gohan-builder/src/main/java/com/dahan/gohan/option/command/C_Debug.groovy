@@ -1,6 +1,7 @@
 package com.dahan.gohan.option.command
 
-import com.dahan.gohan.option.GohanOption
+import com.dahan.gohan.commandline.Option
+
 
 /* ************************************************************************
  *
@@ -29,32 +30,17 @@ import com.dahan.gohan.option.GohanOption
  *
  * @author kevin
  */
-class C_Debug extends GohanOption
+class C_Debug extends Option
 {
 
     C_Debug()
     {
-        this("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。")
+        super("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。")
         setOrder(5)
     }
 
-    private C_Debug(String opt, String description) throws IllegalArgumentException
-    {
-        super(opt, description)
-    }
-
-    private C_Debug(String opt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, hasArg, description)
-    }
-
-    private C_Debug(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, longOpt, hasArg, description)
-    }
-
     @Override
-    void exec(String... args)
+    void exec()
     {
     }
 

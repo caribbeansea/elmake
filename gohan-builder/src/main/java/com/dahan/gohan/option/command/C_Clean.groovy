@@ -1,6 +1,7 @@
 package com.dahan.gohan.option.command
 
-import com.dahan.gohan.option.GohanOption
+import com.dahan.gohan.commandline.Option
+
 
 /* ************************************************************************
  *
@@ -27,32 +28,17 @@ import com.dahan.gohan.option.GohanOption
 /**
  * @author kevin
  */
-class C_Clean extends GohanOption
+class C_Clean extends Option
 {
 
     C_Clean()
     {
-        this("clean", "clean", false, "清空编译缓存")
+        super("clean", "clean", false, "清空编译缓存")
         setOrder(1)
     }
 
-    private C_Clean(String opt, String description) throws IllegalArgumentException
-    {
-        super(opt, description)
-    }
-
-    private C_Clean(String opt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, hasArg, description)
-    }
-
-    private C_Clean(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, longOpt, hasArg, description)
-    }
-
     @Override
-    void exec(String... args)
+    void exec()
     {
     }
 

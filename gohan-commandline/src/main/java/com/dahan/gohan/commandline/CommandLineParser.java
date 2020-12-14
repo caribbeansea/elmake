@@ -1,8 +1,4 @@
-package com.dahan.gohan.option.command
-
-import com.dahan.gohan.commandline.Option
-
-
+package com.dahan.gohan.commandline;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -22,26 +18,24 @@ import com.dahan.gohan.commandline.Option
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/14.
  */
 
+import com.dahan.gohan.commandline.exception.CommandLineParseException;
+
 /**
- * 构建命令
+ * 命令行解析
  *
  * @author kevin
  */
-class C_Run extends Option
+public interface CommandLineParser
 {
 
-    C_Run()
-    {
-        super("run", "run", true, "使用普通模式运行项目，参数为入口函数所存在的类全名。")
-        setOrder(5)
-    }
-
-    @Override
-    void exec()
-    {
-    }
+    /**
+     * 解析启动时传入的参数
+     *
+     * @param args 命令行参数
+     */
+    CommandLine parse(String[] args) throws CommandLineParseException;
 
 }

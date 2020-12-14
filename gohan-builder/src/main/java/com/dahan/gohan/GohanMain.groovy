@@ -1,10 +1,12 @@
 package com.dahan.gohan
 
-import com.dahan.gohan.collect.Lists
+
 import com.dahan.gohan.collect.Maps
-import com.dahan.gohan.option.GohanOption
+import com.dahan.gohan.commandline.DefaultCommandLineParser
+import com.dahan.gohan.commandline.Option
+import com.dahan.gohan.commandline.Options
+import com.dahan.gohan.commandline.exception.CommandLineParseException
 import com.dahan.gohan.reflect.ClassUtils
-import org.apache.commons.cli.*
 
 /* ************************************************************************
  *
@@ -35,38 +37,25 @@ import org.apache.commons.cli.*
 class GohanMain
 {
 
-    public static Options options
-
-    private static def commands = {
+    public static Options options = {
 
         def c_home = "com/dahan/gohan/option/command"
         def source = GohanMain.classLoader.getResource(c_home)
         def classfiles = new File(source.path)
 
-        def map = Maps.newHashMap()
+        def loadOpts = new Options()
 
         classfiles.listFiles().each {
             def path = it.path.replaceAll("/Users/wuyanzu/project/IdeaProjects/gohan/gohan-builder/target/classes/", "")
                     .replaceAll("/", ".")
                     .replaceAll(".class", "")
 
-            def option = ClassUtils.newInstance(Class.forName(path)) as GohanOption
-            map.put(option.getLongOpt(), option)
+            loadOpts.addOpt(ClassUtils.newInstance(Class.forName(path)))
         }
 
-        println()
+        return loadOpts
 
-        return map
-    }.call() as Map<String, GohanOption>
-
-    /*[
-            build: opt(C_Build.class),
-            clean: opt(C_Clean.class),
-            run  : opt(C_Run.class),
-            debug: opt(C_Debug.class),
-            help : opt(C_Help.class),
-            lvar : opt(C_Help.class),
-    ]*/
+    }.call() as Options
 
     /**
      * 入口函数
@@ -74,7 +63,7 @@ class GohanMain
      */
     static void main(String[] args)
     {
-        run(parseCommands(args))
+        run(processInputCommands(args))
     }
 
     /**
@@ -83,70 +72,28 @@ class GohanMain
      */
     static void run(String[] args)
     {
-        loadCommandOptions()
-        def commandLineParser = new DefaultParser()
         try
         {
-            execute(commandLineParser.parse(options, args))
-        } catch (Throwable e)
+            new DefaultCommandLineParser(options).parse(args).orderExec()
+        } catch (CommandLineParseException e)
         {
-            commands.help.exec(e.getMessage())
             e.printStackTrace()
         }
+
     }
 
     /**
-     * 执行命令
+     * 处理是命令的参数
      */
-    static void execute(CommandLine cli)
+    static String[] processInputCommands(String[] args)
     {
-        List<GohanOption> inputOptions = Lists.newArrayList()
-        commands.each { String key, GohanOption value ->
-            if (cli.hasOption(getCommandKey(value)))
+        args.eachWithIndex { String entry, int index ->
+            if(options.hasOption(entry))
             {
-                value.setParams(getOptionValueMap(cli, value))
-                inputOptions.add(value)
-            }
-        }
-
-        Collections.sort(inputOptions)
-
-        inputOptions.each {
-            it.exec(getOptionValueMap(cli, it))
-        }
-
-    }
-
-    /** 加载命令行 **/
-    static void loadCommandOptions()
-    {
-        options = new Options()
-        commands.each { K, V ->
-            options.addOption(V)
-        }
-    }
-
-    /** 解析命令行 **/
-    static String[] parseCommands(String[] args)
-    {
-        args.eachWithIndex { String entry, int i ->
-            def option = commands.get(entry)
-
-            if (option != null)
-            {
-                args[i] = "-" + args[i]
+                args[index] = "-${entry}"
             }
         }
         return args
-    }
-
-    /** 只获取longOpt，也就是长命令。为了统一不使用短命令行 **/
-    static String getCommandKey(Option hasOpt) { hasOpt.getLongOpt() }
-
-    /** 获取命令参数 **/
-    static String[] getOptionValueMap(CommandLine cli, GohanOption option)
-    {
-        return cli.getOptionValues(getCommandKey(option))
     }
 
 }

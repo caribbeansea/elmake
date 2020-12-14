@@ -1,8 +1,4 @@
-package com.dahan.gohan.option.command
-
-import com.dahan.gohan.commandline.Option
-
-
+package com.dahan.gohan.commandline.exception;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -22,26 +18,37 @@ import com.dahan.gohan.commandline.Option
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/14.
  */
 
 /**
- * 构建命令
- *
  * @author kevin
  */
-class C_Run extends Option
+public class CommandLineParseException extends Exception
 {
 
-    C_Run()
+    public CommandLineParseException()
     {
-        super("run", "run", true, "使用普通模式运行项目，参数为入口函数所存在的类全名。")
-        setOrder(5)
     }
 
-    @Override
-    void exec()
+    public CommandLineParseException(String message)
     {
+        super(message);
+    }
+
+    public CommandLineParseException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+    public CommandLineParseException(Throwable cause)
+    {
+        super(cause);
+    }
+
+    public CommandLineParseException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
 
 }

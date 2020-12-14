@@ -12,6 +12,7 @@
     <modules>
         <module>gohan-builder</module>
         <module>gohan-commons</module>
+        <module>gohan-commandline</module>
     </modules>
 
     <repositories>
@@ -122,6 +123,11 @@
                 <artifactId>jol-core</artifactId>
                 <version>0.10</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.dahan</groupId>
+                <artifactId>gohan-commandline</artifactId>
+                <version>1.0.0.BETA</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

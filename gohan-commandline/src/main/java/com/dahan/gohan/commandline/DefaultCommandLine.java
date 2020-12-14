@@ -1,8 +1,4 @@
-package com.dahan.gohan.option.command
-
-import com.dahan.gohan.commandline.Option
-
-
+package com.dahan.gohan.commandline;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -22,26 +18,44 @@ import com.dahan.gohan.commandline.Option
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/14.
  */
+
+import java.util.List;
 
 /**
- * 构建命令
- *
  * @author kevin
  */
-class C_Run extends Option
+public class DefaultCommandLine implements CommandLine
 {
 
-    C_Run()
+    private final Options options;
+
+    public DefaultCommandLine(Options options)
     {
-        super("run", "run", true, "使用普通模式运行项目，参数为入口函数所存在的类全名。")
-        setOrder(5)
+        this.options = options;
     }
 
     @Override
-    void exec()
+    public Options getOptions()
     {
+        return this.options;
+    }
+
+    @Override
+    public void defExec()
+    {
+        for (Option option : options)
+        {
+            option.exec();
+        }
+    }
+
+    @Override
+    public void orderExec()
+    {
+        options.sort();
+        defExec();
     }
 
 }

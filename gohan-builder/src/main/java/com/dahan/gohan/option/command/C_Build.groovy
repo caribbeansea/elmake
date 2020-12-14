@@ -1,6 +1,7 @@
 package com.dahan.gohan.option.command
 
-import com.dahan.gohan.option.GohanOption
+import com.dahan.gohan.commandline.Option
+
 
 /* ************************************************************************
  *
@@ -29,31 +30,16 @@ import com.dahan.gohan.option.GohanOption
  *
  * @author kevin
  */
-class C_Build extends GohanOption
+class C_Build extends Option
 {
     C_Build()
     {
-        this("build", "build", false, "构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。")
+        super("build", "build", false, "构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。")
         setOrder(2)
     }
 
-    private C_Build(String opt, String description) throws IllegalArgumentException
-    {
-        super(opt, description)
-    }
-
-    private C_Build(String opt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, hasArg, description)
-    }
-
-    private C_Build(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, longOpt, hasArg, description)
-    }
-
     @Override
-    void exec(String... args)
+    void exec()
     {
     }
 

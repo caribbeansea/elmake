@@ -29,7 +29,7 @@ import com.dahan.gohan.GohanMain
  */
 def projectHome = "/Users/wuyanzu/project/IdeaProjects/gohan/debugging/subprojects/gohan-build-test"
 
-def commandline = "build lvar projectHome=${projectHome}"
+def commandline = "build lvar name=张三 projectHome=${projectHome}"
 
 println(commandline)
 

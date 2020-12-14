@@ -1,6 +1,7 @@
 package com.dahan.gohan.option.command
 
-import com.dahan.gohan.option.GohanOption
+import com.dahan.gohan.commandline.Option
+
 
 /* ************************************************************************
  *
@@ -29,34 +30,19 @@ import com.dahan.gohan.option.GohanOption
  *
  * @author kevin
  */
-class C_LocalVariable extends GohanOption
+class C_LocalVariable extends Option
 {
 
     C_LocalVariable()
     {
-        this("lvar", "lvar", true, "设置局部变量")
+        super("lvar", "lvar", true, "设置局部变量")
         setOrder(0)
     }
 
-    private C_LocalVariable(String opt, String description) throws IllegalArgumentException
-    {
-        super(opt, description)
-    }
-
-    private C_LocalVariable(String opt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, hasArg, description)
-    }
-
-    private C_LocalVariable(String opt, String longOpt, boolean hasArg, String description) throws IllegalArgumentException
-    {
-        super(opt, longOpt, hasArg, description)
-    }
-
     @Override
-    void exec(String... args)
+    void exec()
     {
-        println(args)
+        println ()
     }
 
 }
