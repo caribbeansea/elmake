@@ -10,9 +10,10 @@
     <version>1.0.0.BETA</version>
 
     <modules>
-        <module>gohan-builder</module>
+        <module>gohan-main</module>
         <module>gohan-commons</module>
         <module>gohan-commandline</module>
+        <module>gohan-script</module>
     </modules>
 
     <repositories>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>gohan-builder</artifactId>
+    <artifactId>gohan-main</artifactId>
 
     <dependencies>
         <dependency>
