@@ -1,4 +1,4 @@
-package com.dahan.gohan.task;
+package com.dahan.gohan.script.task;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.

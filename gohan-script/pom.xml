@@ -11,5 +11,11 @@
 
     <artifactId>gohan-script</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>gohan-repository</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

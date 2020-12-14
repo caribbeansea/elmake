@@ -1,4 +1,4 @@
-package com.dahan
+package com.gohan.dahan.script
 
 import com.dahan.gohan.buildscript.GohanSettings
 

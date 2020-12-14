@@ -24,7 +24,6 @@ package com.dahan.gohan.repository.utils;
 import com.dahan.gohan.collect.Lists;
 import com.dahan.gohan.repository.GohanDependency;
 import com.dahan.gohan.repository.GohanRepository;
-import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.collection.CollectRequest;
 import org.eclipse.aether.collection.CollectResult;
 import org.eclipse.aether.collection.DependencyCollectionException;

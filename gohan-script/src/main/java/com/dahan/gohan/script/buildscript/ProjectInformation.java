@@ -1,4 +1,4 @@
-package com.dahan.gohan.buildscript;
+package com.dahan.gohan.script.buildscript;
 
 /**
  * @author kevin

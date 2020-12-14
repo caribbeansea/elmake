@@ -14,6 +14,7 @@
         <module>gohan-commons</module>
         <module>gohan-commandline</module>
         <module>gohan-script</module>
+        <module>gohan-repository</module>
     </modules>
 
     <repositories>
@@ -109,6 +110,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.dahan</groupId>
+                <artifactId>gohan-repository</artifactId>
+                <version>1.0.0.BETA</version>
+            </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
                 <artifactId>gohan-commons</artifactId>

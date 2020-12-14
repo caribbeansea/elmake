@@ -1,7 +1,7 @@
-package com.dahan.gohan.buildscript
+package com.dahan.gohan.script.buildscript
 
 import com.dahan.gohan.repository.GohanDependency
-import com.dahan.gohan.task.GohanTask
+import com.dahan.gohan.script.task.GohanTask
 
 /* ************************************************************************
  *
