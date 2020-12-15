@@ -41,6 +41,8 @@ package com.dahan.gohan;
  */
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 
 /**
  * 和文件操作相关的工具类
@@ -61,15 +63,21 @@ public class Files {
         return name.substring(indexOf + 1);
     }
 
+    public static String readString(File file) throws IOException
+    {
+        return readString(file.getPath());
+    }
+
     /**
      * 将文件读取到String字符串中
      *
      * @param path 文件路径
      * @return 文件内容
      */
-    // public static String readString(String path) throws IOException {
-    //     return java.nio.file.Files.readString(Paths.get(path), Charsets.UTF_8);
-    // }
+     public static String readString(String path) throws IOException
+     {
+         return java.nio.file.Files.readString(Paths.get(path), Charsets.UTF_8);
+     }
 
     /**
      * 如果目录不存在就去创建

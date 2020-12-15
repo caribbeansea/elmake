@@ -1,6 +1,7 @@
 package com.gohan.dahan.script
 
-import com.dahan.gohan.script.buildscript.GohanSettings
+import com.dahan.gohan.script.Gcript
+import org.junit.Test
 
 /* ************************************************************************
  *
@@ -21,43 +22,20 @@ import com.dahan.gohan.script.buildscript.GohanSettings
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/10.
+ * Creates on 2020/12/15.
  */
 
 /**
  * @author kevin
  */
-class SettingsGohan extends GohanSettings
+class GcriptParseTest
 {
 
-    def buildscript = {
-
-        //
-        // 属性列表，可以使用 ${xx} 来引用, 这里是使用Groovy原生的DSL来做的。
-        // 后续会将 def 关键字去掉，引用时的 ${exts.xx} 去掉。
-        //
-        exts {
-
-            def springbootVersion = "1.0.0.RELEASE"
-            def groovyVersion = "3.0.4"
-
-        }
-
-        /**
-         * 定义子模块
-         */
-        subprojects = [
-                "subprojects/modules-a",
-                "subprojects/modules-b",
-                "subprojects/modules-c",
-                "subprojects/modules-d"
-        ]
-
-    }
-
-    static void main(String[] args)
+    @Test
+    void main()
     {
-        new SettingsGohan().buildscript.call()
+        def path = "/Users/wuyanzu/project/IdeaProjects/gohan/gohan-script/src/test/java/com/gohan/dahan/script/build.gcript"
+        Gcript.parse(new File(path))
     }
 
 }

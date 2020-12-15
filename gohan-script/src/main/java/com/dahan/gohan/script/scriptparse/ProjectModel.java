@@ -1,9 +1,9 @@
-package com.dahan.gohan.script.buildscript;
+package com.dahan.gohan.script.scriptparse;
 
 /**
  * @author kevin
  */
-public class ProjectInformation
+public class ProjectModel
 {
 
     private String groupId;

@@ -1,6 +1,7 @@
 package com.dahan.gohan.script.buildscript
 
 import com.dahan.gohan.repository.GohanDependency
+import com.dahan.gohan.script.scriptparse.ProjectModel
 import com.dahan.gohan.script.task.GohanTask
 
 /* ************************************************************************
@@ -45,7 +46,7 @@ class GohanBuilder
     /**
      * 模块信息
      */
-    def projectInformation = new ProjectInformation()
+    def projectInformation = new ProjectModel()
 
     /**
      * 模块groupId
@@ -120,7 +121,7 @@ class GohanBuilder
     {
         if (projectInformation)
         {
-            projectInformation = new ProjectInformation()
+            projectInformation = new ProjectModel()
         }
         switch (type)
         {
