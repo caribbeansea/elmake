@@ -1,6 +1,6 @@
 package com.gohan.dahan.script
 
-import com.dahan.gohan.script.GohanClassLoader
+import com.dahan.gohan.script.BuildGohan
 import org.junit.Test
 
 /* ************************************************************************
@@ -26,19 +26,16 @@ import org.junit.Test
  */
 
 /**
- * groovy脚本动态执行测试
- *
  * @author kevin
  */
-class GroovyScriptExecTest
+class BuildGohanParseTest
 {
-
-    def groovyScript = "void p(){ println('Hello World') }"
 
     @Test
     void main()
     {
-        GohanClassLoader.getGroovyObject(groovyScript).invokeMethod("p", null)
+        def path = "/Users/wuyanzu/project/IdeaProjects/gohan/gohan-script/src/test/java/com/gohan/dahan/script/build.gohan"
+        BuildGohan.parse(new File(path))
     }
 
 }

@@ -25,10 +25,10 @@ import com.dahan.gohan.Files
  */
 
 /**
- * .gcript文件解析
+ * {@code build.gcript} 文件解析
  * @author kevin
  */
-class Gcript
+class BuildGohan
 {
 
     static void parse(File file)
@@ -38,11 +38,12 @@ class Gcript
         {
             // new instance classloader
             def classLoader = GohanClassLoader.instance
-            def script = buildScript(Files.readString(file))
+
+            def script = buildScript(Files.readString(file), classLoader)
         }
     }
 
-    private static String buildScript(String source)
+    private static String buildScript(String source, GohanClassLoader classLoader)
     {
 
     }

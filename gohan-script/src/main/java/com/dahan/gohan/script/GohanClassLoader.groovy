@@ -1,5 +1,6 @@
 package com.dahan.gohan.script
 
+import com.dahan.gohan.reflect.ClassUtils
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.tools.GroovyClass
 
@@ -74,7 +75,7 @@ class GohanClassLoader extends GroovyClassLoader
      */
     static GroovyObject getGroovyObject(String source)
     {
-
+        return ClassUtils.newInstance(getInstance().parseClass(source)) as GroovyObject
     }
 
 }

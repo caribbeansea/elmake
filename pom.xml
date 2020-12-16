@@ -111,6 +111,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>de.defmacro</groupId>
+                <artifactId>eclipse-astparser</artifactId>
+                <version>8.1</version>
+            </dependency>
+            <dependency>
                 <groupId>com.dahan</groupId>
                 <artifactId>gohan-repository</artifactId>
                 <version>1.0.0.BETA</version>

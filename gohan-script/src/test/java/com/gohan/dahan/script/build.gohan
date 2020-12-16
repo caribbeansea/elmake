@@ -5,6 +5,13 @@ groupId "com.dahan"
 artifactId "gohan"
 version "1.0.0.CARVING"
 
+exts {
+
+    z_username = "zhangsan"
+    l_username = "lisi"
+
+}
+
 //
 // 添加Maven储存库，这里以阿里巴巴为例。
 //

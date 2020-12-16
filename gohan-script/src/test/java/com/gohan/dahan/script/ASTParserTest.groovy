@@ -1,6 +1,9 @@
 package com.gohan.dahan.script
 
-import com.dahan.gohan.script.Gcript
+import com.dahan.gohan.Files
+import org.codehaus.groovy.ast.builder.AstBuilder
+import org.codehaus.groovy.ast.stmt.BlockStatement
+import org.codehaus.groovy.ast.stmt.ExpressionStatement
 import org.junit.Test
 
 /* ************************************************************************
@@ -22,20 +25,35 @@ import org.junit.Test
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/15.
+ * Creates on 2020/12/16.
  */
 
 /**
+ * 测试抽象语法树解析
  * @author kevin
  */
-class GcriptParseTest
+class ASTParserTest
 {
 
+    String path = "/Users/wuyanzu/project/IdeaProjects/gohan/gohan-script/src/test/java/com/gohan/dahan/script/build.gohan"
+
+    @SuppressWarnings('GroovyAssignabilityCheck')
     @Test
-    void main()
+    void ast()
     {
-        def path = "/Users/wuyanzu/project/IdeaProjects/gohan/gohan-script/src/test/java/com/gohan/dahan/script/build.gcript"
-        Gcript.parse(new File(path))
+
+        String scriptcode = Files.readString(path)
+
+        def builder = new AstBuilder()
+        def nodes = builder.buildFromString(scriptcode)
+
+        def statement = nodes[0] as BlockStatement
+        statement.statements.each { ExpressionStatement es ->
+
+            println(es.text)
+
+        }
+
     }
 
 }
