@@ -64,7 +64,7 @@ public class RequestUtils
 
         for (GohanDependency dependency : dependencies)
         {
-            request.addDependency(dependency.toEclipseDependency());
+            request.addDependency(dependency.getDependency());
         }
 
         for (GohanRepository repository : repositories)

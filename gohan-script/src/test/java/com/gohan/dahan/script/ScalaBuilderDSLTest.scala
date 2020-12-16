@@ -1,10 +1,7 @@
 package com.gohan.dahan.script
 
-import com.dahan.gohan.Files
-import org.codehaus.groovy.ast.builder.AstBuilder
-import org.codehaus.groovy.ast.stmt.BlockStatement
-import org.codehaus.groovy.ast.stmt.ExpressionStatement
-import org.junit.Test
+import com.dahan.gohan.repository.GohanDependency
+import com.dahan.gohan.script.buildscript.GohanBuilder
 
 /* ************************************************************************
  *
@@ -29,31 +26,17 @@ import org.junit.Test
  */
 
 /**
- * 测试抽象语法树解析
  * @author kevin
  */
-class ASTParserTest
-{
+object ScalaBuilderDSLTest extends GohanBuilder {
 
-    String path = "/Users/wuyanzu/project/IdeaProjects/gohan/gohan-script/src/test/java/com/gohan/dahan/script/build.gohan"
+  group("com.dahan")
+  name("gohan")
+  version("gh-2+0")
 
-    @SuppressWarnings('GroovyAssignabilityCheck')
-    @Test
-    void ast()
-    {
-
-        String scriptcode = Files.readString(path)
-
-        def builder = new AstBuilder()
-        def nodes = builder.buildFromString(scriptcode)
-
-        def statement = nodes[0] as BlockStatement
-        statement.statements.each { ExpressionStatement es ->
-
-            println(es.text)
-
-        }
-
-    }
+  dependencies(Array[GohanDependency](
+    new GohanDependency("org.slf4j", "slf4j-api", "1.7.25"),
+    new GohanDependency("de.defmacro", "eclipse-astparser", "8.1"),
+  ))
 
 }

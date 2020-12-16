@@ -1,7 +1,4 @@
-package com.gohan.dahan.script
-
-import com.dahan.gohan.script.GohanClassLoader
-import org.junit.Test
+package com.dahan.gohan.repository
 
 /* ************************************************************************
  *
@@ -22,23 +19,24 @@ import org.junit.Test
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/15.
+ * Creates on 2020/12/9.
  */
+
+import com.dahan.gohan.collect.Lists
+import com.dahan.gohan.repository.utils.RepositoryUtils
+import org.junit.Test
 
 /**
- * groovy脚本动态执行测试
- *
  * @author kevin
  */
-class GroovyScriptExecTest
-{
+class ResolveDependencyTest {
 
-    def groovyScript = "void p(){ println('Hello World') }"
-
-    @Test
-    void main()
-    {
-        GohanClassLoader.getGroovyObject(groovyScript).invokeMethod("p", null)
-    }
+  @Test
+  def resolveDependencyTest(): Unit = {
+    RepositoryUtils.resolveDependencies(Lists.of(
+       new GohanDependency("com.alibaba", "fastjson", "1.2.66"),
+       new GohanDependency("net.sf.json-lib", "json-lib", "2.4", "jdk15"),
+    ))
+  }
 
 }

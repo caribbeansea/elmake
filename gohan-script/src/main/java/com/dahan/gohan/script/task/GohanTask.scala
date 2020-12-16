@@ -1,4 +1,4 @@
-package com.dahan.gohan.repository;
+package com.dahan.gohan.script.task;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -21,25 +21,9 @@ package com.dahan.gohan.repository;
  * Creates on 2020/12/9.
  */
 
-import com.dahan.gohan.collect.Lists;
-import com.dahan.gohan.repository.utils.RepositoryUtils;
-import org.eclipse.aether.collection.DependencyCollectionException;
-import org.eclipse.aether.resolution.DependencyResolutionException;
-import org.junit.Test;
-
 /**
  * @author kevin
  */
-public class ResolveDependencyTest
+class GohanTask
 {
-
-    @Test
-    public void resolveDependencyTest() throws DependencyCollectionException, DependencyResolutionException
-    {
-        RepositoryUtils.resolveDependencies(Lists.of(
-                new GohanDependency("com.alibaba", "fastjson", "1.2.66"),
-                new GohanDependency("net.sf.json-lib", "json-lib", "2.4", "jdk15")
-        ));
-    }
-
 }
