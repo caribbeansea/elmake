@@ -27,7 +27,7 @@ import com.dahan.gohan.repository.utils.RepositoryUtils
 import org.junit.Test
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 class ResolveDependencyTest {
 

@@ -47,7 +47,7 @@ import java.nio.file.Paths;
 /**
  * 和文件操作相关的工具类
  *
- * @author kevin
+ * @author tiansheng
  */
 public class Files {
 

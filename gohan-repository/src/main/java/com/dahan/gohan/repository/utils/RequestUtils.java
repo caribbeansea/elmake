@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * 集合请求依赖
  *
- * @author kevin
+ * @author tiansheng
  */
 public class RequestUtils
 {

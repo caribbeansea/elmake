@@ -28,7 +28,7 @@ import org.apache.tools.ant.taskdefs.WaitFor.Unit
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 object ScalaBuilderDSLTest extends GohanBuilder {
 

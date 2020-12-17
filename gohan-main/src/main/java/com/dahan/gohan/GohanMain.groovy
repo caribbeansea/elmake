@@ -32,7 +32,7 @@ import com.dahan.gohan.reflect.ClassUtils
 
 /**
  * 命令行解析
- * @author kevin
+ * @author tiansheng
  */
 class GohanMain
 {

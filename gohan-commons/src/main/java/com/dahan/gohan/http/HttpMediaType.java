@@ -25,7 +25,7 @@ package com.dahan.gohan.http;
 /**
  * 字符编码统一管理
  *
- * @author kevin
+ * @author tiansheng
  */
 public enum HttpMediaType {
 

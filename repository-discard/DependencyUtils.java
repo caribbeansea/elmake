@@ -6,7 +6,7 @@ import com.dahan.gohan.repository.dependency.Dependency;
 import java.util.Map;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class DependencyUtils
 {

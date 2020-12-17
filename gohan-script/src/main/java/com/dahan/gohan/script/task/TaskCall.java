@@ -22,7 +22,7 @@ package com.dahan.gohan.script.task;
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public interface TaskCall {
 

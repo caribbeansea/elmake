@@ -26,7 +26,7 @@ import com.dahan.gohan.commandline.Option
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 class C_Clean extends Option
 {

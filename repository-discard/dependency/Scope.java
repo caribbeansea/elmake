@@ -25,7 +25,7 @@ package com.dahan.gohan.repository.dependency;
 /**
  * 依赖存在范围
  *
- * @author kevin
+ * @author tiansheng
  */
 public enum Scope
 {

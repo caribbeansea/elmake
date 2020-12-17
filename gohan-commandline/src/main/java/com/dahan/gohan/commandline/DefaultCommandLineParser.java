@@ -26,7 +26,7 @@ import com.dahan.gohan.commandline.exception.CommandLineParseException;
 import java.nio.file.LinkOption;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class DefaultCommandLineParser implements CommandLineParser
 {

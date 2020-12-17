@@ -10,7 +10,7 @@ import java.lang.reflect.AccessibleObject;
 /**
  * 注解工具类
  *
- * @author kevin
+ * @author tiansheng
  */
 public class Annotations {
 

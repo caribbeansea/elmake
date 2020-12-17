@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * 插件
  *
- * @author kevin
+ * @author tiansheng
  */
 public class Plugin
 {

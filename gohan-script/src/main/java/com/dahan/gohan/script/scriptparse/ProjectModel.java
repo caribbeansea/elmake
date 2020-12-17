@@ -1,7 +1,7 @@
 package com.dahan.gohan.script.scriptparse;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class ProjectModel
 {

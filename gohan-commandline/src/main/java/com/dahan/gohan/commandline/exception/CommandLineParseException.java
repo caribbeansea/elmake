@@ -22,7 +22,7 @@ package com.dahan.gohan.commandline.exception;
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class CommandLineParseException extends Exception
 {

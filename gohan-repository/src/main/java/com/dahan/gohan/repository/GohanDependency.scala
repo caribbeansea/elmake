@@ -28,7 +28,7 @@ import org.eclipse.aether.graph.Dependency
 /**
  * 依赖基础信息类
  *
- * @author kevin
+ * @author tiansheng
  */
 class GohanDependency {
 
@@ -47,10 +47,10 @@ class GohanDependency {
    */
   private var dependency: Dependency = _
 
-  def this(coor: String, classifier: String = null) {
+  def this(coords: String, classifier: String = null) {
     this()
-    val coors: Array[String] = coor.split(":")
-    pseudo(coors(0), coors(1), coors(2), null)
+    val coordsArray: Array[String] = coords.split(":")
+    pseudo(coordsArray(0), coordsArray(1), coordsArray(2), null)
   }
 
   def this(groupId: String, artifactId: String, version: String) {

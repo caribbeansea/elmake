@@ -27,7 +27,7 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class UrlTools {
 

@@ -34,7 +34,7 @@ import java.io.File;
 /**
  * 仓库对象
  *
- * @author kevin
+ * @author tiansheng
  */
 public class Repository
 {

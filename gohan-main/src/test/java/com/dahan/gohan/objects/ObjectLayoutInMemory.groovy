@@ -28,7 +28,7 @@ import org.openjdk.jol.vm.VM
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 class ObjectLayoutInMemory
 {

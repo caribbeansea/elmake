@@ -27,7 +27,7 @@ import java.util.Stack;
 /**
  * 错误收集器
  *
- * @author kevin
+ * @author tiansheng
  */
 public abstract class ErrorCollects<E extends GohanException> {
 

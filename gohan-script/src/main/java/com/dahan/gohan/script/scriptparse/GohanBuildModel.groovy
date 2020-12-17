@@ -24,7 +24,7 @@ package com.dahan.gohan.script.scriptparse
 
 /**
  * {@code .gcript}文件解析
- * @author kevin
+ * @author tiansheng
  */
 class GohanBuildModel
 {

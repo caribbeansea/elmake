@@ -25,7 +25,7 @@ import com.dahan.gohan.commandline.exception.CommandLineParseException;
 import org.junit.Test;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class InputArgsTest
 {

@@ -33,7 +33,7 @@ import java.util.Stack;
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class Dependency
 {

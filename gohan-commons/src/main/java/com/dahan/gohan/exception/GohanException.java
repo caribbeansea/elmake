@@ -25,7 +25,7 @@ package com.dahan.gohan.exception;
 import com.dahan.gohan.StringUtils;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class GohanException extends RuntimeException
 {

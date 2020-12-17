@@ -25,7 +25,7 @@ package com.dahan.gohan;
 import java.util.Collection;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class Assert {
 

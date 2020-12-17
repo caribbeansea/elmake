@@ -25,7 +25,7 @@ package com.dahan.gohan.script.buildscript
 /**
  * settings.gohan 中的配置是全局适用的。
  *
- * @author kevin
+ * @author tiansheng
  */
 class GohanSettings {
 

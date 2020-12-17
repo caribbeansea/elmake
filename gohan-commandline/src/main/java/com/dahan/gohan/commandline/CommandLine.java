@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * {@link CommandLineParser}解析后的对象
  *
- * @author kevin
+ * @author tiansheng
  */
 public interface CommandLine
 {

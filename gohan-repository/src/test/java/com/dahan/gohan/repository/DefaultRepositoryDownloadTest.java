@@ -44,7 +44,7 @@ import org.eclipse.aether.transport.http.HttpTransporterFactory;
 import org.eclipse.aether.util.graph.visitor.PreorderNodeListGenerator;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class DefaultRepositoryDownloadTest
 {

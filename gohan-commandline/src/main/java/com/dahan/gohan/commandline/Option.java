@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public abstract class Option implements Comparable<Option>
 {

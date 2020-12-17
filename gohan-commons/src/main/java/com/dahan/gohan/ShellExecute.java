@@ -26,7 +26,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class ShellExecute {
 

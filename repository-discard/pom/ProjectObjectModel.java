@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * pom xml的解析对象
  *
- * @author kevin
+ * @author tiansheng
  */
 public class ProjectObjectModel
 {

@@ -23,7 +23,7 @@ package com.gohan.dahan.script
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 import helper.DateHelper._
 

@@ -23,7 +23,7 @@ package com.dahan.gohan
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 Formprint formprint = new Formprint("name", "age", "poorgay", "bool")
 formprint.addFormContent("a", "29", "YES", "falsessss")

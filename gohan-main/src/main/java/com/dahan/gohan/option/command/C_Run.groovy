@@ -28,7 +28,7 @@ import com.dahan.gohan.commandline.Option
 /**
  * 构建命令
  *
- * @author kevin
+ * @author tiansheng
  */
 class C_Run extends Option
 {

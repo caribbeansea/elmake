@@ -44,7 +44,7 @@ import org.eclipse.aether.resolution._
 /**
  * 仓库对象
  *
- * @author kevin
+ * @author tiansheng
  */
 class GohanRepository(c_name: String, c_address: String) {
 

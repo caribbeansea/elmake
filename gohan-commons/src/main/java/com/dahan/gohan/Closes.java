@@ -29,7 +29,7 @@ import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class Closes {
 

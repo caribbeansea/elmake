@@ -21,7 +21,7 @@ import java.util.Set;
 /**
  * 仓库工具类
  *
- * @author kevin
+ * @author tiansheng
  */
 public class RepositoryUtils
 {

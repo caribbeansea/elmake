@@ -41,7 +41,7 @@ import java.util.Objects;
 /**
  * 执行http请求
  *
- * @author kevin
+ * @author tiansheng
  */
 public class Areyouok {
 

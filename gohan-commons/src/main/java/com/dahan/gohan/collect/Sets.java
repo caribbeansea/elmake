@@ -1,7 +1,7 @@
 package com.dahan.gohan.collect;
 
 /*
- * Copyright (C) 2020 kevin All rights reserved.
+ * Copyright (C) 2020 tiansheng All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ import java.util.LinkedHashSet;
 /**
  * 静态的Set工具类
  *
- * @author kevin
+ * @author tiansheng
  */
 public final class Sets {
 

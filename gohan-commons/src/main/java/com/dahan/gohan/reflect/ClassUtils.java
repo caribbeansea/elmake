@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * 类的静态工具类
  *
- * @author kevin
+ * @author tiansheng
  */
 @SuppressWarnings("unchecked")
 public class ClassUtils {

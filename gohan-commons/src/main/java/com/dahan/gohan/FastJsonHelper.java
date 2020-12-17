@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * 统一的json工具类，避免因fastjson序列化所导致的bug难以定位
  *
- * @author kevin
+ * @author tiansheng
  */
 public class FastJsonHelper
 {

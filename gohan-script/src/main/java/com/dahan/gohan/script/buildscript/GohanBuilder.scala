@@ -27,7 +27,7 @@ import com.dahan.gohan.script.task.GohanTask
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 class GohanBuilder {
 

@@ -23,7 +23,7 @@ package com.dahan.gohan.exception;
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class DownloadException extends GohanException
 {

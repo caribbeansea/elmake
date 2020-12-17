@@ -4,7 +4,7 @@ package com.dahan.gohan;
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public interface Execute<T> {
   T accept(Object o) throws Throwable;

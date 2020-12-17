@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public class Options implements Iterable<Option>
 {

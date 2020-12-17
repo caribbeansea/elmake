@@ -30,7 +30,7 @@ import static java.nio.charset.Charset.forName;
 /**
  * 字符集编码,
  *
- * @author kevin
+ * @author tiansheng
  */
 public class Charsets {
 

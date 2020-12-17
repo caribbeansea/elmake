@@ -26,7 +26,7 @@ import com.dahan.gohan.commandline.exception.CommandLineParseException;
 /**
  * 命令行解析
  *
- * @author kevin
+ * @author tiansheng
  */
 public interface CommandLineParser
 {

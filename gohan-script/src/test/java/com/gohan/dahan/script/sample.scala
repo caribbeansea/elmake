@@ -23,15 +23,35 @@ package com.gohan.dahan.script
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 
-import com.dahan.gohan.script.dsl.FunctionLib._
+import com.dahan.gohan.script.funclib.BuildFuncLib._
 
-object sample {
+object run {
+  def main(args: stringArray): Unit = {
+    start // 执行build脚本
+  }
+}
 
-  def main(args: Array[String]): Unit = {
-    include("com.alibaba:fastjson:2.6.66")
+object start {
+
+  group("com.dahan")
+  name("gohan")
+  version("gh-1+0")
+
+  object ext {
+    val fastJsonVersion = "2.6.66"
+  }
+
+  object includes {
+    include(s"com.alibaba:fastjson:${ext.fastJsonVersion}")
+  }
+
+  object tasks {
+    task("mytask", () => {
+      println("x")
+    })
   }
 
 }

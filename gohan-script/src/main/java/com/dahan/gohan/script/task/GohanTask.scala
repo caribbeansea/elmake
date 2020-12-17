@@ -26,7 +26,7 @@ import com.dahan.gohan.Callback
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 class GohanTask(c_name: String, c_taskCall: TaskCall) {
 

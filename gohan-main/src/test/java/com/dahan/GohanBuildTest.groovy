@@ -25,7 +25,7 @@ import com.dahan.gohan.GohanMain
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 def projectHome = "/Users/wuyanzu/project/IdeaProjects/gohan/debugging/subprojects/gohan-build-test"
 

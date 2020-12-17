@@ -23,7 +23,7 @@ package com.dahan.gohan.http;
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 public enum HttpHeaderType {
 

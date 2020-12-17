@@ -37,7 +37,7 @@ import java.util.regex.Pattern;
 /**
  * String工具类
  *
- * @author kevin
+ * @author tiansheng
  */
 public
 class StringUtils

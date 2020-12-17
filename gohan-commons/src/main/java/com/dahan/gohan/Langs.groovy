@@ -23,7 +23,7 @@ package com.dahan.gohan
  */
 
 /**
- * @author kevin
+ * @author tiansheng
  */
 class Langs
 {
