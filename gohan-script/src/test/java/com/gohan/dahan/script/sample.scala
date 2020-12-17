@@ -1,7 +1,4 @@
-package com.dahan.gohan.script.task
-
-import com.dahan.gohan.Callback
-;
+package com.gohan.dahan.script
 
 /* ************************************************************************
  *
@@ -22,16 +19,19 @@ import com.dahan.gohan.Callback
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/9.
+ * Creates on 2020/12/16.
  */
 
 /**
  * @author kevin
  */
-class GohanTask(c_name: String, c_taskCall: TaskCall) {
 
-  private val name = c_name
+import com.dahan.gohan.script.dsl.FunctionLib._
 
-  private val taskCall: TaskCall = c_taskCall
+object sample {
+
+  def main(args: Array[String]): Unit = {
+    include("com.alibaba:fastjson:2.6.66")
+  }
 
 }

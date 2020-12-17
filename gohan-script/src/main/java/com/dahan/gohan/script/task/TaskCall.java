@@ -1,8 +1,4 @@
-package com.dahan.gohan.script.task
-
-import com.dahan.gohan.Callback
-;
-
+package com.dahan.gohan.script.task;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -22,16 +18,14 @@ import com.dahan.gohan.Callback
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/9.
+ * Creates on 2020/12/16.
  */
 
 /**
  * @author kevin
  */
-class GohanTask(c_name: String, c_taskCall: TaskCall) {
+public interface TaskCall {
 
-  private val name = c_name
-
-  private val taskCall: TaskCall = c_taskCall
+    void apply();
 
 }

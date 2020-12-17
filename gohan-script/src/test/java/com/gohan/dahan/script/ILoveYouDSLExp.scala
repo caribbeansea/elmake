@@ -1,7 +1,4 @@
-package com.dahan.gohan.script.task
-
-import com.dahan.gohan.Callback
-;
+package com.gohan.dahan.script
 
 /* ************************************************************************
  *
@@ -22,16 +19,47 @@ import com.dahan.gohan.Callback
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/9.
+ * Creates on 2020/12/16.
  */
 
 /**
  * @author kevin
  */
-class GohanTask(c_name: String, c_taskCall: TaskCall) {
+package love {
 
-  private val name = c_name
+  class LoveHelper private(who: String) {
 
-  private val taskCall: TaskCall = c_taskCall
+    def love(beLoved: String) = {
+      beLoved match {
+        case LoveHelper.You => println(who + " Love " + beLoved)
+        case _ => println("You don't love " + beLoved )
+      }
+
+    }
+  }
+
+  object LoveHelper {
+
+    val I = "I"
+
+    val You = "You"
+
+    implicit def conver(who: String) = new LoveHelper(who)
+
+  }
+
+}
+
+import love.LoveHelper._
+
+object LoveSample {
+
+  def main(args: Array[String]): Unit = {
+
+    I love You
+
+    I love "marry"
+
+  }
 
 }

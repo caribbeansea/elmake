@@ -30,28 +30,66 @@ import org.eclipse.aether.graph.Dependency
  *
  * @author kevin
  */
-final class GohanDependency(c_groupId: String,
-                            c_artifactId: String,
-                            c_version: String,
-                            c_classifier: String = null,
-                            c_scope: String = "compile") {
+class GohanDependency {
 
-  private val groupId: String = c_groupId
+  private var groupId: String = _
 
-  private val artifactId: String = c_artifactId
+  private var artifactId: String = _
 
-  private val version: String = c_version
+  private var version: String = _
 
-  private val scope: String = c_scope
+  private var scope: String = "compile"
 
-  private val classifier: String = c_classifier
+  private var classifier: String = _
 
+  /**
+   * eclipse dependency object.
+   */
   private var dependency: Dependency = _
 
-  if (this.classifier == null) {
-    this.dependency = new Dependency(new DefaultArtifact(s"${groupId}:${artifactId}:${version}"), this.scope)
-  } else {
-    this.dependency = new Dependency(new DefaultArtifact(groupId, artifactId, classifier, "jar", version), this.scope)
+  def this(coor: String, classifier: String = null) {
+    this()
+    val coors: Array[String] = coor.split(":")
+    pseudo(coors(0), coors(1), coors(2), null)
+  }
+
+  def this(groupId: String, artifactId: String, version: String) {
+    this()
+    pseudo(groupId, artifactId, version)
+  }
+
+  def this(groupId: String, artifactId: String, version: String, classifier: String) {
+    this()
+    pseudo(groupId, artifactId, version, classifier)
+  }
+
+  def this(groupId: String, artifactId: String, version: String, classifier: String, scope: String) {
+    this()
+    pseudo(groupId, artifactId, version, classifier, scope)
+  }
+
+  /**
+   * 伪构造器
+   *
+   * @param version    版本号
+   * @param classifier 分类
+   * @param scope      范围
+   */
+  private def pseudo(groupId: String, artifactId: String, version: String, classifier: String = null, scope: String = null): Unit = {
+    this.groupId = groupId
+    this.artifactId = artifactId
+    this.version = version
+
+    if (scope != null) {
+      this.scope = scope
+    }
+
+    if (this.classifier == null) {
+      this.dependency = new Dependency(new DefaultArtifact(s"$groupId:$artifactId:$version"), this.scope)
+    } else {
+      this.classifier = classifier
+      this.dependency = new Dependency(new DefaultArtifact(groupId, artifactId, classifier, "jar", version), this.scope)
+    }
   }
 
   def getGroupId: String = groupId

@@ -82,11 +82,8 @@ class GohanBuilder {
 
   /**
    * 自定义任务
-   *
-   * @param name 任务名称
-   * @param task 任务实例
    */
-  def tasks(name: String, task: GohanTask): Unit = {}
+  def tasks(tasks: Array[GohanTask]): Unit = {}
 
   /**
    * 添加模块摘要信息

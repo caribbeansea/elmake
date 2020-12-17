@@ -1,10 +1,5 @@
 package com.gohan.dahan.script
 
-import com.dahan.gohan.repository.GohanDependency
-import com.dahan.gohan.script.buildscript.GohanBuilder
-import com.dahan.gohan.script.task.GohanTask
-import org.apache.tools.ant.taskdefs.WaitFor.Unit
-
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -30,22 +25,40 @@ import org.apache.tools.ant.taskdefs.WaitFor.Unit
 /**
  * @author kevin
  */
-object ScalaBuilderDSLTest extends GohanBuilder {
+import helper.DateHelper._
 
-  group("com.dahan")
-  name("gohan")
-  version("gh-2+0")
+package helper {
+  import java.util.Calendar
+  import java.util.Date
 
-  dependencies(Array[GohanDependency](
-    new GohanDependency("org.slf4j", "slf4j-api", "1.7.25"),
-    new GohanDependency("de.defmacro", "eclipse-astparser", "8.1"),
-  ))
+  class DateHelper private(number: Int) {
 
-  //
-  // 定义任务
-  //
-  tasks(Array[GohanTask](
+    def days(when: String): Date = {
+      var date = Calendar.getInstance()
+      when match {
+        case DateHelper.ago => date.add(Calendar.DAY_OF_MONTH, -number)
+        case DateHelper.from_now => date.add(Calendar.DAY_OF_MONTH, number)
+        case _ => date
+      }
+      date.getTime()
+    }
+  }
 
-  ))
+  object DateHelper {
+    val ago = "ago"
+    val from_now = "from_now"
+    implicit def convertInt2Date(number: Int) = new DateHelper(number)
+  }
+}
 
+object Sample {
+
+  def main(args: Array[String]): Unit = {
+
+    val twoDayAgo = 2 days ago
+    val twoDayAfter = 2 days from_now
+    println("two days ago is " + twoDayAgo)
+    println("two days after is " + twoDayAfter)
+
+  }
 }

@@ -1,7 +1,8 @@
-package com.dahan.gohan.script.task
+package com.dahan.gohan.script.dsl
 
-import com.dahan.gohan.Callback
-;
+import com.dahan.gohan.repository.GohanDependency
+
+import scala.concurrent.duration.DurationConversions.Classifier
 
 /* ************************************************************************
  *
@@ -22,16 +23,20 @@ import com.dahan.gohan.Callback
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/9.
+ * Creates on 2020/12/16.
  */
 
 /**
  * @author kevin
  */
-class GohanTask(c_name: String, c_taskCall: TaskCall) {
+object FunctionLib {
 
-  private val name = c_name
+  def include(coor: String): Unit = {
+    include(coor, null)
+  }
 
-  private val taskCall: TaskCall = c_taskCall
+  def include(coor: String, classifier: String): Unit = {
+    new GohanDependency(coor, classifier)
+  }
 
 }
