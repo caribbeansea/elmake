@@ -47,25 +47,15 @@ class GohanDependency {
    */
   private var dependency: Dependency = _
 
-  def this(coords: String, classifier: String = null) {
+  def this(coords: String, classifier: String, scope: String) {
     this()
-    val coordsArray: Array[String] = coords.split(":")
-    pseudo(coordsArray(0), coordsArray(1), coordsArray(2), null)
+    val gav: Array[String] = coords.split(":")
+    pseudo(gav(0), gav(1), gav(2), classifier, scope)
   }
 
-  def this(groupId: String, artifactId: String, version: String) {
+  def this(artifact: Artifact, scope: String) {
     this()
-    pseudo(groupId, artifactId, version)
-  }
-
-  def this(groupId: String, artifactId: String, version: String, classifier: String) {
-    this()
-    pseudo(groupId, artifactId, version, classifier)
-  }
-
-  def this(groupId: String, artifactId: String, version: String, classifier: String, scope: String) {
-    this()
-    pseudo(groupId, artifactId, version, classifier, scope)
+    pseudo(artifact.groupId, artifact.artifactId, artifact.version, artifact.classifier, scope)
   }
 
   /**
@@ -99,5 +89,17 @@ class GohanDependency {
   def getVersion: String = version
 
   def getDependency: Dependency = dependency
+
+}
+
+object GohanDependency {
+
+  def apply(coords: String): GohanDependency = new GohanDependency(coords, null, null)
+
+  def apply(coords: String, classifier: String): GohanDependency = new GohanDependency(coords, classifier, null)
+
+  def apply(coords: String, classifier: String, scope: String): GohanDependency = new GohanDependency(coords, classifier, scope)
+
+  def apply(artifact: Artifact, scope: String): GohanDependency = new GohanDependency(artifact, scope)
 
 }

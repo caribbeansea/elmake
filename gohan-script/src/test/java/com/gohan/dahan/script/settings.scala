@@ -18,47 +18,29 @@ package com.gohan.dahan.script
  *
  * ************************************************************************/
 
+import com.dahan.gohan.script.settings_func_lib._
+
 /*
- * Creates on 2020/12/16.
+ * Creates on 2020/12/17.
  */
 
 /**
  * @author tiansheng
  */
-import helper.DateHelper._
-
-package helper {
-  import java.util.Calendar
-  import java.util.Date
-
-  class DateHelper private(number: Int) {
-
-    def days(when: String): Date = {
-      var date = Calendar.getInstance()
-      when match {
-        case DateHelper.ago => date.add(Calendar.DAY_OF_MONTH, -number)
-        case DateHelper.from_now => date.add(Calendar.DAY_OF_MONTH, number)
-        case _ => date
-      }
-      date.getTime()
-    }
-  }
-
-  object DateHelper {
-    val ago = "ago"
-    val from_now = "from_now"
-    implicit def convertInt2Date(number: Int) = new DateHelper(number)
+object SettingsRun {
+  def main(args: stringArray): Unit = {
+    settings
   }
 }
 
-object Sample {
+object settings {
 
-  def main(args: Array[String]): Unit = {
+  subprojects(listof(
+    "subprojects/a",
+    "subprojects/b",
+    "subprojects/c",
+    "subprojects/d",
+  ))
 
-    val twoDayAgo = 2 days ago
-    val twoDayAfter = 2 days from_now
-    println("two days ago is " + twoDayAgo)
-    println("two days after is " + twoDayAfter)
-
-  }
 }
+

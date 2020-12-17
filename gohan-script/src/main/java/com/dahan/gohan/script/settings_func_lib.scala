@@ -1,9 +1,4 @@
-package com.gohan.dahan.script
-
-import com.dahan.gohan.repository.GohanDependency
-import com.dahan.gohan.script.buildscript.GohanBuilder
-import com.dahan.gohan.script.task.GohanTask
-import org.apache.tools.ant.taskdefs.WaitFor.Unit
+package com.dahan.gohan.script
 
 /* ************************************************************************
  *
@@ -24,28 +19,36 @@ import org.apache.tools.ant.taskdefs.WaitFor.Unit
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/16.
+ * Creates on 2020/12/17.
  */
 
 /**
  * @author tiansheng
  */
-object ScalaBuilderDSLTest extends GohanBuilder {
+object settings_func_lib extends public_func_lib {
 
-  group("com.dahan")
-  name("gohan")
-  version("gh-2+0")
+  /**
+   * 设置路径为 settings.gohan 文件的同一级目录。假设当前目录下有
+   * 一个 subprojects 目录，那么久可以这样写<code> subprojects/Module-A </code>
+   *
+   * project
+   * |
+   * | --- subprojects
+   * |          |
+   * |          | --- Module-A
+   * |          |
+   * |          | --- Module-B
+   * |          |
+   * |
+   * | --- settings.gohan
+   *
+   */
+  private var _subprojects: *[rely] = _
 
-  dependencies(Array[GohanDependency](
-    new GohanDependency("org.slf4j", "slf4j-api", "1.7.25"),
-    new GohanDependency("de.defmacro", "eclipse-astparser", "8.1"),
-  ))
-
-  //
-  // 定义任务
-  //
-  tasks(Array[GohanTask](
-
-  ))
+  def subprojects(subprojects: *[string]): void = {
+    subprojects.foreach((value: string) => {
+      println(value)
+    })
+  }
 
 }

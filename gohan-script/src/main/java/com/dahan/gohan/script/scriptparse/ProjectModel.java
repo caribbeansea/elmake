@@ -1,5 +1,7 @@
 package com.dahan.gohan.script.scriptparse;
 
+import com.dahan.gohan.repository.GohanDependency;
+
 /**
  * @author tiansheng
  */
@@ -11,6 +13,8 @@ public class ProjectModel
     private String artifactId;
 
     private String version;
+
+    private GohanDependency parent;
 
     public String getGroupId()
     {

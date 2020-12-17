@@ -1,4 +1,6 @@
-package com.dahan.gohan.repository
+package com.dahan.gohan.script
+
+import com.dahan.gohan.repository.GohanDependency
 
 /* ************************************************************************
  *
@@ -19,24 +21,29 @@ package com.dahan.gohan.repository
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/9.
+ * Creates on 2020/12/17.
  */
-
-import com.dahan.gohan.collect.Lists
-import com.dahan.gohan.repository.utils.RepositoryUtils
-import org.junit.Test
 
 /**
  * @author tiansheng
  */
-class ResolveDependencyTest {
+trait public_func_lib extends gohan_util_lib {
 
-  @Test
-  def resolveDependencyTest(): Unit = {
-    RepositoryUtils.resolveDependencies(Lists.of(
-      GohanDependency("com.alibaba:fastjson:1.2.66"),
-      GohanDependency("net.sf.json-lib:json-lib:2.4", "jdk15"),
-    ))
+  def include(coords: string): rely = include(coords, null)
+
+  /**
+   * 导入依赖
+   *
+   * 如果依赖没有指定版本好那么会从父模块去寻找，如果父模块找不到就会到</dependencyManager>去找。依然
+   * 没有找到的话就会报错提示依赖引入失败。
+   *
+   * @param coords     依赖坐标
+   * @param classifier 分类
+   * @param scope      范围
+   * @return 依赖对象 #GohanDependency
+   */
+  def include(coords: string, classifier: string = null, scope: string = null): rely = {
+    return dependency(coords, classifier, scope)
   }
 
 }

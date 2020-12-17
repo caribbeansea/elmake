@@ -25,41 +25,33 @@ package com.gohan.dahan.script
 /**
  * @author tiansheng
  */
-package love {
 
-  class LoveHelper private(who: String) {
+import com.dahan.gohan.script.build_func_lib._
 
-    def love(beLoved: String) = {
-      beLoved match {
-        case LoveHelper.You => println(who + " Love " + beLoved)
-        case _ => println("You don't love " + beLoved )
-      }
-
-    }
+object BuildRun {
+  def main(args: stringArray): Unit = {
+    build // 执行build脚本
   }
-
-  object LoveHelper {
-
-    val I = "I"
-
-    val You = "You"
-
-    implicit def conver(who: String) = new LoveHelper(who)
-
-  }
-
 }
 
-import love.LoveHelper._
+object build {
 
-object LoveSample {
+  group("com.dahan")
+  name("gohan")
+  version("gh-1+0")
 
-  def main(args: Array[String]): Unit = {
+  object ext {
+    val fastJsonVersion = "2.6.66"
+  }
 
-    I love You
+  object includes {
+    include(s"com.alibaba:fastjson:${ext.fastJsonVersion}")
+  }
 
-    I love "marry"
-
+  object tasks {
+    task("mytask", () => {
+      println("x")
+    })
   }
 
 }

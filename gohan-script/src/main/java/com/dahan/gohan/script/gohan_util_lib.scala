@@ -1,4 +1,6 @@
-package com.dahan.gohan.script.buildscript
+package com.dahan.gohan.script
+
+import scala.reflect.ClassTag
 
 /* ************************************************************************
  *
@@ -19,39 +21,19 @@ package com.dahan.gohan.script.buildscript
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/10.
+ * Creates on 2020/12/17.
  */
 
 /**
- * settings.gohan 中的配置是全局适用的。
- *
  * @author tiansheng
  */
-class GohanSettings {
+trait gohan_util_lib extends type_define_lib {
 
   /**
-   * 设置路径为 settings.gohan 文件的同一级目录。假设当前目录下有
-   * 一个 subprojects 目录，那么久可以这样写<code> subprojects/Module-A </code>
+   * 这里的  _* 代表参数可变。妈的，scala的语法真他妈的傻逼（爱了❤️）。
    *
-   * project
-   * |
-   * | --- subprojects
-   * |          |
-   * |          | --- Module-A
-   * |          |
-   * |          | --- Module-B
-   * |          |
-   * |
-   * | --- settings.gohan
-   *
+   * @param elems 元素列表
    */
-  var subprojects: Array[String] = _
-
-  /**
-   * 公用的依赖
-   */
-  def dependencies(): Unit = {
-
-  }
+  def listof[E](elems: E*): *[E] = List(elems: _*)
 
 }

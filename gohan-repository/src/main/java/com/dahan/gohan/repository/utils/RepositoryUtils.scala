@@ -21,26 +21,20 @@ package com.dahan.gohan.repository.utils
  * Creates on 2020/12/9.
  */
 
-import com.dahan.gohan.collect.Lists
-import com.dahan.gohan.collect.Maps
-import com.dahan.gohan.repository.GohanDependency
-import com.dahan.gohan.repository.GohanRepository
+import java.util
+
+import com.dahan.gohan.collect.{Lists, Maps}
+import com.dahan.gohan.repository.{GohanDependency, GohanRepository}
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils
-import org.eclipse.aether.DefaultRepositorySystemSession
-import org.eclipse.aether.RepositorySystem
-import org.eclipse.aether.RepositorySystemSession
+import org.eclipse.aether.{DefaultRepositorySystemSession, RepositorySystem}
 import org.eclipse.aether.collection.DependencyCollectionException
 import org.eclipse.aether.connector.basic.BasicRepositoryConnectorFactory
-import org.eclipse.aether.impl.DefaultServiceLocator
 import org.eclipse.aether.repository.LocalRepository
-import org.eclipse.aether.resolution.DependencyRequest
-import org.eclipse.aether.resolution.DependencyResolutionException
-import org.eclipse.aether.resolution.DependencyResult
+import org.eclipse.aether.resolution.{DependencyResolutionException, DependencyResult}
 import org.eclipse.aether.spi.connector.RepositoryConnectorFactory
 import org.eclipse.aether.spi.connector.transport.TransporterFactory
 import org.eclipse.aether.transport.file.FileTransporterFactory
 import org.eclipse.aether.transport.http.HttpTransporterFactory
-import java.util
 
 /**
  * 工件储存库工具类

@@ -1,4 +1,4 @@
-package com.gohan.dahan.script
+package com.dahan.gohan.repository
 
 /* ************************************************************************
  *
@@ -19,39 +19,20 @@ package com.gohan.dahan.script
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/16.
+ * Creates on 2020/12/17.
  */
 
 /**
  * @author tiansheng
  */
+class Artifact(group: String, artifact: String, version0: String, classifier0: String = null) {
 
-import com.dahan.gohan.script.funclib.BuildFuncLib._
+  val groupId: String = group
 
-object run {
-  def main(args: stringArray): Unit = {
-    start // 执行build脚本
-  }
-}
+  val artifactId: String = artifact
 
-object start {
+  val version: String = version0
 
-  group("com.dahan")
-  name("gohan")
-  version("gh-1+0")
-
-  object ext {
-    val fastJsonVersion = "2.6.66"
-  }
-
-  object includes {
-    include(s"com.alibaba:fastjson:${ext.fastJsonVersion}")
-  }
-
-  object tasks {
-    task("mytask", () => {
-      println("x")
-    })
-  }
+  val classifier: String = classifier0
 
 }
