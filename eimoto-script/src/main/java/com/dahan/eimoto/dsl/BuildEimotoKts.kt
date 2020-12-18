@@ -29,7 +29,7 @@ import com.dahan.eimoto.repository.EimotoDependency
 /**
  * @author tiansheng
  */
-open class BuildObject {
+open class BuildEimotoKts {
 
     /**
      * 常量
@@ -68,8 +68,8 @@ open class BuildObject {
     // set project parent.
     fun parent(value: String) = settings.put(ConstVar.PARENT_VALUE, value)
 
-    // 添加插件
-    fun apply(coords: String) = Unit
+    // 添加一门能够被JVM执行的语言，例如：Groovy、Scala、Kotlin
+    fun lang(vararg name: String) = Unit
 
     fun include(coords: String) = include(coords, null, null)
 
