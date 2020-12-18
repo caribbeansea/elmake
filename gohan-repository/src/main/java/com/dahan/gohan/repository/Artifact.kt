@@ -1,4 +1,4 @@
-package com.dahan.gohan.script
+package com.dahan.gohan.repository
 
 /* ************************************************************************
  *
@@ -25,30 +25,14 @@ package com.dahan.gohan.script
 /**
  * @author tiansheng
  */
-object settings_func_lib extends public_func_lib {
+class Artifact(group: String, artifact: String, version0: String, classifier0: String? = null) {
 
-  /**
-   * 设置路径为 settings.gohan 文件的同一级目录。假设当前目录下有
-   * 一个 subprojects 目录，那么久可以这样写<code> subprojects/Module-A </code>
-   *
-   * project
-   * |
-   * | --- subprojects
-   * |          |
-   * |          | --- Module-A
-   * |          |
-   * |          | --- Module-B
-   * |          |
-   * |
-   * | --- settings.gohan
-   *
-   */
-  private var _subprojects: *[rely] = _
+    val groupId: String = group
 
-  def subprojects(subprojects: *[string]): void = {
-    subprojects.foreach((value: string) => {
-      println(value)
-    })
-  }
+    val artifactId: String = artifact
+
+    val version: String = version0
+
+    var classifier: String? = classifier0
 
 }

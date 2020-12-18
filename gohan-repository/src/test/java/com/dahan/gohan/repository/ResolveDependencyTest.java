@@ -1,12 +1,4 @@
-package com.dahan.gohan.script.parse
-
-import java.io.{File, FileNotFoundException}
-import java.lang.ClassLoader
-
-import com.dahan.gohan.Files
-
-import scala.reflect.runtime.universe
-import scala.tools.reflect.ToolBox
+package com.dahan.gohan.repository;
 
 /* ************************************************************************
  *
@@ -27,32 +19,25 @@ import scala.tools.reflect.ToolBox
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/17.
+ * Creates on 2020/12/9.
  */
+
+
+import com.dahan.gohan.collect.Lists;
+import com.dahan.gohan.repository.utils.RepositoryUtils;
+import org.junit.jupiter.api.Test;
 
 /**
- * build.scala解析
- *
  * @author tiansheng
  */
-object BuildScalaParser {
+public class ResolveDependencyTest {
 
-  /**
-   * @param path build.scala文件路径
-   */
-  def parse(path: String): Unit = {
-    val file: File = new File(path)
-
-    if (!file.exists()) {
-      throw new FileNotFoundException("build.scala文件路径有误")
+    @Test
+    public void resolveDependencyTest() {
+        RepositoryUtils.INSTANCE.resolveDependencies(Lists.of(
+                new GohanDependency("com.alibaba:fastjson:1.2.66"),
+                new GohanDependency("net.sf.json-lib:json-lib:2.4", "jdk15")
+        ));
     }
-
-    val tb = universe.runtimeMirror(getClass.getClassLoader).mkToolBox()
-
-    tb.eval(tb.parse(Files.readString(file)))
-
-    println()
-
-  }
 
 }
