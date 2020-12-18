@@ -1,9 +1,9 @@
-package com.dahan.gohan.repository.pom;
+package com.dahan.eimoto.repository.pom;
 
-import com.dahan.gohan.StringUtils;
-import com.dahan.gohan.collect.Maps;
-import com.dahan.gohan.repository.dependency.Dependency;
-import com.dahan.gohan.repository.dependency.Plugin;
+import com.dahan.eimoto.StringUtils;
+import com.dahan.eimoto.collect.Maps;
+import com.dahan.eimoto.repository.dependency.Dependency;
+import com.dahan.eimoto.repository.dependency.Plugin;
 import org.dom4j.DocumentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

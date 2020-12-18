@@ -3,4 +3,4 @@
  *
  * @author tiansheng
  */
-package com.dahan.gohan.repository.initialize;
+package com.dahan.eimoto.repository.initialize;

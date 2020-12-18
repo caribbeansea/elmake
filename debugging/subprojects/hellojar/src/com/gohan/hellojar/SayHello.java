@@ -1,4 +1,4 @@
-package com.gohan.hellojar;
+package com.eimoto.hellojar;
 
 public class SayHello
 {

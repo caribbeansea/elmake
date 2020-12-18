@@ -1,4 +1,4 @@
-package com.gohan;
+package com.eimoto;
 
 public class HelloWorld
 {

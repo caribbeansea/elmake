@@ -1,12 +1,12 @@
-package com.dahan.gohan.repository;
+package com.dahan.eimoto.repository;
 
-import com.dahan.gohan.Closes;
-import com.dahan.gohan.Langs;
-import com.dahan.gohan.collect.Lists;
-import com.dahan.gohan.collect.Sets;
-import com.dahan.gohan.collection.exception.DependencyNotObtained;
-import com.dahan.gohan.repository.dependency.Dependency;
-import com.dahan.gohan.repository.dependency.Scope;
+import com.dahan.eimoto.Closes;
+import com.dahan.eimoto.Langs;
+import com.dahan.eimoto.collect.Lists;
+import com.dahan.eimoto.collect.Sets;
+import com.dahan.eimoto.collection.exception.DependencyNotObtained;
+import com.dahan.eimoto.repository.dependency.Dependency;
+import com.dahan.eimoto.repository.dependency.Scope;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

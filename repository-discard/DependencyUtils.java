@@ -1,7 +1,7 @@
-package com.dahan.gohan.repository;
+package com.dahan.eimoto.repository;
 
-import com.dahan.gohan.collect.Maps;
-import com.dahan.gohan.repository.dependency.Dependency;
+import com.dahan.eimoto.collect.Maps;
+import com.dahan.eimoto.repository.dependency.Dependency;
 
 import java.util.Map;
 

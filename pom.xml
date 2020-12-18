@@ -5,16 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dahan</groupId>
-    <artifactId>gohan</artifactId>
+    <artifactId>eimoto</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0.BETA</version>
 
     <modules>
-        <module>gohan-main</module>
-        <module>gohan-commons</module>
-        <module>gohan-commandline</module>
-        <module>gohan-script</module>
-        <module>gohan-repository</module>
+        <module>eimoto-main</module>
+        <module>eimoto-commons</module>
+        <module>eimoto-commandline</module>
+        <module>eimoto-script</module>
+        <module>eimoto-repository</module>
+        <module>eimoto-plugins</module>
     </modules>
 
     <repositories>
@@ -31,7 +32,7 @@
         <logback.version>1.1.11</logback.version>
         <fastjson.version>1.2.66</fastjson.version>
         <okhttp.version>4.8.0</okhttp.version>
-        <gohan-common.version>1.0.0.BETA</gohan-common.version>
+        <eimoto-common.version>1.0.0.BETA</eimoto-common.version>
         <dom4j.version>1.6.1</dom4j.version>
         <aetherVersion>1.0.0.v20140518</aetherVersion>
         <mavenVersion>3.1.0</mavenVersion>
@@ -49,13 +50,13 @@
             </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>gohan-repository</artifactId>
+                <artifactId>eimoto-repository</artifactId>
                 <version>1.0.0.BETA</version>
             </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>gohan-commons</artifactId>
-                <version>${gohan-common.version}</version>
+                <artifactId>eimoto-commons</artifactId>
+                <version>${eimoto-common.version}</version>
             </dependency>
             <dependency>
                 <groupId>dom4j</groupId>
@@ -70,7 +71,7 @@
             </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>gohan-commandline</artifactId>
+                <artifactId>eimoto-commandline</artifactId>
                 <version>1.0.0.BETA</version>
             </dependency>
         </dependencies>

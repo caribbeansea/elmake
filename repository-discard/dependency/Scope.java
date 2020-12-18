@@ -1,4 +1,4 @@
-package com.dahan.gohan.repository.dependency;
+package com.dahan.eimoto.repository.dependency;
 
 /* ************************************************************************
  *

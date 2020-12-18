@@ -1,12 +1,12 @@
-package com.dahan.gohan.repository.pom;
+package com.dahan.eimoto.repository.pom;
 
-import com.dahan.gohan.Assert;
-import com.dahan.gohan.Matches;
-import com.dahan.gohan.StringUtils;
-import com.dahan.gohan.exception.PropertyNotFoundException;
-import com.dahan.gohan.repository.RepositoryUtils;
-import com.dahan.gohan.repository.dependency.Dependency;
-import com.dahan.gohan.repository.dependency.Scope;
+import com.dahan.eimoto.Assert;
+import com.dahan.eimoto.Matches;
+import com.dahan.eimoto.StringUtils;
+import com.dahan.eimoto.exception.PropertyNotFoundException;
+import com.dahan.eimoto.repository.RepositoryUtils;
+import com.dahan.eimoto.repository.dependency.Dependency;
+import com.dahan.eimoto.repository.dependency.Scope;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;

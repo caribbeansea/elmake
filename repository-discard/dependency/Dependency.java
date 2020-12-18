@@ -1,10 +1,10 @@
-package com.dahan.gohan.repository.dependency;
+package com.dahan.eimoto.repository.dependency;
 
-import com.dahan.gohan.StringUtils;
-import com.dahan.gohan.collect.Arrays;
-import com.dahan.gohan.collect.Maps;
-import com.dahan.gohan.repository.Repository;
-import com.dahan.gohan.repository.pom.ProjectObjectModel;
+import com.dahan.eimoto.StringUtils;
+import com.dahan.eimoto.collect.Arrays;
+import com.dahan.eimoto.collect.Maps;
+import com.dahan.eimoto.repository.Repository;
+import com.dahan.eimoto.repository.pom.ProjectObjectModel;
 
 import java.io.File;
 import java.util.LinkedHashMap;

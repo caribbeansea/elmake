@@ -1,11 +1,11 @@
-package com.dahan.gohan.repository;
+package com.dahan.eimoto.repository;
 
-import com.dahan.gohan.Files;
-import com.dahan.gohan.collection.exception.DNOCollects;
-import com.dahan.gohan.exception.DownloadException;
-import com.dahan.gohan.exception.UnknownAddressException;
-import com.dahan.gohan.repository.dependency.Dependency;
-import com.dahan.gohan.repository.dependency.Scope;
+import com.dahan.eimoto.Files;
+import com.dahan.eimoto.collection.exception.DNOCollects;
+import com.dahan.eimoto.exception.DownloadException;
+import com.dahan.eimoto.exception.UnknownAddressException;
+import com.dahan.eimoto.repository.dependency.Dependency;
+import com.dahan.eimoto.repository.dependency.Scope;
 
 import java.io.File;
 

@@ -2,7 +2,7 @@
 // 设置当前项目的GAV坐标
 //
 groupId "com.dahan"
-artifactId "gohan"
+artifactId "eimoto"
 version "1.0.0.CARVING"
 
 //
@@ -64,7 +64,7 @@ dependencies {
 tasks {
 
     //
-    // 定义一个任务名称以及任务内容,然后在控制台执行[ gohan task hello ]，
+    // 定义一个任务名称以及任务内容,然后在控制台执行[ eimoto task hello ]，
     // 即可执行你自定义的任务内容。
     //
     task "hello", {
