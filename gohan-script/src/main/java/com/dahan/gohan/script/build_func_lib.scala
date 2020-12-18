@@ -39,6 +39,16 @@ object build_func_lib extends public_func_lib {
 
   private var projectModel: ProjectModel = _
 
+  //
+  // 任务列表
+  //
+  private val taskMap = Map()
+
+  //
+  // 依赖列表
+  //
+  private val relys = List[rely]()
+
   def group(name: string): void = __notnull__(name, markGroup)
 
   def name(name: string): void = __notnull__(name, markArtifact)
@@ -62,6 +72,22 @@ object build_func_lib extends public_func_lib {
    * @param coords 插件GAV坐标
    */
   def apply(coords: string): void = {}
+
+  def include(coords: string): Unit = include(coords, null)
+
+  /**
+   * 导入依赖
+   *
+   * 如果依赖没有指定版本好那么会从父模块去寻找，如果父模块找不到就会到</dependencyManager>去找。依然
+   * 没有找到的话就会报错提示依赖引入失败。
+   *
+   * @param coords     依赖坐标
+   * @param classifier 分类
+   * @param scope      范围
+   * @return 依赖对象 #GohanDependency
+   */
+  def include(coords: string, classifier: string = null, scope: string = null): Unit =
+    rely(coords, classifier, scope) :: relys // 将创建出来的依赖对象添加到 relys 集合中
 
   /**
    * 自定义任务

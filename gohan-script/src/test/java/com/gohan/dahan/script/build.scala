@@ -26,32 +26,46 @@ package com.gohan.dahan.script
  * @author tiansheng
  */
 
+import com.dahan.gohan.script.annotation._
 import com.dahan.gohan.script.build_func_lib._
 
 object BuildRun {
   def main(args: stringArray): Unit = {
     build // 执行build脚本
+    build.ext
+    build.includes
+    build.manager
+    build.tasks
+    println("执行完毕")
   }
 }
 
-object build {
+@buildtool object build {
 
   group("com.dahan")
   name("gohan")
   version("gh-1+0")
 
-  object ext {
+  @ext object ext {
     val fastJsonVersion = "2.6.66"
   }
 
-  object includes {
+  @includes object includes {
     include(s"com.alibaba:fastjson:${ext.fastJsonVersion}")
   }
 
-  object tasks {
+  @includesManager object manager {
+  }
+
+  @tasks object tasks {
+
     task("mytask", () => {
       println("x")
+      println("x")
+      println("x")
+      println("x")
     })
+
   }
 
 }

@@ -1,6 +1,7 @@
-package com.dahan.gohan.script
+package com.dahan.gohan.script.annotation
 
-import com.dahan.gohan.repository.GohanDependency
+import scala.annotation.StaticAnnotation
+import scala.annotation.meta.companionObject
 
 /* ************************************************************************
  *
@@ -25,8 +26,9 @@ import com.dahan.gohan.repository.GohanDependency
  */
 
 /**
+ * 被注解的 object 表示是一个定义常量的
+ *
  * @author tiansheng
  */
-trait public_func_lib extends gohan_util_lib {
-
-}
+@companionObject
+final class ext extends StaticAnnotation

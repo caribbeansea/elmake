@@ -1,6 +1,8 @@
-package com.dahan.gohan.script
+package com.gohan.dahan.script
 
-import com.dahan.gohan.repository.GohanDependency
+import java.nio.file.Paths
+
+import com.dahan.gohan.script.parse.BuildScalaParser
 
 /* ************************************************************************
  *
@@ -27,6 +29,10 @@ import com.dahan.gohan.repository.GohanDependency
 /**
  * @author tiansheng
  */
-trait public_func_lib extends gohan_util_lib {
+object StartBuildTest {
+
+  def main(args: Array[String]): Unit = {
+    BuildScalaParser.parse("/Users/wuyanzu/project/IdeaProjects/gohan/gohan-script/src/test/java/com/gohan/dahan/script/build.scala")
+  }
 
 }

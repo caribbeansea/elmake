@@ -1,6 +1,12 @@
-package com.dahan.gohan.script
+package com.dahan.gohan.script.parse
 
-import com.dahan.gohan.repository.GohanDependency
+import java.io.{File, FileNotFoundException}
+import java.lang.ClassLoader
+
+import com.dahan.gohan.Files
+
+import scala.reflect.runtime.universe
+import scala.tools.reflect.ToolBox
 
 /* ************************************************************************
  *
@@ -25,8 +31,28 @@ import com.dahan.gohan.repository.GohanDependency
  */
 
 /**
+ * build.scala解析
+ *
  * @author tiansheng
  */
-trait public_func_lib extends gohan_util_lib {
+object BuildScalaParser {
+
+  /**
+   * @param path build.scala文件路径
+   */
+  def parse(path: String): Unit = {
+    val file: File = new File(path)
+
+    if (!file.exists()) {
+      throw new FileNotFoundException("build.scala文件路径有误")
+    }
+
+    val tb = universe.runtimeMirror(getClass.getClassLoader).mkToolBox()
+
+    tb.eval(tb.parse(Files.readString(file)))
+
+    println()
+
+  }
 
 }

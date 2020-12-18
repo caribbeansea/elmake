@@ -1,6 +1,4 @@
-package com.dahan.gohan.script
-
-import com.dahan.gohan.repository.GohanDependency
+package com.dahan.gohan.script.parse
 
 /* ************************************************************************
  *
@@ -27,6 +25,8 @@ import com.dahan.gohan.repository.GohanDependency
 /**
  * @author tiansheng
  */
-trait public_func_lib extends gohan_util_lib {
+trait BuildInstance {
+
+  def printlnx(): Unit
 
 }
