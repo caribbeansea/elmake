@@ -22,9 +22,12 @@ package com.dahan.eimoto.commandline;
  */
 
 import com.dahan.eimoto.collect.Lists;
+import com.dahan.eimoto.collect.Maps;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author tiansheng
@@ -55,12 +58,17 @@ public abstract class Option implements Comparable<Option>
     /**
      * 命令参数列表
      */
-    private List<String> values;
+    private List<String> values = Lists.newArrayList();
 
     /**
      * 执行顺序
      */
     private int order;
+
+    /**
+     * 公共资源
+     */
+    protected static volatile Map<String, Object> settings = Maps.newHashMap();
 
     public Option()
     {
@@ -146,7 +154,9 @@ public abstract class Option implements Comparable<Option>
 
     /**
      * 执行策略
+     *
+     * @param values 参数
      */
-    public abstract void exec();
+    public abstract void exec(List<String> values);
 
 }

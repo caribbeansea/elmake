@@ -1,7 +1,4 @@
-package com.dahan
-
-import com.dahan.eimoto.EimotoMainKt
-
+package com.dahan.eimoto.libforkt
 
 /* ************************************************************************
  *
@@ -22,16 +19,13 @@ import com.dahan.eimoto.EimotoMainKt
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/19.
  */
 
 /**
+ * Kotlin即时编译器
+ *
  * @author tiansheng
  */
-def projectHome = "/Users/wuyanzu/project/IdeaProjects/eimoto/debugging/subprojects/eimoto-build-test"
-
-def commandline = "build lvar name=张三 projectHome=${projectHome}"
-
-println(commandline)
-
-EimotoMainKt.main(commandline.split(" "))
+class JitKt {
+}

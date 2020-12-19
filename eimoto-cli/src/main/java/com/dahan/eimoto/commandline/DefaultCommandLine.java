@@ -45,7 +45,7 @@ public class DefaultCommandLine implements CommandLine
     {
         for (Option option : options)
         {
-            option.exec();
+            option.exec(option.getValues());
         }
     }
 

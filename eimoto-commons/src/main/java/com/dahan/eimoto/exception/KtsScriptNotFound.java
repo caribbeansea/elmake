@@ -1,8 +1,4 @@
-package com.dahan
-
-import com.dahan.eimoto.EimotoMainKt
-
-
+package com.dahan.eimoto.exception;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -22,16 +18,41 @@ import com.dahan.eimoto.EimotoMainKt
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/19.
  */
 
 /**
  * @author tiansheng
  */
-def projectHome = "/Users/wuyanzu/project/IdeaProjects/eimoto/debugging/subprojects/eimoto-build-test"
+public class KtsScriptNotFound extends EimotoException
+{
 
-def commandline = "build lvar name=张三 projectHome=${projectHome}"
+    public KtsScriptNotFound()
+    {
+    }
 
-println(commandline)
+    public KtsScriptNotFound(String... message)
+    {
+        super(message);
+    }
 
-EimotoMainKt.main(commandline.split(" "))
+    public KtsScriptNotFound(String message)
+    {
+        super(message);
+    }
+
+    public KtsScriptNotFound(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+    public KtsScriptNotFound(Throwable cause)
+    {
+        super(cause);
+    }
+
+    public KtsScriptNotFound(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+}

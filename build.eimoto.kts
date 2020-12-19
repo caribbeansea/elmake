@@ -1,26 +1,25 @@
+
 group("com.dahan")
 name("eimoto")
 version("gh-1+01")
 
 //
-// 添加当前项目支持的JVM的语言
+// 添加一门支持JVM的语言
 //
 lang("groovy", "kotlin", "scala")
 
-ext {
-    commandCliVersion = "1.4"
-    slf4jVersion = "1.7.25"
-    logbackVersion = "1.1.11"
-    fastjsonVersion = "1.2.66"
-    okhttpVersion = "4.8.0"
-    eimotoCommonVersion = "1.0.0.BETA"
-    dom4jVersion = "1.6.1"
-    aetherVersion = "1.0.0V20140518"
-    mavenVersion = "3.1.0"
-    wagonVersion = "1.0"
-    scalaVersion = "2.13.4"
-    kotlinVersion = "1.4.21"
-}
+val commandCliVersion = "1.4"
+val slf4jVersion = "1.7.25"
+val logbackVersion = "1.1.11"
+val fastjsonVersion = "1.2.66"
+val okhttpVersion = "4.8.0"
+val eimotoCommonVersion = "1.0.0.BETA"
+val dom4jVersion = "1.6.1"
+val aetherVersion = "1.0.0V20140518"
+val mavenVersion = "3.1.0"
+val wagonVersion = "1.0"
+val scalaVersion = "2.13.4"
+val kotlinVersion = "1.4.21"
 
 /**
  * 导入依赖
@@ -44,4 +43,3 @@ includesManager {
     include("dom4j:dom4j:${dom4jVersion}")
     include("org.openjdk.jol:jol-core:0.10", "test")
 }
-  

@@ -24,6 +24,8 @@ package com.dahan.eimoto.commandline;
 import com.dahan.eimoto.commandline.exception.CommandLineParseException;
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * @author tiansheng
  */
@@ -59,7 +61,7 @@ public class InputArgsTest
         }
 
         @Override
-        public void exec()
+        public void exec(List<String> values)
         {
             System.out.println("---> build");
         }

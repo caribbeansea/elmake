@@ -1,8 +1,11 @@
-package com.dahan.eimoto.repository.dependency;
+package com.dahan.eimoto.build
+
+import com.dahan.eimoto.dsl.BuildEimotoKts
+import com.dahan.eimoto.repository.EimotoDependency
 
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,34 +22,18 @@ package com.dahan.eimoto.repository.dependency;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/18.
  */
 
 /**
- * 依赖存在范围
- *
  * @author tiansheng
  */
-public enum Scope
-{
-    COMPILE,
+class BuildEimotoKtsTest : BuildEimotoKts() {
 
-    /**
-     * 只在测试时使用，打包并不会将scope为test的依赖打包到classpath下。
-     */
-    TEST,
+    init {
 
-    /**
-     * 系统依赖，该依赖是指本地存在的依赖信息。且会打包到classpath下去供运行
-     * 时使用。
-     */
-    LOCAL,
+        #impl
 
-    /**
-     * EXLOCAL和LOCAL范围效果一致，但是EXLOCAL不会将本地依赖打包到classpath下。
-     */
-    EXLOCAL,
-
-    PROVIDED,
+    }
 
 }

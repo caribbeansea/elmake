@@ -16,6 +16,7 @@
         <module>eimoto-script</module>
         <module>eimoto-repository</module>
         <module>eimoto-bootstrap</module>
+        <module>eimoto-libforkt</module>
     </modules>
 
     <repositories>
@@ -160,6 +161,14 @@
     </profiles>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>

@@ -1,10 +1,7 @@
-package com.dahan.eimoto.repository.dependency;
-
-import java.util.Map;
-
+package com.dahan.eimoto;
 /* ************************************************************************
  *
- * Copyright (C) 2020 2B键盘 All rights reserved.
+ * Copyright (C) 2020 dahan All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,24 +18,20 @@ import java.util.Map;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/3.
+ * Creates on 2020/12/19.
  */
+
+import java.io.InputStream;
 
 /**
- * 插件
- *
  * @author tiansheng
  */
-public class Plugin
+public class Streams
 {
-    /**
-     * 插件依赖
-     **/
-    private Dependency dependency;
 
-    /**
-     * configuration配置
-     **/
-    private Map<String, String> settings;
+    public static InputStream getResourceAsStream(String path, ClassLoader classLoader)
+    {
+        return classLoader.getResourceAsStream(path);
+    }
 
 }

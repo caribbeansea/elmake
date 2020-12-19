@@ -31,7 +31,9 @@ object StartBuilding {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        EimotoMainKt.main(arrayOf("build"))
+        val userdir = System.getProperty("user.dir")
+        val clistr = "build lvar buildKts=${userdir}/build.eimoto.kts settingsKts=${userdir}/settings.eimoto.kts"
+        EimotoMainKt.main(clistr.split(" ").toTypedArray())
     }
 
 }
