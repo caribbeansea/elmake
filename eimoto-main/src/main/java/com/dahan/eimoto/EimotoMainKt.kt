@@ -4,7 +4,9 @@ package com.dahan.eimoto
 import com.dahan.eimoto.commandline.DefaultCommandLineParser
 import com.dahan.eimoto.commandline.Options
 import com.dahan.eimoto.commandline.exception.CommandLineParseException
+import com.dahan.eimoto.exception.NoCommandCollectException
 import com.dahan.eimoto.reflect.ClassUtils
+import java.io.File
 
 /* ************************************************************************
  *
@@ -32,35 +34,12 @@ import com.dahan.eimoto.reflect.ClassUtils
  * 命令行解析
  * @author tiansheng
  */
-class EimotoMain
-{
+object EimotoMainKt {
 
-    public static Options options = {
+    private val options: Options = OptionBeans.opts
 
-        def c_home = "com/dahan/eimoto/option/command"
-        def source = EimotoMain.classLoader.getResource(c_home)
-        def classfiles = new File(source.path)
-
-        def loadOpts = new Options()
-
-        classfiles.listFiles().each {
-            def path = it.path.replaceAll("/Users/wuyanzu/project/IdeaProjects/eimoto/eimoto-builder/target/classes/", "")
-                    .replaceAll("/", ".")
-                    .replaceAll(".class", "")
-
-            loadOpts.addOpt(ClassUtils.newInstance(Class.forName(path)))
-        }
-
-        return loadOpts
-
-    }.call() as Options
-
-    /**
-     * 入口函数
-     * @param args 参数命令
-     */
-    static void main(String[] args)
-    {
+    @JvmStatic
+    fun main(args: Array<String>) {
         run(processInputCommands(args))
     }
 
@@ -68,13 +47,10 @@ class EimotoMain
      * 解析命令
      * @param args 命令参数
      */
-    static void run(String[] args)
-    {
-        try
-        {
-            new DefaultCommandLineParser(options).parse(args).orderExec()
-        } catch (CommandLineParseException e)
-        {
+    private fun run(args: Array<String>) {
+        try {
+            DefaultCommandLineParser(options).parse(args).orderExec()
+        } catch (e: CommandLineParseException) {
             e.printStackTrace()
         }
 
@@ -83,12 +59,10 @@ class EimotoMain
     /**
      * 处理是命令的参数
      */
-    static String[] processInputCommands(String[] args)
-    {
-        args.eachWithIndex { String entry, int index ->
-            if(options.hasOption(entry))
-            {
-                args[index] = "-${entry}"
+    private fun processInputCommands(args: Array<String>): Array<String> {
+        args.forEachIndexed { i: Int, item: String ->
+            if (options.hasOption(item)) {
+                args[i] = "-${item}"
             }
         }
         return args

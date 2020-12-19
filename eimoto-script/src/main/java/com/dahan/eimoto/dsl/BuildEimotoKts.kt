@@ -54,7 +54,9 @@ open class BuildEimotoKts {
     /**
      * 所有的信息都保存在settings map中
      */
-    private var settings: MutableMap<String, Any> = Maps.newHashMap()
+    private val settings: MutableMap<String, Any> = Maps.newHashMap()
+
+    private var langs: Array<out String>? = null
 
     // set project group id.
     fun group(value: String) = settings.put(ConstVar.GROUP_VALUE, value)
@@ -69,15 +71,27 @@ open class BuildEimotoKts {
     fun parent(value: String) = settings.put(ConstVar.PARENT_VALUE, value)
 
     // 添加一门能够被JVM执行的语言，例如：Groovy、Scala、Kotlin
-    fun lang(vararg name: String) = Unit
+    fun lang(vararg langs: String) {
+        this.langs = langs
+    }
 
     fun include(coords: String) = include(coords, null, null)
 
-    fun include(coords: String, scope: EimotoDependency.Scope) = include(coords, null, scope)
+    fun include(coords: String, scope: String) = include(coords, null, scope)
 
     // 引入依赖包
-    fun include(coords: String, classifier: String?, scope: EimotoDependency.Scope?) =
-            dependencies.add(EimotoDependency(coords, classifier, scope))
+    fun include(coords: String, classifier: String?, scope: String?) {
+
+        val dependency: EimotoDependency =
+                if (scope != null) {
+                    EimotoDependency(coords, classifier, EimotoDependency.Scope.valueOf(scope.toUpperCase()))
+                } else {
+                    EimotoDependency(coords, classifier, EimotoDependency.Scope.COMPILER)
+                }
+
+        dependencies.add(dependency)
+
+    }
 
     // ############################ 定义代码块 ############################
 
@@ -89,5 +103,8 @@ open class BuildEimotoKts {
 
     // includes代码块，所有include的导入依赖声明应该放在includes代码块下面
     fun includes(function: () -> Unit) = function()
+
+    // includesManager代码块，这下面定义的依赖所有子类可以进行继承
+    fun includesManager(function: () -> Unit) = function()
 
 }

@@ -1,7 +1,7 @@
-package com.dahan.eimoto.option.command
+package com.dahan.eimoto.build
 
-import com.dahan.eimoto.commandline.Option
-
+import com.dahan.eimoto.dsl.BuildEimotoKts
+import com.dahan.eimoto.dsl.SettingsEimotoKts
 
 /* ************************************************************************
  *
@@ -22,26 +22,28 @@ import com.dahan.eimoto.commandline.Option
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/18.
  */
 
 /**
- * 构建命令
- *
  * @author tiansheng
  */
-class C_Debug extends Option
-{
+class SettingsEimotoKtsTest : SettingsEimotoKts() {
 
-    C_Debug()
-    {
-        super("debug", "debug", true, "使用DEBUG模式运行项目，参数为入口函数所存在的类全名。")
-        setOrder(5)
-    }
+    init {
 
-    @Override
-    void exec()
-    {
+        val rootNode = "subprojects/"
+
+        val subprojectArray: Array<String> = arrayOf(
+                rootNode + "commandline",
+                rootNode + "commons",
+                rootNode + "main",
+                rootNode + "repository",
+                rootNode + "build",
+        )
+
+        subprojects(*subprojectArray)
+
     }
 
 }

@@ -1,4 +1,4 @@
-package com.dahan.eimoto.build
+package com.dahan.eimoto.bootsrap
 
 import com.dahan.eimoto.dsl.BuildEimotoKts
 import com.dahan.eimoto.repository.EimotoDependency
@@ -28,7 +28,7 @@ import com.dahan.eimoto.repository.EimotoDependency
 /**
  * @author tiansheng
  */
-class BuildEimotoKtsTest : BuildEimotoKts() {
+class BuildEimotoKts : BuildEimotoKts() {
 
     init {
 

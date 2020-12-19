@@ -50,7 +50,7 @@ class EimotoDependency {
     /**
      * 依赖指定范围
      */
-    enum class Scope(scope: String) {
+    enum class Scope(val value: String) {
 
         /**
          * 依赖会在编译和运行时期存在，并且会打包进classpath
@@ -71,7 +71,9 @@ class EimotoDependency {
         /**
          * 引入系统依赖，但它不会被打包进classpath。
          */
-        EXSYSTEM("system")
+        EXSYSTEM("system"),
+
+        ;
 
     }
 
@@ -97,7 +99,7 @@ class EimotoDependency {
 
         this.classifier = artifact.classifier
         if (this.classifier == null) {
-            this.dependency = Dependency(DefaultArtifact("$groupId:$artifactId:$version"), this.scope.name)
+            this.dependency = Dependency(DefaultArtifact("$groupId:$artifactId:$version"), this.scope.value)
         } else {
             this.dependency = Dependency(DefaultArtifact(groupId, artifactId, classifier, "jar", version), this.scope.name)
         }

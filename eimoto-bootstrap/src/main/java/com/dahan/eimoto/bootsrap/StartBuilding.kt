@@ -1,7 +1,6 @@
-package com.dahan.eimoto.option.command
+package com.dahan.eimoto.bootsrap
 
-import com.dahan.eimoto.commandline.Option
-
+import com.dahan.eimoto.EimotoMainKt
 
 /* ************************************************************************
  *
@@ -22,24 +21,17 @@ import com.dahan.eimoto.commandline.Option
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/18.
  */
 
 /**
  * @author tiansheng
  */
-class C_Clean extends Option
-{
+object StartBuilding {
 
-    C_Clean()
-    {
-        super("clean", "clean", false, "清空编译缓存")
-        setOrder(1)
-    }
-
-    @Override
-    void exec()
-    {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        EimotoMainKt.main(arrayOf("build"))
     }
 
 }

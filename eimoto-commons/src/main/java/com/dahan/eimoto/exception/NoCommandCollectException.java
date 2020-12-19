@@ -1,8 +1,4 @@
-package com.dahan.eimoto.option.command
-
-
-import com.dahan.eimoto.commandline.Option
-
+package com.dahan.eimoto.exception;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -22,27 +18,41 @@ import com.dahan.eimoto.commandline.Option
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/19.
  */
 
 /**
- * 构建命令
- *
  * @author tiansheng
  */
-class C_Help extends Option
+public class NoCommandCollectException extends EimotoException
 {
 
-    C_Help()
+    public NoCommandCollectException()
     {
-        super("help", "help", false, "查看帮助")
-        setOrder(10)
     }
 
-    @Override
-    void exec()
+    public NoCommandCollectException(String... message)
     {
-
+        super(message);
     }
 
+    public NoCommandCollectException(String message)
+    {
+        super(message);
+    }
+
+    public NoCommandCollectException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+    public NoCommandCollectException(Throwable cause)
+    {
+        super(cause);
+    }
+
+    public NoCommandCollectException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }

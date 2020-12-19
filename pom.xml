@@ -12,10 +12,10 @@
     <modules>
         <module>eimoto-main</module>
         <module>eimoto-commons</module>
-        <module>eimoto-commandline</module>
+        <module>eimoto-cli</module>
         <module>eimoto-script</module>
         <module>eimoto-repository</module>
-        <module>eimoto-plugins</module>
+        <module>eimoto-bootstrap</module>
     </modules>
 
     <repositories>
@@ -71,7 +71,7 @@
             </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>eimoto-commandline</artifactId>
+                <artifactId>eimoto-cli</artifactId>
                 <version>1.0.0.BETA</version>
             </dependency>
         </dependencies>

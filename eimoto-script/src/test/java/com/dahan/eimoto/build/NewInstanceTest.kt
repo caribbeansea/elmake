@@ -1,7 +1,4 @@
-package com.dahan.eimoto.option.command
-
-import com.dahan.eimoto.commandline.Option
-
+package com.dahan.eimoto.build
 
 /* ************************************************************************
  *
@@ -22,25 +19,20 @@ import com.dahan.eimoto.commandline.Option
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/12.
+ * Creates on 2020/12/18.
  */
 
 /**
- * 构建命令
- *
  * @author tiansheng
  */
-class C_Build extends Option
-{
-    C_Build()
-    {
-        super("build", "build", false, "构建项目，参数为项目名或模块名。如果不传则默认打包整个项目。")
-        setOrder(2)
-    }
+object NewInstanceTest {
 
-    @Override
-    void exec()
-    {
+    @JvmStatic
+    fun main(args: Array<String>) {
+
+        val instance = BuildEimotoKtsTest()
+        println()
+
     }
 
 }
