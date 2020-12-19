@@ -1,5 +1,7 @@
 package com.dahan.eimoto.libforkt
 
+import org.apache.tools.ant.taskdefs.Classloader
+
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -27,5 +29,10 @@ package com.dahan.eimoto.libforkt
  *
  * @author tiansheng
  */
-class JitKt {
+object Jitkt {
+
+    fun <T> compile(source: String, classloader: Classloader): Class<T>? {
+        return null
+    }
+
 }

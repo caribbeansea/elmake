@@ -25,13 +25,6 @@ object OptionBeans {
 
     const val basepath = "com/dahan/eimoto"
 
-    fun compile(src: String) {
-    }
-
-    fun main(args: Array<String>) {
-        compile("")
-    }
-
 }
 
 /**
