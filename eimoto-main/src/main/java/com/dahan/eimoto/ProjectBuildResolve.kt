@@ -1,6 +1,8 @@
-package com.dahan.eimoto.bootsrap
+package com.dahan.eimoto
 
-import com.dahan.eimoto.EimotoMainKt
+import com.dahan.eimoto.dsl.BuildEimotoKts
+import com.dahan.eimoto.repository.EimotoDependency
+import com.dahan.eimoto.repository.utils.RepositoryUtils
 
 /* ************************************************************************
  *
@@ -21,19 +23,18 @@ import com.dahan.eimoto.EimotoMainKt
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/18.
+ * Creates on 2020/12/20.
  */
 
 /**
  * @author tiansheng
  */
-object StartBuilding {
+object ProjectBuildResolve {
 
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val userdir = System.getProperty("user.dir")
-        val clistr = "build lvar self=y"
-        EimotoMainKt.main(clistr.split(" ").toTypedArray())
+    fun doBuild(buildKts: BuildEimotoKts) {
+        resolveDependency(buildKts.dependencies)
     }
+
+    private fun resolveDependency(dependencies: List<EimotoDependency>) = RepositoryUtils.resolveDependencies(dependencies)
 
 }

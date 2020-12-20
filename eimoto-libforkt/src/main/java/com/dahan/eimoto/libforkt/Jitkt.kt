@@ -1,6 +1,7 @@
 package com.dahan.eimoto.libforkt
 
 import org.apache.tools.ant.taskdefs.Classloader
+import kotlin.reflect.KClass
 
 /* ************************************************************************
  *
@@ -31,8 +32,8 @@ import org.apache.tools.ant.taskdefs.Classloader
  */
 object Jitkt {
 
-    fun <T> compile(source: String, classloader: Classloader): Class<T>? {
-        return null
+    fun <T> compile(source: String, classloader: Classloader): Class<T> {
+        TODO()
     }
 
 }

@@ -21,6 +21,16 @@
             <artifactId>jol-core</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>eimoto-bootstrap</artifactId>
+            <version>1.0.0.BETA</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>eimoto-repository</artifactId>
+            <version>1.0.0.BETA</version>
+        </dependency>
     </dependencies>
 
 </project>

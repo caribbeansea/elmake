@@ -49,7 +49,7 @@ open class BuildEimotoKts {
     /**
      * 依赖列表
      */
-    private val dependencies: MutableList<EimotoDependency> = Lists.newArrayList()
+    val dependencies: MutableList<EimotoDependency> = Lists.newArrayList()
 
     /**
      * 所有的信息都保存在settings map中

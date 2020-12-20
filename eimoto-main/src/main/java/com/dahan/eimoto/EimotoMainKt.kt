@@ -37,14 +37,14 @@ object EimotoMainKt {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        run(processInputCommands(args))
+        doMain(processInputCommands(args))
     }
 
     /**
      * 解析命令
      * @param args 命令参数
      */
-    private fun run(args: Array<String>) {
+    private fun doMain(args: Array<String>) {
         try {
             DefaultCommandLineParser(options).parse(args).orderExec()
         } catch (e: CommandLineParseException) {

@@ -1,6 +1,7 @@
 package com.dahan.eimoto
 
 import com.alibaba.fastjson.util.IOUtils
+import com.dahan.eimoto.bootsrap.BootBuildKts
 import com.dahan.eimoto.commandline.Option
 import com.dahan.eimoto.commandline.Options
 import com.dahan.eimoto.exception.KtsScriptNotFound
@@ -38,16 +39,10 @@ private class Build : Option("build", "build", false, "构建项目，参数为�
 
     override fun exec(values: MutableList<String>) {
 
-        val buildKtsPath = settings["buildKts"] as String
-        val settingsKtsPath = settings["settingsKts"] as String
-
-        val buildKts = File(buildKtsPath)
-
-        if (!buildKts.exists()) throw KtsScriptNotFound("未找到 build.eimoto.kts 构建脚本，在路径：${buildKtsPath}")
-
-        val src = insertKtsImpl(Files.readString(buildKts), "build")
-
-        println()
+        if (settings["self"] == "y") {
+            val bootKts = BootBuildKts()
+            ProjectBuildResolve.doBuild(bootKts)
+        }
 
     }
 

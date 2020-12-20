@@ -1,4 +1,3 @@
-
 group("com.dahan")
 name("eimoto")
 version("gh-1+01")

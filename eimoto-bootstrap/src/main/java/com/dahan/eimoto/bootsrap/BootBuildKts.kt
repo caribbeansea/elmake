@@ -28,7 +28,7 @@ import com.dahan.eimoto.repository.EimotoDependency
 /**
  * @author tiansheng
  */
-class BuildEimotoKts : BuildEimotoKts() {
+class BootBuildKts : BuildEimotoKts() {
 
     init {
 
