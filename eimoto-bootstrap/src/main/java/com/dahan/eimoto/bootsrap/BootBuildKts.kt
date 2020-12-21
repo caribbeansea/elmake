@@ -61,7 +61,7 @@ class BootBuildKts : BuildEimotoKts() {
             include("org.slf4j:slf4j-api:${slf4jVersion}")
             include("ch.qos.logback:logback-core:${logbackVersion}")
             include("ch.qos.logback:logback-classic:${logbackVersion}")
-            include("org.codehaus.groovy:groovy-all:3.0.4")
+            include("org.codehaus.groovy:groovy-all:3.0.7", ext = "pom")
             include("com.alibaba:fastjson:${fastjsonVersion}")
             include("com.squareup.okhttp3:okhttp:${okhttpVersion}")
             include("org.scala-lang:scala-library:${scalaVersion}")

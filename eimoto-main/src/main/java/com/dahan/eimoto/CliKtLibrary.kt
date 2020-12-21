@@ -41,7 +41,7 @@ private class Build : Option("build", "build", false, "构建项目，参数为�
 
         if (settings["self"] == "y") {
             val bootKts = BootBuildKts()
-            ProjectBuildResolve.doBuild(bootKts)
+            ProjectBuildResolve.doSelfBuild(bootKts)
         }
 
     }

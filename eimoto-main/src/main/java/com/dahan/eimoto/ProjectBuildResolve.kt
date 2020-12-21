@@ -31,7 +31,7 @@ import com.dahan.eimoto.repository.utils.RepositoryUtils
  */
 object ProjectBuildResolve {
 
-    fun doBuild(buildKts: BuildEimotoKts) {
+    fun doSelfBuild(buildKts: BuildEimotoKts) {
         resolveDependency(buildKts.dependencies)
     }
 

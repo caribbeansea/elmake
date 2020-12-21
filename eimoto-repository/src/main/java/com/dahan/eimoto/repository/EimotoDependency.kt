@@ -42,6 +42,8 @@ class EimotoDependency {
 
     private var classifier: String? = null
 
+    private var ext: String? = "jar"
+
     /**
      * eclipse dependency object.
      */
@@ -81,7 +83,9 @@ class EimotoDependency {
 
     constructor(coords: String, classifier: String?) : this(coords, classifier, null)
 
-    constructor(coords: String, classifier: String? = null, scope: Scope? = null) {
+    constructor(coords: String, classifier: String?, scope: String? = null) : this(coords, classifier, null, scope)
+
+    constructor(coords: String, classifier: String? = null, ext: String? = null, scope: String? = null) {
         val split = coords.split(":")
         val artifact = Artifact(split[0], split[1], split[2])
 
@@ -94,14 +98,18 @@ class EimotoDependency {
         this.version = artifact.version
 
         if (scope != null) {
-            this.scope = scope
+            this.scope = Scope.valueOf(scope.toUpperCase())
+        }
+
+        if (ext != null) {
+            this.ext = ext
         }
 
         this.classifier = artifact.classifier
-        if (this.classifier == null) {
+        if (classifier == null && ext == null) {
             this.dependency = Dependency(DefaultArtifact("$groupId:$artifactId:$version"), this.scope.value)
         } else {
-            this.dependency = Dependency(DefaultArtifact(groupId, artifactId, classifier, "jar", version), this.scope.name)
+            this.dependency = Dependency(DefaultArtifact(groupId, artifactId, this.classifier, this.ext, version), this.scope.name)
         }
 
     }

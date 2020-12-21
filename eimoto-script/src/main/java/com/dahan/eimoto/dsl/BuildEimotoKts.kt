@@ -77,20 +77,15 @@ open class BuildEimotoKts {
 
     fun include(coords: String) = include(coords, null, null)
 
-    fun include(coords: String, scope: String) = include(coords, null, scope)
+    fun include(coords: String, scope: String) = include(coords, null, null, scope)
+
+    fun include(coords: String, classifier: String? = null, ext: String? = null) {
+        include(coords, classifier, ext, null)
+    }
 
     // 引入依赖包
-    fun include(coords: String, classifier: String?, scope: String?) {
-
-        val dependency: EimotoDependency =
-                if (scope != null) {
-                    EimotoDependency(coords, classifier, EimotoDependency.Scope.valueOf(scope.toUpperCase()))
-                } else {
-                    EimotoDependency(coords, classifier, EimotoDependency.Scope.COMPILER)
-                }
-
-        dependencies.add(dependency)
-
+    fun include(coords: String, classifier: String? = null, ext: String? = null, scope: String?) {
+        dependencies.add(EimotoDependency(coords, classifier, ext, scope))
     }
 
     // ############################ 定义代码块 ############################
