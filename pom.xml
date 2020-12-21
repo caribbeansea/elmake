@@ -10,13 +10,13 @@
     <version>1.0.0.BETA</version>
 
     <modules>
-        <module>eimoto-main</module>
-        <module>eimoto-commons</module>
-        <module>eimoto-cli</module>
-        <module>eimoto-script</module>
-        <module>eimoto-repository</module>
-        <module>eimoto-bootstrap</module>
-        <module>eimoto-libforkt</module>
+        <module>subprojects/main</module>
+        <module>subprojects/commons</module>
+        <module>subprojects/cli</module>
+        <module>subprojects/dsl</module>
+        <module>subprojects/repository</module>
+        <module>subprojects/bootstrap</module>
+        <module>subprojects/libforkt</module>
     </modules>
 
     <repositories>
@@ -33,7 +33,7 @@
         <logback.version>1.1.11</logback.version>
         <fastjson.version>1.2.66</fastjson.version>
         <okhttp.version>4.8.0</okhttp.version>
-        <eimoto-common.version>1.0.0.BETA</eimoto-common.version>
+        <common.version>1.0.0.BETA</common.version>
         <dom4j.version>1.6.1</dom4j.version>
         <aetherVersion>1.0.0.v20140518</aetherVersion>
         <mavenVersion>3.1.0</mavenVersion>
@@ -51,13 +51,13 @@
             </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>eimoto-repository</artifactId>
+                <artifactId>repository</artifactId>
                 <version>1.0.0.BETA</version>
             </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>eimoto-commons</artifactId>
-                <version>${eimoto-common.version}</version>
+                <artifactId>commons</artifactId>
+                <version>${common.version}</version>
             </dependency>
             <dependency>
                 <groupId>dom4j</groupId>
@@ -72,7 +72,7 @@
             </dependency>
             <dependency>
                 <groupId>com.dahan</groupId>
-                <artifactId>eimoto-cli</artifactId>
+                <artifactId>cli</artifactId>
                 <version>1.0.0.BETA</version>
             </dependency>
         </dependencies>
@@ -99,7 +99,7 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>3.0.4</version>
+            <version>3.0.7</version>
             <type>pom</type>
         </dependency>
 
@@ -145,15 +145,34 @@
     </profiles>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
-            </resource>
-        </resources>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.9.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>addSources</goal>
+                            <goal>addTestSources</goal>
+                            <goal>generateStubs</goal>
+                            <goal>compile</goal>
+                            <goal>generateTestStubs</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <parameters>true</parameters>
+                    <sources>
+                        <source>
+                            <directory>${project.basedir}/src/main/</directory>
+                            <includes>
+                                <include>**/*.groovy</include>
+                            </includes>
+                        </source>
+                    </sources>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

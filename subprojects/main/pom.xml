@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>eimoto</artifactId>
+        <groupId>com.dahan</groupId>
+        <version>1.0.0.BETA</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>main</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>cli</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>1.0.0.BETA</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>repository</artifactId>
+            <version>1.0.0.BETA</version>
+        </dependency>
+    </dependencies>
+
+</project>
