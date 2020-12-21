@@ -27,10 +27,10 @@ package com.dahan.eimoto.dsl
  */
 open class SettingsEimotoKts {
 
-    private var subprojectArray: Array<String>? = null
+    var subprojectArray: Array<out String>? = null
 
     fun subprojects(vararg values: String) {
-
+        this.subprojectArray = values
     }
 
 }

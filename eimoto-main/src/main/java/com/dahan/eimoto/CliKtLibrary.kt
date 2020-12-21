@@ -1,14 +1,10 @@
 package com.dahan.eimoto
 
-import com.alibaba.fastjson.util.IOUtils
 import com.dahan.eimoto.bootsrap.BootBuildKts
+import com.dahan.eimoto.bootsrap.SettingsEimotoKts
 import com.dahan.eimoto.commandline.Option
 import com.dahan.eimoto.commandline.Options
-import com.dahan.eimoto.exception.KtsScriptNotFound
-import java.io.File
 import java.io.InputStream
-import javax.script.ScriptEngine
-import javax.script.ScriptEngineManager
 
 object OptionBeans {
 
@@ -38,12 +34,7 @@ private class Build : Option("build", "build", false, "构建项目，参数为�
     }
 
     override fun exec(values: MutableList<String>) {
-
-        if (settings["self"] == "y") {
-            val bootKts = BootBuildKts()
-            ProjectBuildResolve.doSelfBuild(bootKts)
-        }
-
+        ProjectBuildResolve.doBuilding(BootBuildKts(), SettingsEimotoKts())
     }
 
     fun insertKtsImpl(implstr: String, prefix: String): String {

@@ -1,9 +1,6 @@
-package com.dahan.eimoto
+package com.dahan.bootstrap
 
-import com.dahan.eimoto.bootsrap.SettingsEimotoKts
-import com.dahan.eimoto.dsl.BuildEimotoKts
-import com.dahan.eimoto.repository.EimotoDependency
-import com.dahan.eimoto.repository.utils.RepositoryUtils
+import com.dahan.eimoto.EimotoMainKt
 
 /* ************************************************************************
  *
@@ -24,27 +21,18 @@ import com.dahan.eimoto.repository.utils.RepositoryUtils
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/20.
+ * Creates on 2020/12/21.
  */
 
 /**
  * @author tiansheng
  */
-object ProjectBuildResolve {
+object BuildDebugging {
 
-    /**
-     * 执行项目的构建指令
-     *
-     * @param buildKts 主项目的构建脚本
-     * @param settingsKts 项目配置
-     */
-    fun doBuilding(buildKts: BuildEimotoKts, settingsKts: SettingsEimotoKts) {
-        resolveDependency(buildKts.dependencies)
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val clistr = "build"
+        EimotoMainKt.main(clistr.split(" ").toTypedArray())
     }
-
-    //
-    // 解决依赖引用下载
-    //
-    private fun resolveDependency(dependencies: List<EimotoDependency>) = RepositoryUtils.resolveDependencies(dependencies)
 
 }
