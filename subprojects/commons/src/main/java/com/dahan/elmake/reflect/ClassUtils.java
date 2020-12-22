@@ -75,6 +75,9 @@ public class ClassUtils {
     public static <T> T newInstance(Class<?> clazz, Object... paramVal) {
         Constructor<?> constructor = null;
         try {
+            if(paramVal == null) {
+                return newInstance(clazz);
+            }
             Class<?>[] parametersType = new Class[paramVal.length];
             for (int i = 0; i < paramVal.length; i++) {
                 parametersType[i] = paramVal[i].getClass();

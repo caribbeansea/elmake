@@ -1,6 +1,4 @@
-package com.dahan.elmake.dsl.groovy
-
-import com.dahan.elmake.dsl.Setfile
+package com.dahan.elmake.exception;
 
 /* ************************************************************************
  *
@@ -27,8 +25,36 @@ import com.dahan.elmake.dsl.Setfile
 /**
  * @author tiansheng
  */
-class SettingsOfGroovy extends Setfile {
+public class LackRequiredParam extends ElMakeException
+{
 
+    public LackRequiredParam()
+    {
+        super();
+    }
 
+    public LackRequiredParam(String... message)
+    {
+        super(message);
+    }
 
+    public LackRequiredParam(String message)
+    {
+        super(message);
+    }
+
+    public LackRequiredParam(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+    public LackRequiredParam(Throwable cause)
+    {
+        super(cause);
+    }
+
+    public LackRequiredParam(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+    {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }

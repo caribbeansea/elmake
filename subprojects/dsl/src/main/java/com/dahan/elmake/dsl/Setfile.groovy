@@ -25,13 +25,30 @@ package com.dahan.elmake.dsl
 /**
  * @author tiansheng
  */
-class Settingsfile implements SettingsApi {
+class Setfile implements SettingsApi {
 
-    protected String[] subprojects
+    protected String[] subModules
+
+    protected Map<String, Makefile> subMakefile
 
     @Override
     void subprojects(String... modules) {
-        this.subprojects = modules
+        this.subModules = modules
     }
 
+    String[] getSubModules() {
+        return subModules
+    }
+
+    void setSubModules(String[] subModules) {
+        this.subModules = subModules
+    }
+
+    Map<String, Makefile> getSubMakefile() {
+        return subMakefile
+    }
+
+    void setSubMakefile(Map<String, Makefile> subMakefile) {
+        this.subMakefile = subMakefile
+    }
 }

@@ -2,7 +2,8 @@ package com.dahan.elmake.dsl
 
 import com.dahan.elmake.Files
 import com.dahan.elmake.Streams
-import com.dahan.elmake.dsl.kotlin.MakeOfKts
+import com.dahan.elmake.StringUtils
+import com.dahan.elmake.exception.LackRequiredParam
 import com.dahan.elmake.reflect.ClassUtils
 
 /* ************************************************************************
@@ -43,32 +44,46 @@ class MakefileBuilder {
         this.classLoader = new GroovyClassLoader(classLoader)
     }
 
+
+    Makefile parseMakefile() {
+        return compileMakefile(this.basedir)
+    }
+
     //
     // 1) 编译makefile构建脚本
     //
-    // 2) 获取settings配置文件并编译
+    // 2) 验证makefile
     //
-    Makefile parseMakefile() {
+    // 3) 如果 settings 不是空的，那么就先解析settings
+    //
+    private Makefile compileMakefile(String basedir) {
+        // #1
+        def makefile = compileGroovy(readIntegValue(AutoconfConst.MAKEFILE_NAME, basedir, false),
+                new File("${basedir}/${AutoconfConst.MAKEFILE_NAME}")) as Makefile
 
-        def makefile = compileMakefile()
+        // #2
+        verifyMarkfileRequiredParam(makefile)
 
-        def settings = compileSettings()
+        // #3
+        def setfile = compileSettings(basedir)
 
-        return null
-    }
+        if (setfile != null) {
+            def submodules = setfile.getSubModules()
+            submodules.each {
+                def subMakefile = compileMakefile("${basedir}/${it}")
+                subMakefile.parent = makefile
+                makefile.addSubMakefile(subMakefile)
+            }
+        }
 
-    /**
-     * 编译 autoconf.elmake 构建脚本
-     */
-    private Makefile compileMakefile() {
-        return compileGroovy(readIntegValue(AutoconfConst.MAKEFILE_NAME, false))
+        return makefile
     }
 
     /**
      * 编译 settings.elmake 构建脚本
      */
-    private Settingsfile compileSettings() {
-        def src = readIntegValue(AutoconfConst.SETTINGS_NAME, true)
+    private Setfile compileSettings(String basedir) {
+        def src = readIntegValue(AutoconfConst.SETTINGS_NAME, basedir, true)
         if (src == null) return null
         return compileGroovy(src)
     }
@@ -76,15 +91,15 @@ class MakefileBuilder {
     /**
      * 读取并合并构建脚本(settings.elmake)源码
      */
-    private String readIntegValue(String name, boolean nullable) {
+    private String readIntegValue(String name, String basedir, boolean nullable) {
 
         def src
-
+        def path = "${basedir}/${name}"
         if (nullable) {
-            src = readHomeValue(name, null)
+            src = readHomeValue(path, null)
             if (src == null) return null
         } else {
-            src = readHomeValue(name, "未能获取到 ${name} 文件")
+            src = readHomeValue(path, "未能获取到 ${name} 文件, 在${path}")
         }
 
         def stream = Streams.getResourceAsStream("com/dahan/elmake/overview/${name}.overview", classLoader)
@@ -98,10 +113,10 @@ class MakefileBuilder {
      * @param name 文件名
      * @return 文件内容
      */
-    private String readHomeValue(String name, String notfound) {
-        def file = new File("${basedir}/${name}")
+    private static String readHomeValue(String path, String notfound) {
+        def file = new File(path)
         if (file.exists()) {
-            return Files.readString(new File("${basedir}/${name}"))
+            return Files.readString(file)
         } else {
             if (notfound != null) {
                 throw new FileNotFoundException(notfound)
@@ -111,13 +126,32 @@ class MakefileBuilder {
     }
 
     /**
+     * 验证Makefile必要参数数据
+     *
+     * @param makefile makefile对象
+     */
+    private static void verifyMarkfileRequiredParam(Makefile makefile) {
+
+        if (makefile.isSubproject()) {
+
+            if (StringUtils.isEmpty(makefile.name)) {
+                throw new LackRequiredParam("${AutoconfConst.MAKEFILE_NAME}缺少必要参数：group")
+            }
+
+        } else {
+
+        }
+
+    }
+
+    /**
      * 编译构建脚本（settings, makefile）
      *
      * @param src 脚本源码
      * @return 对应的脚本对象
      */
-    private <T> T compileGroovy(String src) {
-        return ClassUtils.newInstance(classLoader.parseClass(src))
+    private <T> T compileGroovy(String src, Object... objects) {
+        return ClassUtils.newInstance(classLoader.parseClass(src), objects)
     }
 
 }

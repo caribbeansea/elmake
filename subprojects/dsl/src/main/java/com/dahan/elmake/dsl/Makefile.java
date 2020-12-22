@@ -25,6 +25,7 @@ package com.dahan.elmake.dsl;
 import com.dahan.elmake.collect.Lists;
 import com.dahan.elmake.repository.ElMakeDependency;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -34,22 +35,60 @@ import java.util.Map;
 public abstract class Makefile implements SpecificApi, TagFuncApi
 {
 
+    /**
+     * 组ID，也就是maven中的groupId
+     */
     protected String groupId;
 
+    /**
+     * name，可以理解为artifactId
+     */
     protected String name;
 
+    /**
+     * 项目版本
+     */
     protected String version;
 
+    /**
+     * 支持的语言种类
+     */
     protected List<String> langs;
 
+    /**
+     * 当前makefile是不是子项目
+     */
+    protected boolean subproject;
+
+    /**
+     * 完整路径
+     */
+    protected File self;
+
+    /**
+     * 引用的依赖包列表
+     */
     protected List<ElMakeDependency> dependencies;
 
+    /**
+     * 依赖管理列表
+     */
     protected Map<String, ElMakeDependency> dependencyManager;
 
     /**
-     * 子模块
+     * 项目配置
      */
-    protected Map<String, Makefile> subprojects;
+    protected Setfile setfile;
+
+    /**
+     * 子模块的构建脚本
+     */
+    protected List<Makefile> subMakefile;
+
+    /**
+     * 父模块
+     */
+    protected Makefile parent;
 
     @Override
     public void lang(String... langs)
@@ -178,13 +217,61 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
         this.dependencyManager = dependencyManager;
     }
 
-    public Map<String, Makefile> getSubprojects()
+    public boolean isSubproject()
     {
-        return subprojects;
+        return subproject;
     }
 
-    public void setSubprojects(Map<String, Makefile> subprojects)
+    public void setSubproject(boolean subproject)
     {
-        this.subprojects = subprojects;
+        this.subproject = subproject;
+    }
+
+    public Setfile getSetfile()
+    {
+        return setfile;
+    }
+
+    public void setSetfile(Setfile setfile)
+    {
+        this.setfile = setfile;
+    }
+
+    public File getSelf()
+    {
+        return self;
+    }
+
+    public void setSelf(File self)
+    {
+        this.self = self;
+    }
+
+    public List<Makefile> getSubMakefile()
+    {
+        return subMakefile;
+    }
+
+    public void addSubMakefile(Makefile subMakefile)
+    {
+        if(this.subMakefile == null) {
+            this.subMakefile = Lists.newArrayList();
+        }
+        this.subMakefile.add(subMakefile);
+    }
+
+    public void setSubMakefile(List<Makefile> subMakefile)
+    {
+        this.subMakefile = subMakefile;
+    }
+
+    public Makefile getParent()
+    {
+        return parent;
+    }
+
+    public void setParent(Makefile parent)
+    {
+        this.parent = parent;
     }
 }

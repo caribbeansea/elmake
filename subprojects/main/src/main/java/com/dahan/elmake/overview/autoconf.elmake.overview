@@ -1,5 +1,6 @@
 package com.dahan.elmake.build
 
+import java.io.File
 import com.dahan.elmake.dsl.groovy.MakeOfGroovy
 
 /* ************************************************************************
@@ -28,6 +29,10 @@ import com.dahan.elmake.dsl.groovy.MakeOfGroovy
  * @author tiansheng
  */
 class GroovyMakeBean extends MakeOfGroovy {
+
+    GroovyMakeBean(File file) {
+        setSelf(file)
+    }
 
     {
 
