@@ -45,9 +45,6 @@ public class ClosureSupportTest implements TagFuncApi
 
     @Test
     public void doMain() {
-        includes((String call) -> {
-            System.out.println("");
-        });
     }
 
 }

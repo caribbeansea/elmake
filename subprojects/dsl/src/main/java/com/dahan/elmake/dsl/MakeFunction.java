@@ -28,6 +28,6 @@ package com.dahan.elmake.dsl;
 public interface MakeFunction
 {
 
-    void apply(String call);
+    void apply(Makefile.Call call);
 
 }

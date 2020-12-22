@@ -90,6 +90,11 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
      */
     protected Makefile parent;
 
+    enum Call {
+        INCLUDES,
+        INCLUDE_MANAGER,
+    }
+
     @Override
     public void lang(String... langs)
     {
@@ -148,13 +153,13 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
     @Override
     public void includes(MakeFunction makeFunction)
     {
-        makeFunction.apply();
+        makeFunction.apply(Call.INCLUDES);
     }
 
     @Override
     public void includeManager(MakeFunction makeFunction)
     {
-        makeFunction.apply();
+        makeFunction.apply(Call.INCLUDE_MANAGER);
     }
 
     public String getGroupId()
