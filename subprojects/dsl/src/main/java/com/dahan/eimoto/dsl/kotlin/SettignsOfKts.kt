@@ -1,9 +1,4 @@
-package com.dahan.eimoto
-
-import com.dahan.eimoto.bootsrap.SettingsEimotoKts
-import com.dahan.eimoto.dsl.BuildEimotoKts
-import com.dahan.eimoto.repository.EimotoDependency
-import com.dahan.eimoto.repository.utils.RepositoryUtils
+package com.dahan.eimoto.dsl.kotlin
 
 /* ************************************************************************
  *
@@ -24,27 +19,18 @@ import com.dahan.eimoto.repository.utils.RepositoryUtils
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/20.
+ * Creates on 2020/12/18.
  */
 
 /**
  * @author tiansheng
  */
-object ProjectBuildResolve {
+open class SettignsOfKts {
 
-    /**
-     * 执行项目的构建指令
-     *
-     * @param buildKts 主项目的构建脚本
-     * @param settingsKts 项目配置
-     */
-    fun doBuilding(buildKts: BuildEimotoKts, settingsKts: SettingsEimotoKts) {
-        resolveDependency(buildKts.dependencies)
+    var subprojectArray: Array<out String>? = null
+
+    fun subprojects(vararg values: String) {
+        this.subprojectArray = values
     }
-
-    //
-    // 解决依赖引用下载
-    //
-    private fun resolveDependency(dependencies: List<EimotoDependency>) = RepositoryUtils.resolveDependencies(dependencies)
 
 }

@@ -1,7 +1,5 @@
 package com.dahan.eimoto
 
-import com.dahan.eimoto.bootsrap.BootBuildKts
-import com.dahan.eimoto.bootsrap.SettingsEimotoKts
 import com.dahan.eimoto.commandline.Option
 import com.dahan.eimoto.commandline.Options
 import java.io.InputStream
@@ -34,16 +32,7 @@ private class Build : Option("build", "build", false, "构建项目，参数为�
     }
 
     override fun exec(values: MutableList<String>) {
-        ProjectBuildResolve.doBuilding(BootBuildKts(), SettingsEimotoKts())
-    }
-
-    fun insertKtsImpl(implstr: String, prefix: String): String {
-        val streams: InputStream =
-                Streams.getResourceAsStream("${OptionBeans.basepath}/${prefix}.eimoto.kts.tmp", this::class.java.classLoader)
-
-        val tmp = String(streams.readAllBytes())
-
-        return tmp.replace("#impl", implstr)
+        AutoconfResolve.doBuilding(settings["base_p"] as String)
     }
 
 }

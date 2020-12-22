@@ -1,7 +1,7 @@
-package com.dahan.eimoto.bootsrap
+package com.dahan
 
-import com.dahan.eimoto.dsl.BuildEimotoKts
-import com.dahan.eimoto.dsl.SettingsEimotoKts
+
+import com.dahan.eimoto.dsl.groovy.MakeOfGroovy
 
 /* ************************************************************************
  *
@@ -22,27 +22,15 @@ import com.dahan.eimoto.dsl.SettingsEimotoKts
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/18.
+ * Creates on 2020/12/22.
  */
 
 /**
  * @author tiansheng
  */
-class SettingsEimotoKts : SettingsEimotoKts() {
+class GroovyClassTest extends MakeOfGroovy {
 
-    init {
-
-        val rootNode = "subprojects/"
-
-        val subprojectArray: Array<String> = arrayOf(
-                rootNode + "commandline",
-                rootNode + "commons",
-                rootNode + "main",
-                rootNode + "repository",
-                rootNode + "build",
-        )
-
-        subprojects(*subprojectArray)
+    {
 
     }
 

@@ -1,4 +1,4 @@
-package com.dahan.eimoto.bootsrap
+package com.dahan.eimoto.build
 
 import com.dahan.eimoto.dsl.kotlin.MakeOfKts
 
@@ -27,7 +27,7 @@ import com.dahan.eimoto.dsl.kotlin.MakeOfKts
 /**
  * @author tiansheng
  */
-class BootBuildKts : MakeOfKts() {
+class MakeOfKtsTest : MakeOfKts() {
 
     init {
 
@@ -60,7 +60,7 @@ class BootBuildKts : MakeOfKts() {
             include("org.slf4j:slf4j-api:${slf4jVersion}")
             include("ch.qos.logback:logback-core:${logbackVersion}")
             include("ch.qos.logback:logback-classic:${logbackVersion}")
-            include("org.codehaus.groovy:groovy-all:3.0.7", ext = "pom")
+            include("org.codehaus.groovy:groovy-all:3.0.4")
             include("com.alibaba:fastjson:${fastjsonVersion}")
             include("com.squareup.okhttp3:okhttp:${okhttpVersion}")
             include("org.scala-lang:scala-library:${scalaVersion}")

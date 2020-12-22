@@ -1,4 +1,6 @@
-package com.dahan.eimoto.dsl
+package com.dahan.eimoto.bootsrap
+
+import com.dahan.eimoto.dsl.kotlin.SettignsOfKts
 
 /* ************************************************************************
  *
@@ -25,12 +27,22 @@ package com.dahan.eimoto.dsl
 /**
  * @author tiansheng
  */
-open class SettingsEimotoKts {
+class SettignsOfKts : SettignsOfKts() {
 
-    var subprojectArray: Array<out String>? = null
+    init {
 
-    fun subprojects(vararg values: String) {
-        this.subprojectArray = values
+        val rootNode = "subprojects/"
+
+        val subprojectArray: Array<String> = arrayOf(
+                rootNode + "commandline",
+                rootNode + "commons",
+                rootNode + "main",
+                rootNode + "repository",
+                rootNode + "build",
+        )
+
+        subprojects(*subprojectArray)
+
     }
 
 }

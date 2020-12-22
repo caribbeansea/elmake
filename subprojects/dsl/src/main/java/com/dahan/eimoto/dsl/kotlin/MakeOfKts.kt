@@ -1,4 +1,4 @@
-package com.dahan.eimoto.dsl
+package com.dahan.eimoto.dsl.kotlin
 
 import com.dahan.eimoto.collect.Lists
 import com.dahan.eimoto.collect.Maps
@@ -29,7 +29,7 @@ import com.dahan.eimoto.repository.EimotoDependency
 /**
  * @author tiansheng
  */
-open class BuildEimotoKts {
+open class MakeOfKts {
 
     /**
      * 常量
