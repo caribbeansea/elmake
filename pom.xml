@@ -20,6 +20,8 @@
 
         <!-- 以下模块为各个阶段的构建模块 -->
         <module>subprojects/phase/resovledep</module>
+        <module>subprojects/phase/verifymod</module>
+        <module>subprojects/phase/joincompile</module>
 
     </modules>
 
