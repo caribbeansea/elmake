@@ -1,6 +1,6 @@
 package com.dahan
 
-import com.dahan.eimoto.EimotoMainKt
+import com.dahan.elmake.ElMakeMainKt
 
 
 /* ************************************************************************
@@ -28,10 +28,10 @@ import com.dahan.eimoto.EimotoMainKt
 /**
  * @author tiansheng
  */
-def projectHome = "/Users/wuyanzu/project/IdeaProjects/eimoto/debugging/subprojects/build-test"
+def projectHome = "/Users/wuyanzu/project/IdeaProjects/elmake/debugging/subprojects/build-test"
 
 def commandline = "build lvar name=张三 projectHome=${projectHome}"
 
 println(commandline)
 
-EimotoMainKt.main(commandline.split(" "))
+ElMakeMainKt.main(commandline.split(" "))

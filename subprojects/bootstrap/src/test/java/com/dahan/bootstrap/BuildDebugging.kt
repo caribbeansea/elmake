@@ -1,6 +1,6 @@
 package com.dahan.bootstrap
 
-import com.dahan.eimoto.EimotoMainKt
+import com.dahan.elmake.ElMakeMainKt
 
 /* ************************************************************************
  *
@@ -32,7 +32,7 @@ object BuildDebugging {
     @JvmStatic
     fun main(args: Array<String>) {
         val clistr = "build"
-        EimotoMainKt.main(clistr.split(" ").toTypedArray())
+        ElMakeMainKt.main(clistr.split(" ").toTypedArray())
     }
 
 }

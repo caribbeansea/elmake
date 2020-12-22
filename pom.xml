@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dahan</groupId>
-    <artifactId>eimoto</artifactId>
+    <artifactId>elmake</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0.BETA</version>
 
@@ -17,6 +17,10 @@
         <module>subprojects/repository</module>
         <module>subprojects/bootstrap</module>
         <module>subprojects/libforkt</module>
+
+        <!-- 以下模块为各个阶段的构建模块 -->
+        <module>subprojects/phase/resovledep</module>
+
     </modules>
 
     <repositories>

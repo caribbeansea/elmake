@@ -1,5 +1,5 @@
 group("com.dahan")
-name("eimoto")
+name("elmake")
 version("gh-1+01")
 
 //
@@ -12,7 +12,7 @@ val slf4jVersion = "1.7.25"
 val logbackVersion = "1.1.11"
 val fastjsonVersion = "1.2.66"
 val okhttpVersion = "4.8.0"
-val eimotoCommonVersion = "1.0.0.BETA"
+val elmakeCommonVersion = "1.0.0.BETA"
 val dom4jVersion = "1.6.1"
 val aetherVersion = "1.0.0V20140518"
 val mavenVersion = "3.1.0"

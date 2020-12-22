@@ -2,24 +2,26 @@
 // 清空IDEA的所有缓存
 //
 
-def removeIml(def base_p) {
-    def project_dir = new File(base_p)
-    project_dir.listFiles().each {
-        if (!it.isDirectory()) {
-            if (it.name.contains(".iml")) {
-                it.delete()
-                println "删除IML文件 ${it.name}"
-            }
-        } else {
-            if (it.name.contains(".idea")) {
-                it.delete()
-                println "删除.IDEA文件 ${it.name}"
-            } else {
-                removeIml(it.path)
-            }
-        }
-    }
+def cur_dir = new File(getClass().protectionDomain.codeSource.location.path).parent
 
-}
+ def removeIml(def base_p) {
+     def project_dir = new File(base_p)
+     project_dir.listFiles().each {
+         if (!it.isDirectory()) {
+             if (it.name.contains(".iml")) {
+                 it.delete()
+                 println "删除IML文件 ${it.name}"
+             }
+         } else {
+             if (it.name.contains(".idea")) {
+                 it.delete()
+                 println "删除.IDEA文件 ${it.name}"
+             } else {
+                 removeIml(it.path)
+             }
+         }
+     }
 
-removeIml("/Users/wuyanzu/project/IdeaProjects/eimoto")
+ }
+
+ removeIml("cur_dir")

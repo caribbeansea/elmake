@@ -1,7 +1,7 @@
 package com.dahan
 
 
-import com.dahan.eimoto.dsl.groovy.MakeOfGroovy
+import com.dahan.elmake.dsl.groovy.MakeOfGroovy
 
 /* ************************************************************************
  *
