@@ -1,4 +1,7 @@
-package com.dahan.elmake.dsl;
+package com.dahan.elmake.build
+
+import com.dahan.elmake.dsl.kotlin.SettignsOfKts
+
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -18,16 +21,28 @@ package com.dahan.elmake.dsl;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/21.
+ * Creates on 2020/12/18.
  */
 
 /**
  * @author tiansheng
  */
-@FunctionalInterface
-public interface MakeFunction
-{
+class SettignsOfKtsTest : SettignsOfKts() {
 
-    void apply(String call);
+    init {
+
+        val rootNode = "subprojects/"
+
+        val subprojectArray: Array<String> = arrayOf(
+                rootNode + "commandline",
+                rootNode + "commons",
+                rootNode + "main",
+                rootNode + "repository",
+                rootNode + "build",
+        )
+
+        subprojects(*subprojectArray)
+
+    }
 
 }

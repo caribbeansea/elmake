@@ -1,4 +1,4 @@
-package com.dahan.elmake.dsl;
+package com.dahan.elmake.build;
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -21,13 +21,33 @@ package com.dahan.elmake.dsl;
  * Creates on 2020/12/21.
  */
 
+import com.dahan.elmake.dsl.MakeFunction;
+import com.dahan.elmake.dsl.TagFuncApi;
+import org.junit.Test;
+
 /**
  * @author tiansheng
  */
-@FunctionalInterface
-public interface MakeFunction
+public class ClosureSupportTest implements TagFuncApi
 {
 
-    void apply(String call);
+    @Override
+    public void includes(MakeFunction makeFunction)
+    {
+
+    }
+
+    @Override
+    public void includeManager(MakeFunction makeFunction)
+    {
+
+    }
+
+    @Test
+    public void doMain() {
+        includes((String call) -> {
+            System.out.println("");
+        });
+    }
 
 }

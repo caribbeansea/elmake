@@ -1,4 +1,5 @@
-package com.dahan.elmake.dsl;
+package com.dahan.elmake.build
+
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
@@ -18,16 +19,20 @@ package com.dahan.elmake.dsl;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/21.
+ * Creates on 2020/12/18.
  */
 
 /**
  * @author tiansheng
  */
-@FunctionalInterface
-public interface MakeFunction
-{
+object NewInstanceTest {
 
-    void apply(String call);
+    @JvmStatic
+    fun main(args: Array<String>) {
+
+        val instance = MakeOfKtsTest()
+        println()
+
+    }
 
 }
