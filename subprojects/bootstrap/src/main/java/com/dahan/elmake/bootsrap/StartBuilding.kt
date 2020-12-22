@@ -32,7 +32,7 @@ object StartBuilding {
     @JvmStatic
     fun main(args: Array<String>) {
         val userdir = System.getProperty("user.dir")
-        val clistr = "build lvar self=y"
+        val clistr = "build lvar home=${userdir}/maketoolp"
         ElMakeMainKt.main(clistr.split(" ").toTypedArray())
     }
 

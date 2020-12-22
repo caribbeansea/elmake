@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * @author tiansheng
  */
-public abstract class AbsMake implements SpecificApi, TagFuncApi
+public abstract class Makefile implements SpecificApi, TagFuncApi
 {
 
     protected String groupId;
@@ -45,6 +45,11 @@ public abstract class AbsMake implements SpecificApi, TagFuncApi
     protected List<ElMakeDependency> dependencies;
 
     protected Map<String, ElMakeDependency> dependencyManager;
+
+    /**
+     * 子模块
+     */
+    protected Map<String, Makefile> subprojects;
 
     @Override
     public void lang(String... langs)
@@ -171,5 +176,15 @@ public abstract class AbsMake implements SpecificApi, TagFuncApi
     public void setDependencyManager(Map<String, ElMakeDependency> dependencyManager)
     {
         this.dependencyManager = dependencyManager;
+    }
+
+    public Map<String, Makefile> getSubprojects()
+    {
+        return subprojects;
+    }
+
+    public void setSubprojects(Map<String, Makefile> subprojects)
+    {
+        this.subprojects = subprojects;
     }
 }

@@ -1,6 +1,6 @@
 package com.dahan.elmake.dsl.groovy
 
-import com.dahan.elmake.dsl.AbsMake
+import com.dahan.elmake.dsl.Makefile
 
 /* ************************************************************************
  *
@@ -29,7 +29,7 @@ import com.dahan.elmake.dsl.AbsMake
  *
  * @author tiansheng
  */
-class MakeOfGroovy extends AbsMake {
+class MakeOfGroovy extends Makefile {
 
     void include(Map<String, String> settings) {
         super.include(settings.coords, settings.scope, settings.classifier,

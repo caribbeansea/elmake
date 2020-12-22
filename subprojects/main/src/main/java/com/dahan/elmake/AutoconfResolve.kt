@@ -1,10 +1,10 @@
 package com.dahan.elmake
 
-import com.dahan.elmake.dsl.AbsMake
-import com.dahan.elmake.reflect.ClassUtils.*
+import com.dahan.elmake.dsl.AutoconfConst
+import com.dahan.elmake.dsl.MakefileBuilder
 import com.dahan.elmake.repository.ElMakeDependency
 import com.dahan.elmake.repository.utils.RepositoryUtils
-import groovy.lang.GroovyClassLoader
+import com.dahan.elmake.reslovedep.ResolveDependency
 import java.io.File
 
 /* ************************************************************************
@@ -34,35 +34,19 @@ import java.io.File
  */
 object AutoconfResolve {
 
-    private const val conf_name = "/autoconf.elmake"
-
-    /**
-     * 执行项目的构建指令
-     *
-     * @param base_dir 项目根路径
-     */
+    //
+    // 1) 解析构建脚本，输出 Makefile 对象
+    //
     fun doBuilding(base_dir: String) {
-        val projectDirector = File("${base_dir}/${conf_name}")
-        val scriptContent = Files.readString(projectDirector)
-        val stream = Streams.getResourceAsStream("com/dahan/elmake/${conf_name}.overview", this::class.java.classLoader)
-        val tmp = String(stream.readAllBytes()).replace("#IMPL", scriptContent)
 
-        val makeInstance = compileGroovy(tmp);
+        // 解析makefile
+        val makefileBuilder = MakefileBuilder(base_dir, this::class.java.classLoader)
+        val makefile = makefileBuilder.parseMakefile()
 
-        println()
-        // resolveDependency(absBuildDSL.dependencies)
-    }
+        // 下载依赖
+        val resdep = ResolveDependency(cabsmake = makefile)
+        resdep.resolve()
 
-    /**
-     * 编译Groovy
-     */
-    private fun compileGroovy(sourceCode: String): AbsMake {
-        // 获取groovy类加载器
-        val gcl = GroovyClassLoader(this::class.java.classLoader)
-        val clazz = gcl.parseClass(sourceCode)
-
-        // 实例化脚本
-        return newInstance(clazz)
     }
 
     //

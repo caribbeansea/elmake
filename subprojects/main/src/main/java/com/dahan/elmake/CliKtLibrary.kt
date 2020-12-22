@@ -31,7 +31,7 @@ private class Build : Option("build", "build", false, "构建项目，参数为�
     }
 
     override fun exec(values: MutableList<String>) {
-        AutoconfResolve.doBuilding(settings["base_p"] as String)
+        AutoconfResolve.doBuilding(settings["home"] as String)
     }
 
 }

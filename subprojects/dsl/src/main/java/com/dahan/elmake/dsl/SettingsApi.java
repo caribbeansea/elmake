@@ -1,6 +1,4 @@
-package com.dahan.elmake.reslovedep
-
-import com.dahan.elmake.dsl.Makefile
+package com.dahan.elmake.dsl;
 
 /* ************************************************************************
  *
@@ -25,19 +23,16 @@ import com.dahan.elmake.dsl.Makefile
  */
 
 /**
- * 下载并整合依赖数据
- *
  * @author tiansheng
  */
-class ResolveDependency(val cabsmake: Makefile) {
+public interface SettingsApi
+{
 
     /**
-     * root make 构建对象
+     * 定义子模块
+     *
+     * @param modules 模块路径
      */
-    val absmake = cabsmake
-
-    fun resolve() {
-
-    }
+    void subprojects(String... modules);
 
 }

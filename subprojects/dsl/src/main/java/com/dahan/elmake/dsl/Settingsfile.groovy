@@ -1,6 +1,4 @@
-package com.dahan.elmake.reslovedep
-
-import com.dahan.elmake.dsl.Makefile
+package com.dahan.elmake.dsl
 
 /* ************************************************************************
  *
@@ -25,19 +23,15 @@ import com.dahan.elmake.dsl.Makefile
  */
 
 /**
- * 下载并整合依赖数据
- *
  * @author tiansheng
  */
-class ResolveDependency(val cabsmake: Makefile) {
+class Settingsfile implements SettingsApi {
 
-    /**
-     * root make 构建对象
-     */
-    val absmake = cabsmake
+    protected String[] subprojects
 
-    fun resolve() {
-
+    @Override
+    void subprojects(String... modules) {
+        this.subprojects = modules
     }
 
 }

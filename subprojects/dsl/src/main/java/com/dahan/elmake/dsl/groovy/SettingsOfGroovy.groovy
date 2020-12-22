@@ -1,6 +1,6 @@
-package com.dahan.elmake.reslovedep
+package com.dahan.elmake.dsl.groovy
 
-import com.dahan.elmake.dsl.Makefile
+import com.dahan.elmake.dsl.Settingsfile
 
 /* ************************************************************************
  *
@@ -25,19 +25,10 @@ import com.dahan.elmake.dsl.Makefile
  */
 
 /**
- * 下载并整合依赖数据
- *
  * @author tiansheng
  */
-class ResolveDependency(val cabsmake: Makefile) {
+class SettingsOfGroovy extends Settingsfile {
 
-    /**
-     * root make 构建对象
-     */
-    val absmake = cabsmake
 
-    fun resolve() {
-
-    }
 
 }

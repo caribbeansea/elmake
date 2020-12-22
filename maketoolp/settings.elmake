@@ -1,4 +1,4 @@
 subprojects(
         "subprojects/domain",
-        "subprojects/sayhello",
+        "subprojects/sayhello"
 )

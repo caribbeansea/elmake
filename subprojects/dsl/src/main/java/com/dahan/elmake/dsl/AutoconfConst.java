@@ -1,6 +1,4 @@
-package com.dahan.elmake.reslovedep
-
-import com.dahan.elmake.dsl.Makefile
+package com.dahan.elmake.dsl;
 
 /* ************************************************************************
  *
@@ -25,19 +23,13 @@ import com.dahan.elmake.dsl.Makefile
  */
 
 /**
- * 下载并整合依赖数据
- *
  * @author tiansheng
  */
-class ResolveDependency(val cabsmake: Makefile) {
+public interface AutoconfConst
+{
 
-    /**
-     * root make 构建对象
-     */
-    val absmake = cabsmake
+    String MAKEFILE_NAME = "autoconf.elmake";
 
-    fun resolve() {
-
-    }
+    String SETTINGS_NAME = "settings.elmake";
 
 }
