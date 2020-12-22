@@ -22,6 +22,7 @@
         <module>subprojects/phase/resovledep</module>
         <module>subprojects/phase/verifymod</module>
         <module>subprojects/phase/joincompile</module>
+        <module>subprojects/phase/makeall</module>
 
     </modules>
 
