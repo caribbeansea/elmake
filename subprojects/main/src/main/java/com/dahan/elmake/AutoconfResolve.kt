@@ -34,7 +34,7 @@ import java.io.File
  */
 object AutoconfResolve {
 
-    private const val conf_name = "/autoconf.make"
+    private const val conf_name = "/autoconf.elmake"
 
     /**
      * 执行项目的构建指令
@@ -44,7 +44,7 @@ object AutoconfResolve {
     fun doBuilding(base_dir: String) {
         val projectDirector = File("${base_dir}/${conf_name}")
         val scriptContent = Files.readString(projectDirector)
-        val stream = Streams.getResourceAsStream("com/dahan/elmake/${conf_name}.tmp", this::class.java.classLoader)
+        val stream = Streams.getResourceAsStream("com/dahan/elmake/${conf_name}.overview", this::class.java.classLoader)
         val tmp = String(stream.readAllBytes()).replace("#IMPL", scriptContent)
 
         val makeInstance = compileGroovy(tmp);
