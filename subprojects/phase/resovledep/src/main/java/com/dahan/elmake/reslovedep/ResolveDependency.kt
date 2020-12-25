@@ -1,6 +1,7 @@
 package com.dahan.elmake.reslovedep
 
 import com.dahan.elmake.dsl.Makefile
+import com.dahan.elmake.repository.utils.RepositoryUtils
 
 /* ************************************************************************
  *
@@ -34,10 +35,11 @@ class ResolveDependency(val cabsmake: Makefile) {
     /**
      * root make 构建对象
      */
-    val absmake = cabsmake
+    private val makefile: Makefile = cabsmake
 
     fun resolve() {
-
+        val dependencies = makefile.dependencies
+        RepositoryUtils.resolveDependencies(dependencies)
     }
 
 }

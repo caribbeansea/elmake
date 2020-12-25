@@ -44,6 +44,7 @@ import org.eclipse.aether.resolution.*
 class ElmakeRepository(c_name: String, c_address: String) {
 
     object Constant {
+        // TODO FIX(RELEASE)
         val localDirectory: String = System.getProperty("user.dir") + "/repository-test/"
     }
 

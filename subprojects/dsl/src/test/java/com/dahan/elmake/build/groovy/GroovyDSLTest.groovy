@@ -33,12 +33,6 @@ class GroovyDSLTest extends MakeOfGroovy {
             include(coords: "org.jetbrains.kotlin:kotlin-test:${kotlinVersion}", scope: "test")
         }
 
-        includeManager {
-            include("de.defmacro:eclipse-astparser:8.1")
-            include("dom4j:dom4j:${dom4jVersion}")
-            include(coords: "org.openjdk.jol:jol-core:0.10", scope: "test")
-        }
-
     }
 
     public static void main(String[] args) {

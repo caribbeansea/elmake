@@ -90,7 +90,8 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
      */
     protected Makefile parent;
 
-    enum Call {
+    enum Call
+    {
         INCLUDES,
         INCLUDE_MANAGER,
     }
@@ -156,11 +157,11 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
         makeFunction.apply(Call.INCLUDES);
     }
 
-    @Override
-    public void includeManager(MakeFunction makeFunction)
-    {
-        makeFunction.apply(Call.INCLUDE_MANAGER);
-    }
+    // TODO
+    // public void includeManager(MakeFunction makeFunction)
+    // {
+    //     makeFunction.apply(Call.INCLUDE_MANAGER);
+    // }
 
     public String getGroupId()
     {
@@ -259,7 +260,8 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
 
     public void addSubMakefile(Makefile subMakefile)
     {
-        if(this.subMakefile == null) {
+        if (this.subMakefile == null)
+        {
             this.subMakefile = Lists.newArrayList();
         }
         this.subMakefile.add(subMakefile);

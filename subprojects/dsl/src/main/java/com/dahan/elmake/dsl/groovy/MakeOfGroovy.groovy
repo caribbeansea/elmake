@@ -31,6 +31,12 @@ import com.dahan.elmake.dsl.Makefile
  */
 class MakeOfGroovy extends Makefile {
 
+    void applyClosure(Closure<?>... closure) {
+        closure.each {
+            it.call()
+        }
+    }
+
     void include(Map<String, String> settings) {
         super.include(settings.coords, settings.scope, settings.classifier,
                 settings.ext)

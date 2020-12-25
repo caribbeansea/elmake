@@ -19,9 +19,5 @@ def kotlinVersion = "1.4.21"
  * 导入依赖
  */
 includes {
-    include("com.alibaba:fastjson")
-}
-
-includeManager {
     include("com.alibaba:fastjson:${fastjsonVersion}")
 }

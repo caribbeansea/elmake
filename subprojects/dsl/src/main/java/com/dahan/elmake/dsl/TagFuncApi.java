@@ -48,6 +48,6 @@ public interface TagFuncApi
      * includeManager的作用与Maven一致，就是做依赖管理的工作，让项目所有依赖统一在父模块中进行版本的管理。
      * 子模块可选引用。
      */
-    void includeManager(MakeFunction makeFunction);
+    // void includeManager(MakeFunction makeFunction);
 
 }

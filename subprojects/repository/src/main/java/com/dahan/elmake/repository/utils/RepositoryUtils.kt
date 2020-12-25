@@ -32,6 +32,7 @@ import org.eclipse.aether.transport.http.HttpTransporterFactory
  * limitations under the License.
  *
  * ************************************************************************/
+
 /*
  * Creates on 2020/12/9.
  */
@@ -46,9 +47,9 @@ object RepositoryUtils {
     // 当前项目支持使用的储存库集合。
     // 如果需要使用其他的仓库的话请在 build 脚本下添加 repository {} 节点。
     private val REPOSITORYS: Map<String, ElmakeRepository> = Maps.newHashMap( // 默认使用阿里云中央仓库
-            "funault", ElmakeRepository("alibaba-central", "https://maven.aliyun.com/repository/central"))
+            "default", ElmakeRepository("alibaba-central", "https://maven.aliyun.com/repository/central"))
 
-    private val funaultRepository = getfunaultRepository()
+    private val defaultRepository = getDefaultRepository()
 
     /**
      * @return RepositorySystem接口实例
@@ -79,7 +80,7 @@ object RepositoryUtils {
     /**
      * @return 默认工件储存库
      */
-    fun getfunaultRepository(): ElmakeRepository? = REPOSITORYS.get("funault")
+    private fun getDefaultRepository(): ElmakeRepository? = REPOSITORYS["default"]
 
     fun resolveDependencies(elMakeDependency: ElMakeDependency): DependencyResult? =
             resolveDependencies(Lists.of(elMakeDependency))
@@ -89,8 +90,8 @@ object RepositoryUtils {
      */
     fun resolveDependencies(elMakeDependencies: List<ElMakeDependency>): DependencyResult? {
         val dependencyRequest =
-                RequestUtils.newDependencyRequest(elMakeDependencies, Lists.newArrayList(REPOSITORYS.values), funaultRepository)
-        return funaultRepository?.resolveDependencies(dependencyRequest)
+                RequestUtils.newDependencyRequest(elMakeDependencies, Lists.newArrayList(REPOSITORYS.values), defaultRepository)
+        return defaultRepository?.resolveDependencies(dependencyRequest)
     }
 
 }
