@@ -23,7 +23,9 @@ package com.dahan.elmake.dsl;
  */
 
 import com.dahan.elmake.collect.Lists;
-import com.dahan.elmake.repository.ElMakeDependency;
+import com.dahan.elmake.collect.Maps;
+import com.dahan.elmake.repository.DependencyInfo;
+import org.eclipse.aether.graph.DependencyNode;
 
 import java.io.File;
 import java.util.List;
@@ -68,12 +70,17 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
     /**
      * 引用的依赖包列表
      */
-    protected List<ElMakeDependency> dependencies;
+    protected List<DependencyInfo> includeDependencies;
 
     /**
      * 依赖管理列表
      */
-    protected Map<String, ElMakeDependency> dependencyManager;
+    protected Map<String, DependencyInfo> includeManagerDependency;
+
+    /**
+     * 使用的依赖列表
+     */
+    protected Map<String, DependencyNode> usingDepsMap = Maps.newHashMap();
 
     /**
      * 项目配置
@@ -94,6 +101,18 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
     {
         INCLUDES,
         INCLUDE_MANAGER,
+    }
+
+    /**
+     * 添加当前项目使用的依赖
+     *
+     * @param node 工件结果对象（当 {@link DependencyInfo} 被下载或者是本地引用完成之后会返回一个 {@link DependencyNode} 结果。
+     *             通过这个结果我们就可以去构建一个当前项目使用的所有依赖。例如：我们引用了 A 依赖，A 又去引用了 B，在这个结果中就包含
+     *             A、B两个依赖。
+     */
+    public void addUsingDependency(DependencyNode node)
+    {
+        usingDepsMap.put(node.getArtifact().toString(), node);
     }
 
     @Override
@@ -144,11 +163,11 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
     @Override
     public void include(String coords, String scope, String classifier, String ext)
     {
-        if (dependencies == null)
+        if (includeDependencies == null)
         {
-            dependencies = Lists.newArrayList();
+            includeDependencies = Lists.newArrayList();
         }
-        dependencies.add(new ElMakeDependency(coords, classifier, ext, scope));
+        includeDependencies.add(new DependencyInfo(coords, classifier, ext, scope));
     }
 
     @Override
@@ -203,24 +222,24 @@ public abstract class Makefile implements SpecificApi, TagFuncApi
         this.langs = langs;
     }
 
-    public List<ElMakeDependency> getDependencies()
+    public List<DependencyInfo> getDependencies()
     {
-        return dependencies;
+        return includeDependencies;
     }
 
-    public void setDependencies(List<ElMakeDependency> dependencies)
+    public void setDependencies(List<DependencyInfo> includeDependencies)
     {
-        this.dependencies = dependencies;
+        this.includeDependencies = includeDependencies;
     }
 
-    public Map<String, ElMakeDependency> getDependencyManager()
+    public Map<String, DependencyInfo> getDependencyManager()
     {
-        return dependencyManager;
+        return includeManagerDependency;
     }
 
-    public void setDependencyManager(Map<String, ElMakeDependency> dependencyManager)
+    public void setDependencyManager(Map<String, DependencyInfo> dependencyManager)
     {
-        this.dependencyManager = dependencyManager;
+        this.includeManagerDependency = dependencyManager;
     }
 
     public boolean isSubproject()

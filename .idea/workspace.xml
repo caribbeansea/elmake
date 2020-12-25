@@ -20,9 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a774946-2d52-4267-817e-b8d49f08688c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/DependencyInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/Scope.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maketoolp/autoconf.elmake" beforeDir="false" afterPath="$PROJECT_DIR$/maketoolp/autoconf.elmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/Makefile.java" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/Makefile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/groovy/MakeOfGroovy.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/groovy/MakeOfGroovy.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/kotlin/MakeOfKts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/kotlin/MakeOfKts.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake/AutoconfResolve.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake/AutoconfResolve.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subprojects/phase/resovledep/src/main/java/com/dahan/elmake/reslovedep/ResolveDependency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/phase/resovledep/src/main/java/com/dahan/elmake/reslovedep/ResolveDependency.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ElMakeDependency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ElMakeDependency.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/Artifact.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ArtifactParam.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ElMakeDependency.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RepositoryUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RepositoryUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RequestUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RequestUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/test/java/com/dahan/elmake/repository/ResolveDependencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/test/java/com/dahan/elmake/repository/ResolveDependencyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +46,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Enum" />
       </list>
     </option>
   </component>
@@ -51,6 +63,10 @@
         <Entry>
           <option name="moduleName" value="commons" />
           <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console_19.groovy" />
+        </Entry>
+        <Entry>
+          <option name="moduleName" value="resovledep" />
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console_20.groovy" />
         </Entry>
         <Entry>
           <option name="moduleName" value="eimoto" />
@@ -265,7 +281,7 @@
       <workItem from="1608616949079" duration="109000" />
       <workItem from="1608617083584" duration="2906000" />
       <workItem from="1608620065399" duration="529000" />
-      <workItem from="1608620695721" duration="14160000" />
+      <workItem from="1608620695721" duration="17880000" />
     </task>
     <servers />
   </component>
@@ -302,63 +318,76 @@
       <screen x="55" y="25" width="1737" height="1095" />
     </state>
     <state x="407" y="501" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608518360613" />
-    <state x="572" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608616712540">
-      <screen x="55" y="25" width="1737" height="1095" />
+    <state x="533" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608867940426">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state x="533" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1608867940426" />
     <state x="572" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608616712540" />
+    <state x="634" y="311" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608868547977">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="634" y="311" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1608868547977" />
     <state x="679" y="356" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1608534650419">
       <screen x="55" y="25" width="1737" height="1095" />
     </state>
     <state x="679" y="356" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608534650419" />
-    <state x="802" y="247" width="739" height="627" key="#xdebugger.evaluate" timestamp="1608861800832">
+    <state x="546" y="223" width="730" height="609" key="#xdebugger.evaluate" timestamp="1608868659512">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="802" y="247" key="#xdebugger.evaluate/0.0.1792.1120@0.0.1792.1120" timestamp="1608861800832" />
+    <state x="546" y="223" width="730" height="609" key="#xdebugger.evaluate/0.0.1792.1120@0.0.1792.1120" timestamp="1608868659512" />
     <state x="832" y="266" width="739" height="627" key="#xdebugger.evaluate/55.25.1737.1095@55.25.1737.1095" timestamp="1608629886072" />
-    <state width="847" height="477" key="DebuggerActiveHint" timestamp="1608861776421">
+    <state width="894" height="630" key="DebuggerActiveHint" timestamp="1608868717390">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="847" height="477" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1608861776421" />
+    <state width="894" height="630" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1608868717390" />
     <state width="821" height="466" key="DebuggerActiveHint/55.25.1737.1095@55.25.1737.1095" timestamp="1608628896098" />
-    <state width="1750" height="356" key="GridCell.Tab.0.bottom" timestamp="1608864510935">
+    <state width="1750" height="300" key="GridCell.Tab.0.bottom" timestamp="1608868695673">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510935" />
+    <state width="1750" height="300" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695673" />
+    <state width="1750" height="356" key="GridCell.Tab.0.bottom/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791863" />
     <state width="1695" height="333" key="GridCell.Tab.0.bottom/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
-    <state width="1750" height="356" key="GridCell.Tab.0.center" timestamp="1608864510934">
+    <state width="1750" height="300" key="GridCell.Tab.0.center" timestamp="1608868695671">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510934" />
+    <state width="1750" height="300" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695671" />
+    <state width="1750" height="356" key="GridCell.Tab.0.center/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791860" />
     <state width="1695" height="333" key="GridCell.Tab.0.center/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974497" />
-    <state width="1750" height="356" key="GridCell.Tab.0.left" timestamp="1608864510933">
+    <state width="1750" height="300" key="GridCell.Tab.0.left" timestamp="1608868695670">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510933" />
+    <state width="1750" height="300" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695670" />
+    <state width="1750" height="356" key="GridCell.Tab.0.left/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791859" />
     <state width="1695" height="333" key="GridCell.Tab.0.left/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974496" />
-    <state width="1750" height="356" key="GridCell.Tab.0.right" timestamp="1608864510934">
+    <state width="1750" height="300" key="GridCell.Tab.0.right" timestamp="1608868695671">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510934" />
+    <state width="1750" height="300" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695671" />
+    <state width="1750" height="356" key="GridCell.Tab.0.right/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791861" />
     <state width="1695" height="333" key="GridCell.Tab.0.right/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974497" />
-    <state width="1750" height="356" key="GridCell.Tab.1.bottom" timestamp="1608864510821">
+    <state width="1750" height="300" key="GridCell.Tab.1.bottom" timestamp="1608868698413">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510821" />
+    <state width="1750" height="300" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698413" />
+    <state width="1750" height="356" key="GridCell.Tab.1.bottom/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791727" />
     <state width="1695" height="333" key="GridCell.Tab.1.bottom/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974499" />
-    <state width="1750" height="356" key="GridCell.Tab.1.center" timestamp="1608864510820">
+    <state width="1750" height="300" key="GridCell.Tab.1.center" timestamp="1608868698411">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510820" />
+    <state width="1750" height="300" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698411" />
+    <state width="1750" height="356" key="GridCell.Tab.1.center/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791726" />
     <state width="1695" height="333" key="GridCell.Tab.1.center/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
-    <state width="1750" height="356" key="GridCell.Tab.1.left" timestamp="1608864510819">
+    <state width="1750" height="300" key="GridCell.Tab.1.left" timestamp="1608868698411">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510819" />
+    <state width="1750" height="300" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698411" />
+    <state width="1750" height="356" key="GridCell.Tab.1.left/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791726" />
     <state width="1695" height="333" key="GridCell.Tab.1.left/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
-    <state width="1750" height="356" key="GridCell.Tab.1.right" timestamp="1608864510820">
+    <state width="1750" height="300" key="GridCell.Tab.1.right" timestamp="1608868698412">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="356" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510820" />
+    <state width="1750" height="300" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698412" />
+    <state width="1750" height="356" key="GridCell.Tab.1.right/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791727" />
     <state width="1695" height="333" key="GridCell.Tab.1.right/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
     <state x="461" y="231" key="Maven.ArtifactSearchDialog" timestamp="1608620391535">
       <screen x="55" y="25" width="1737" height="1095" />
@@ -381,9 +410,10 @@
       <screen x="55" y="25" width="1737" height="1095" />
     </state>
     <state x="155" y="125" width="1536" height="895" key="com.intellij.history.integration.ui.views.FileHistoryDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608531520880" />
-    <state x="624" y="327" width="649" height="548" key="find.popup" timestamp="1608621081236">
-      <screen x="55" y="25" width="1737" height="1095" />
+    <state x="586" y="309" width="670" height="561" key="find.popup" timestamp="1608865953607">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state x="586" y="309" width="670" height="561" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1608865953607" />
     <state x="624" y="327" width="649" height="548" key="find.popup/55.25.1737.1095@55.25.1737.1095" timestamp="1608621081236" />
     <state x="798" y="433" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1608616660307">
       <screen x="55" y="25" width="1737" height="1095" />
@@ -398,10 +428,10 @@
     </state>
     <state x="600" y="249" width="716" height="400" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1608620216213" />
     <state x="637" y="383" width="797" height="514" key="org.intellij.images.editor.actions.BackgroundImageDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608620875179" />
-    <state x="550" y="250" width="692" height="692" key="search.everywhere.popup" timestamp="1608861184267">
+    <state x="550" y="250" width="692" height="692" key="search.everywhere.popup" timestamp="1608866004174">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="550" y="250" width="692" height="692" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1608861184267" />
+    <state x="550" y="250" width="692" height="692" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1608866004174" />
     <state x="588" y="269" width="670" height="676" key="search.everywhere.popup/55.25.1737.1095@55.25.1737.1095" timestamp="1608629142501" />
   </component>
 </project>

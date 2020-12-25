@@ -19,5 +19,6 @@ def kotlinVersion = "1.4.21"
  * 导入依赖
  */
 includes {
-    include("com.alibaba:fastjson:${fastjsonVersion}")
+    include coords: "com.alibaba:fastjson:${fastjsonVersion}"
+    include coords: "org.codehaus.groovy:groovy-all:3.0.7", ext: "pom"
 }

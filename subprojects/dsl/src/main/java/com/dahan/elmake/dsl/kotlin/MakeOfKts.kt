@@ -2,7 +2,7 @@ package com.dahan.elmake.dsl.kotlin
 
 import com.dahan.elmake.collect.Lists
 import com.dahan.elmake.collect.Maps
-import com.dahan.elmake.repository.ElMakeDependency
+import com.dahan.elmake.repository.DependencyInfo
 
 /* ************************************************************************
  *
@@ -49,7 +49,7 @@ open class MakeOfKts {
     /**
      * 依赖列表
      */
-    val dependencies: MutableList<ElMakeDependency> = Lists.newArrayList()
+    val dependencies: MutableList<DependencyInfo> = Lists.newArrayList()
 
     /**
      * 所有的信息都保存在settings map中
@@ -85,7 +85,7 @@ open class MakeOfKts {
 
     // 引入依赖包
     fun include(coords: String, classifier: String? = null, ext: String? = null, scope: String?) {
-        dependencies.add(ElMakeDependency(coords, classifier, ext, scope))
+        dependencies.add(DependencyInfo(coords, classifier, ext, scope))
     }
 
     // ############################ 定义代码块 ############################

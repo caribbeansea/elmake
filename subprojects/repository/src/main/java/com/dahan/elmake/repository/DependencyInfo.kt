@@ -1,10 +1,13 @@
 package com.dahan.elmake.repository
 
+import org.eclipse.aether.artifact.DefaultArtifact
+import org.eclipse.aether.graph.Dependency
+
 /* ************************************************************************
  *
  * Copyright (C) 2020 dahan All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License")
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -19,18 +22,16 @@ package com.dahan.elmake.repository
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/9.
+ * Creates on 2020/12/25.
  */
-
-import org.eclipse.aether.artifact.DefaultArtifact
-import org.eclipse.aether.graph.Dependency
 
 /**
- * 依赖基础信息类
- *
  * @author tiansheng
  */
-class ElMakeDependency {
+/**
+ * Dependency各项参数，以及坐标信息
+ */
+class DependencyInfo {
 
     private var groupId: String? = null
 
@@ -49,43 +50,6 @@ class ElMakeDependency {
      */
     private var dependency: Dependency? = null
 
-    /**
-     * 身份ID，用于做统一标记。由<code>
-     *     <groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>
-     * </code>组成。
-     */
-    private val identity: String? = null
-
-    /**
-     * 依赖指定范围
-     */
-    enum class Scope(val value: String) {
-
-        /**
-         * 依赖会在编译和运行时期存在，并且会打包进classpath
-         */
-        COMPILER("compiler"),
-
-        /**
-         * 依赖只在测试时存在，不会被打包进classpath
-         */
-        TEST("test"),
-
-        /**
-         * 引入系统依赖，并且它的效果与 COMPILER 一样。
-         * 同样会被打包进claspath。
-         */
-        SYSTEM("system"),
-
-        /**
-         * 引入系统依赖，但它不会被打包进classpath。
-         */
-        EXSYSTEM("system"),
-
-        ;
-
-    }
-
     constructor(coords: String) : this(coords, null, null)
 
     constructor(coords: String, classifier: String?) : this(coords, classifier, null)
@@ -93,8 +57,9 @@ class ElMakeDependency {
     constructor(coords: String, classifier: String?, scope: String? = null) : this(coords, classifier, null, scope)
 
     constructor(coords: String, classifier: String? = null, ext: String? = null, scope: String? = null) {
+
         val split = coords.split(":")
-        val artifact = Artifact(split[0], split[1], split[2])
+        val artifact = ArtifactParam(split[0], split[1], split[2])
 
         if (classifier != null) {
             artifact.classifier = classifier
@@ -121,12 +86,12 @@ class ElMakeDependency {
 
     }
 
-    fun getGroupId(): String? = groupId
+    fun getGroupId(): String? = this.groupId
 
-    fun getArtifactId(): String? = artifactId
+    fun getArtifactId(): String? = this.artifactId
 
-    fun getVersion(): String? = version
+    fun getVersion(): String? = this.version
 
-    fun getDependency(): Dependency? = this.dependency
+    fun getDependency() = this.dependency
 
 }

@@ -41,11 +41,10 @@ class ResolveDependency(val cabsmake: Makefile) {
         val dependencies = makefile.dependencies
         val depresult = RepositoryUtils.resolveDependencies(dependencies)
 
-        depresult?.artifactResults?.forEach {
-            it.artifact.toString()
+        depresult?.root?.children?.forEach {
+            makefile.addUsingDependency(it)
         }
 
-        println()
     }
 
 }

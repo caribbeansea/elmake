@@ -2,7 +2,7 @@ package com.dahan.elmake
 
 import com.dahan.elmake.dsl.AutoconfConst
 import com.dahan.elmake.dsl.MakefileBuilder
-import com.dahan.elmake.repository.ElMakeDependency
+import com.dahan.elmake.repository.DependencyInfo
 import com.dahan.elmake.repository.utils.RepositoryUtils
 import com.dahan.elmake.reslovedep.ResolveDependency
 import java.io.File
@@ -52,7 +52,7 @@ object AutoconfResolve {
     //
     // 解决依赖引用下载
     //
-    private fun resolveDependency(dependencies: List<ElMakeDependency>) = RepositoryUtils.resolveDependencies(dependencies)
+    private fun resolveDependency(dependencies: List<DependencyInfo>) = RepositoryUtils.resolveDependencies(dependencies)
 
     @JvmStatic
     fun main(args: Array<String>) {

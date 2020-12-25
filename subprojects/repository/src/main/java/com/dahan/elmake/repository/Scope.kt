@@ -1,4 +1,4 @@
-package com.dahan.elmake.repository;
+package com.dahan.elmake.repository
 
 /* ************************************************************************
  *
@@ -19,24 +19,37 @@ package com.dahan.elmake.repository;
  * ************************************************************************/
 
 /*
- * Creates on 2020/12/9.
+ * Creates on 2020/12/25.
  */
-
-import com.dahan.elmake.collect.Lists;
-import com.dahan.elmake.repository.utils.RepositoryUtils;
-import org.junit.jupiter.api.Test;
 
 /**
+ * 依赖指定范围
+ *
  * @author tiansheng
  */
-public class ResolveDependencyTest {
+enum class Scope(val value: String) {
 
-    @Test
-    public void resolveDependencyTest() {
-        RepositoryUtils.INSTANCE.resolveDependencies(Lists.of(
-                new DependencyInfo("com.alibaba:fastjson:1.2.66"),
-                new DependencyInfo("net.sf.json-lib:json-lib:2.4", "jdk15")
-        ));
-    }
+    /**
+     * 依赖会在编译和运行时期存在，并且会打包进classpath
+     */
+    COMPILER("compiler"),
+
+    /**
+     * 依赖只在测试时存在，不会被打包进classpath
+     */
+    TEST("test"),
+
+    /**
+     * 引入系统依赖，并且它的效果与 COMPILER 一样。
+     * 同样会被打包进claspath。
+     */
+    SYSTEM("system"),
+
+    /**
+     * 引入系统依赖，但它不会被打包进classpath。
+     */
+    EXSYSTEM("system"),
+
+    ;
 
 }

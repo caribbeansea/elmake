@@ -2,7 +2,7 @@ package com.dahan.elmake.repository.utils
 
 import com.dahan.elmake.collect.Lists
 import com.dahan.elmake.collect.Maps
-import com.dahan.elmake.repository.ElMakeDependency
+import com.dahan.elmake.repository.DependencyInfo
 import com.dahan.elmake.repository.ElmakeRepository
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils
 import org.eclipse.aether.RepositorySystem
@@ -82,13 +82,13 @@ object RepositoryUtils {
      */
     private fun getDefaultRepository(): ElmakeRepository? = REPOSITORYS["default"]
 
-    fun resolveDependencies(elMakeDependency: ElMakeDependency): DependencyResult? =
-            resolveDependencies(Lists.of(elMakeDependency))
+    fun resolveDependencies(DependencyInfo: DependencyInfo): DependencyResult? =
+            resolveDependencies(Lists.of(DependencyInfo))
 
     /**
      * 下载所需依赖
      */
-    fun resolveDependencies(elMakeDependencies: List<ElMakeDependency>): DependencyResult? {
+    fun resolveDependencies(elMakeDependencies: List<DependencyInfo>): DependencyResult? {
         val dependencyRequest =
                 RequestUtils.newDependencyRequest(elMakeDependencies, Lists.newArrayList(REPOSITORYS.values), defaultRepository)
         return defaultRepository?.resolveDependencies(dependencyRequest)

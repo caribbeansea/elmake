@@ -25,7 +25,7 @@ package com.dahan.elmake.repository
 /**
  * @author tiansheng
  */
-class Artifact(group: String, artifact: String, version0: String, classifier0: String? = null) {
+class ArtifactParam(group: String, artifact: String, version0: String, classifier0: String? = null) {
 
     val groupId: String = group
 

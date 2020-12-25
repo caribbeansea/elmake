@@ -23,7 +23,7 @@ package com.dahan.elmake.repository.utils
  */
 
 import com.dahan.elmake.collect.Lists
-import com.dahan.elmake.repository.ElMakeDependency
+import com.dahan.elmake.repository.DependencyInfo
 import com.dahan.elmake.repository.ElmakeRepository
 import org.eclipse.aether.collection.CollectRequest
 import org.eclipse.aether.collection.DependencyCollectionException
@@ -38,7 +38,7 @@ object RequestUtils {
 
     @Throws(DependencyCollectionException::class)
     fun newDependencyRequest(
-            dependencies: List<ElMakeDependency>,
+            dependencies: List<DependencyInfo>,
             repositories: List<ElmakeRepository>,
             repository: ElmakeRepository?,
     ): DependencyRequest {
@@ -51,11 +51,11 @@ object RequestUtils {
         return dependencyRequest
     }
 
-    fun newCollectRequest(dependencies: List<ElMakeDependency>, elmakeRepository: ElmakeRepository): CollectRequest {
+    fun newCollectRequest(dependencies: List<DependencyInfo>, elmakeRepository: ElmakeRepository): CollectRequest {
         return newCollectRequest(dependencies, Lists.of(elmakeRepository))
     }
 
-    private fun newCollectRequest(dependencies: List<ElMakeDependency>, repositories: List<ElmakeRepository>): CollectRequest {
+    private fun newCollectRequest(dependencies: List<DependencyInfo>, repositories: List<ElmakeRepository>): CollectRequest {
         val request = CollectRequest()
 
         dependencies.forEach {
