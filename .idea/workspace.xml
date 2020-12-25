@@ -20,20 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a774946-2d52-4267-817e-b8d49f08688c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/DependencyInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/Scope.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subprojects/phase/verifymod/src/main/java/com/dahan/elmake/verifymod/VerifyModules.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maketoolp/autoconf.elmake" beforeDir="false" afterPath="$PROJECT_DIR$/maketoolp/autoconf.elmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/Makefile.java" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/Makefile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/groovy/MakeOfGroovy.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/groovy/MakeOfGroovy.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/kotlin/MakeOfKts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/dsl/src/main/java/com/dahan/elmake/dsl/kotlin/MakeOfKts.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake/AutoconfResolve.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake/AutoconfResolve.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/phase/resovledep/src/main/java/com/dahan/elmake/reslovedep/ResolveDependency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/phase/resovledep/src/main/java/com/dahan/elmake/reslovedep/ResolveDependency.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/Artifact.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ArtifactParam.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ElMakeDependency.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RepositoryUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RepositoryUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RequestUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/utils/RequestUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/test/java/com/dahan/elmake/repository/ResolveDependencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/test/java/com/dahan/elmake/repository/ResolveDependencyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/phase/verifymod/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/phase/verifymod/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +39,8 @@
         <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -281,7 +271,8 @@
       <workItem from="1608616949079" duration="109000" />
       <workItem from="1608617083584" duration="2906000" />
       <workItem from="1608620065399" duration="529000" />
-      <workItem from="1608620695721" duration="17880000" />
+      <workItem from="1608620695721" duration="19493000" />
+      <workItem from="1608901468804" duration="244000" />
     </task>
     <servers />
   </component>
@@ -341,57 +332,58 @@
     </state>
     <state width="894" height="630" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1608868717390" />
     <state width="821" height="466" key="DebuggerActiveHint/55.25.1737.1095@55.25.1737.1095" timestamp="1608628896098" />
-    <state width="1750" height="300" key="GridCell.Tab.0.bottom" timestamp="1608868695673">
+    <state width="1750" height="300" key="GridCell.Tab.0.bottom" timestamp="1608871320307">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695673" />
+    <state width="1750" height="300" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320307" />
     <state width="1750" height="356" key="GridCell.Tab.0.bottom/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791863" />
     <state width="1695" height="333" key="GridCell.Tab.0.bottom/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
-    <state width="1750" height="300" key="GridCell.Tab.0.center" timestamp="1608868695671">
+    <state width="1750" height="300" key="GridCell.Tab.0.center" timestamp="1608871320305">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695671" />
+    <state width="1750" height="300" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320305" />
     <state width="1750" height="356" key="GridCell.Tab.0.center/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791860" />
     <state width="1695" height="333" key="GridCell.Tab.0.center/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974497" />
-    <state width="1750" height="300" key="GridCell.Tab.0.left" timestamp="1608868695670">
+    <state width="1750" height="300" key="GridCell.Tab.0.left" timestamp="1608871320304">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695670" />
+    <state width="1750" height="300" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320304" />
     <state width="1750" height="356" key="GridCell.Tab.0.left/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791859" />
     <state width="1695" height="333" key="GridCell.Tab.0.left/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974496" />
-    <state width="1750" height="300" key="GridCell.Tab.0.right" timestamp="1608868695671">
+    <state width="1750" height="300" key="GridCell.Tab.0.right" timestamp="1608871320306">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608868695671" />
+    <state width="1750" height="300" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320306" />
     <state width="1750" height="356" key="GridCell.Tab.0.right/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791861" />
     <state width="1695" height="333" key="GridCell.Tab.0.right/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974497" />
-    <state width="1750" height="300" key="GridCell.Tab.1.bottom" timestamp="1608868698413">
+    <state width="1750" height="300" key="GridCell.Tab.1.bottom" timestamp="1608871320314">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698413" />
+    <state width="1750" height="300" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320314" />
     <state width="1750" height="356" key="GridCell.Tab.1.bottom/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791727" />
     <state width="1695" height="333" key="GridCell.Tab.1.bottom/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974499" />
-    <state width="1750" height="300" key="GridCell.Tab.1.center" timestamp="1608868698411">
+    <state width="1750" height="300" key="GridCell.Tab.1.center" timestamp="1608871320312">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698411" />
+    <state width="1750" height="300" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320312" />
     <state width="1750" height="356" key="GridCell.Tab.1.center/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791726" />
     <state width="1695" height="333" key="GridCell.Tab.1.center/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
-    <state width="1750" height="300" key="GridCell.Tab.1.left" timestamp="1608868698411">
+    <state width="1750" height="300" key="GridCell.Tab.1.left" timestamp="1608871320311">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698411" />
+    <state width="1750" height="300" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320311" />
     <state width="1750" height="356" key="GridCell.Tab.1.left/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791726" />
     <state width="1695" height="333" key="GridCell.Tab.1.left/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
-    <state width="1750" height="300" key="GridCell.Tab.1.right" timestamp="1608868698412">
+    <state width="1750" height="300" key="GridCell.Tab.1.right" timestamp="1608871320313">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="300" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608868698412" />
+    <state width="1750" height="300" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608871320313" />
     <state width="1750" height="356" key="GridCell.Tab.1.right/54.25.1738.1095@54.25.1738.1095" timestamp="1608864791727" />
     <state width="1695" height="333" key="GridCell.Tab.1.right/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
-    <state x="461" y="231" key="Maven.ArtifactSearchDialog" timestamp="1608620391535">
-      <screen x="55" y="25" width="1737" height="1095" />
+    <state x="419" y="211" key="Maven.ArtifactSearchDialog" timestamp="1608901577966">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state x="419" y="211" key="Maven.ArtifactSearchDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1608901577966" />
     <state x="461" y="231" key="Maven.ArtifactSearchDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608620391535" />
     <state x="525" y="211" key="SettingsEditor" timestamp="1608626322971">
       <screen x="55" y="25" width="1737" height="1095" />

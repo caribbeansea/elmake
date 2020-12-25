@@ -47,6 +47,9 @@ object AutoconfResolve {
         val resdep = ResolveDependency(cabsmake = makefile)
         resdep.resolve()
 
+        // 验证模块信息
+
+
     }
 
     //
