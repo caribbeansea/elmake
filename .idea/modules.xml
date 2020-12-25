@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/subprojects/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/subprojects/bootstrap/bootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/cli/cli.iml" filepath="$PROJECT_DIR$/subprojects/cli/cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/commons/commons.iml" filepath="$PROJECT_DIR$/subprojects/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/dsl/dsl.iml" filepath="$PROJECT_DIR$/subprojects/dsl/dsl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eimoto.iml" filepath="$PROJECT_DIR$/eimoto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/bootstrap/eimoto-bootstrap.iml" filepath="$PROJECT_DIR$/subprojects/bootstrap/eimoto-bootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/cli/eimoto-cli.iml" filepath="$PROJECT_DIR$/subprojects/cli/eimoto-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/commons/eimoto-commons.iml" filepath="$PROJECT_DIR$/subprojects/commons/eimoto-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/libforkt/eimoto-libforkt.iml" filepath="$PROJECT_DIR$/subprojects/libforkt/eimoto-libforkt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/main/eimoto-main.iml" filepath="$PROJECT_DIR$/subprojects/main/eimoto-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/repository/eimoto-repository.iml" filepath="$PROJECT_DIR$/subprojects/repository/eimoto-repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/dsl/eimoto-script.iml" filepath="$PROJECT_DIR$/subprojects/dsl/eimoto-script.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elmake.iml" filepath="$PROJECT_DIR$/elmake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/phase/joincompile/joincompile.iml" filepath="$PROJECT_DIR$/subprojects/phase/joincompile/joincompile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/libforkt/libforkt.iml" filepath="$PROJECT_DIR$/subprojects/libforkt/libforkt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/main/main.iml" filepath="$PROJECT_DIR$/subprojects/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/phase/makeall/makeall.iml" filepath="$PROJECT_DIR$/subprojects/phase/makeall/makeall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/repository/repository.iml" filepath="$PROJECT_DIR$/subprojects/repository/repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/phase/resovledep/resovledep.iml" filepath="$PROJECT_DIR$/subprojects/phase/resovledep/resovledep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/dsl/script.iml" filepath="$PROJECT_DIR$/subprojects/dsl/script.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/phase/task.iml" filepath="$PROJECT_DIR$/subprojects/phase/task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subprojects/phase/verifymod/verifymod.iml" filepath="$PROJECT_DIR$/subprojects/phase/verifymod/verifymod.iml" />
+    </modules>
+  </component>
+</project>

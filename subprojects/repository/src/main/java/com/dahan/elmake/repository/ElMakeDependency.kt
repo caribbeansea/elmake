@@ -50,6 +50,13 @@ class ElMakeDependency {
     private var dependency: Dependency? = null
 
     /**
+     * 身份ID，用于做统一标记。由<code>
+     *     <groupId>:<artifactId>[:<extension>[:<classifier>]]:<version>
+     * </code>组成。
+     */
+    private val identity: String? = null
+
+    /**
      * 依赖指定范围
      */
     enum class Scope(val value: String) {

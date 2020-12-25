@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eimoto-bootstrap" />
+        <module name="eimoto-repository" />
+        <module name="verifymod" />
+        <module name="bootstrap" />
+        <module name="cli" />
+        <module name="repository" />
+        <module name="eimoto-main" />
+        <module name="dsl" />
+        <module name="joincompile" />
+        <module name="eimoto-commons" />
+        <module name="eimoto-libforkt" />
+        <module name="eimoto-cli" />
+        <module name="commons" />
+        <module name="libforkt" />
+        <module name="resovledep" />
+        <module name="eimoto-script" />
+        <module name="script" />
+        <module name="makeall" />
+        <module name="main" />
+      </profile>
+      <profile name="Annotation profile for eimoto" enabled="true">
+        <sourceOutputDir name="../../task/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../task/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="task" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bootstrap" target="11" />
+      <module name="cli" target="11" />
+      <module name="commons" target="11" />
+      <module name="dsl" target="11" />
+      <module name="eimoto" target="11" />
+      <module name="eimoto-bootstrap" target="11" />
+      <module name="eimoto-cli" target="11" />
+      <module name="eimoto-commons" target="11" />
+      <module name="eimoto-libforkt" target="11" />
+      <module name="eimoto-main" target="11" />
+      <module name="eimoto-repository" target="11" />
+      <module name="eimoto-script" target="11" />
+      <module name="elmake" target="11" />
+      <module name="joincompile" target="11" />
+      <module name="libforkt" target="11" />
+      <module name="main" target="11" />
+      <module name="makeall" target="11" />
+      <module name="repository" target="11" />
+      <module name="resovledep" target="11" />
+      <module name="script" target="11" />
+      <module name="task" target="11" />
+      <module name="verifymod" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

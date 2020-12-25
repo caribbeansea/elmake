@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6a774946-2d52-4267-817e-b8d49f08688c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/phase/resovledep/src/main/java/com/dahan/elmake/reslovedep/ResolveDependency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/phase/resovledep/src/main/java/com/dahan/elmake/reslovedep/ResolveDependency.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ElMakeDependency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/repository/src/main/java/com/dahan/elmake/repository/ElMakeDependency.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GroovyConsoleState">
+    <option name="list">
+      <list>
+        <Entry>
+          <option name="moduleName" value="commons" />
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console_19.groovy" />
+        </Entry>
+        <Entry>
+          <option name="moduleName" value="eimoto" />
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console_18.groovy" />
+        </Entry>
+      </list>
+    </option>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1lrorIHhZHI4g5pbVUIZkiPufMO" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/eimoto-main/src/main/java/com/dahan/eimoto/build.eimoto.kts.tmp&#10;/Users/wuyanzu/project/IdeaProjects/eimoto/subprojects/dsl/src/test/java/com/dahan/eimoto/build/groovy/GroovyDSLTest.groovy&#10;/Users/wuyanzu/project/IdeaProjects/eimoto/eimoto-main/target/classes/com/dahan/eimoto/Lvar.class&#10;/Users/wuyanzu/project/IdeaProjects/eimoto/subprojects/dsl/src/test/java/com/dahan/eimoto/build/ClosureSupportTest.java" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake/overview" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/platform/linux-x86" />
+      <recent name="$PROJECT_DIR$/subprojects/task" />
+      <recent name="$PROJECT_DIR$/subprojects" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.dahan.eimoto.dsl.kotlin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dahan.eimoto.exception" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake" />
+      <recent name="$PROJECT_DIR$/subprojects/phase" />
+      <recent name="$PROJECT_DIR$/platform/windows-x86" />
+      <recent name="$PROJECT_DIR$/platform/windows-x64" />
+      <recent name="$PROJECT_DIR$/platform/macos-x86" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StartBuilding">
+    <configuration name="GroovyDSLTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dahan.elmake.build.groovy.GroovyDSLTest" />
+      <module name="dsl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dahan.elmake.build.groovy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cleanIdeaCache" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="eimoto" />
+      <setting name="path" value="file://$PROJECT_DIR$/cleanIdeaCache.gy" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResolveDependencyTest.resolveDependencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dahan.elmake.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dahan.elmake.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.dahan.elmake.repository.ResolveDependencyTest" />
+      <option name="METHOD_NAME" value="resolveDependencyTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AutoconfResolve" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.dahan.elmake.AutoconfResolve" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartBuilding" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="bootstrap" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.dahan.elmake.bootsrap.StartBuilding" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="elmake" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="elmake" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StartBuilding" />
+        <item itemvalue="JUnit.ResolveDependencyTest.resolveDependencyTest" />
+        <item itemvalue="Groovy.cleanIdeaCache" />
+        <item itemvalue="Application.AutoconfResolve" />
+        <item itemvalue="Application.GroovyDSLTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a774946-2d52-4267-817e-b8d49f08688c" name="Default Changelist" comment="" />
+      <created>1608364767215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608364767215</updated>
+      <workItem from="1608364769906" duration="11866000" />
+      <workItem from="1608450798247" duration="1293000" />
+      <workItem from="1608516526512" duration="4786000" />
+      <workItem from="1608531216718" duration="221000" />
+      <workItem from="1608531448824" duration="1228000" />
+      <workItem from="1608532706373" duration="11167000" />
+      <workItem from="1608616856867" duration="40000" />
+      <workItem from="1608616949079" duration="109000" />
+      <workItem from="1608617083584" duration="2906000" />
+      <workItem from="1608620065399" duration="529000" />
+      <workItem from="1608620695721" duration="14160000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="367" y="129" key="#Project_Structure" timestamp="1608687500440">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="367" y="129" key="#Project_Structure/0.0.1792.1120@0.0.1792.1120" timestamp="1608687500440" />
+    <state x="411" y="151" key="#Project_Structure/55.25.1737.1095@55.25.1737.1095" timestamp="1608630634641" />
+    <state x="612" y="378" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608621759081">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="612" y="378" key="#com.intellij.fileTypes.FileTypeChooser/55.25.1737.1095@55.25.1737.1095" timestamp="1608621759081" />
+    <state x="736" y="283" key="#com.intellij.ide.util.MemberChooser" timestamp="1608628810083">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="736" y="283" key="#com.intellij.ide.util.MemberChooser/55.25.1737.1095@55.25.1737.1095" timestamp="1608628810083" />
+    <state x="407" y="501" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1608518360613">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="407" y="501" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608518360613" />
+    <state x="572" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608616712540">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="572" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608616712540" />
+    <state x="679" y="356" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1608534650419">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="679" y="356" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608534650419" />
+    <state x="802" y="247" width="739" height="627" key="#xdebugger.evaluate" timestamp="1608861800832">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="802" y="247" key="#xdebugger.evaluate/0.0.1792.1120@0.0.1792.1120" timestamp="1608861800832" />
+    <state x="832" y="266" width="739" height="627" key="#xdebugger.evaluate/55.25.1737.1095@55.25.1737.1095" timestamp="1608629886072" />
+    <state width="847" height="477" key="DebuggerActiveHint" timestamp="1608861776421">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="847" height="477" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1608861776421" />
+    <state width="821" height="466" key="DebuggerActiveHint/55.25.1737.1095@55.25.1737.1095" timestamp="1608628896098" />
+    <state width="1750" height="356" key="GridCell.Tab.0.bottom" timestamp="1608864510935">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510935" />
+    <state width="1695" height="333" key="GridCell.Tab.0.bottom/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
+    <state width="1750" height="356" key="GridCell.Tab.0.center" timestamp="1608864510934">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510934" />
+    <state width="1695" height="333" key="GridCell.Tab.0.center/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974497" />
+    <state width="1750" height="356" key="GridCell.Tab.0.left" timestamp="1608864510933">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510933" />
+    <state width="1695" height="333" key="GridCell.Tab.0.left/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974496" />
+    <state width="1750" height="356" key="GridCell.Tab.0.right" timestamp="1608864510934">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510934" />
+    <state width="1695" height="333" key="GridCell.Tab.0.right/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974497" />
+    <state width="1750" height="356" key="GridCell.Tab.1.bottom" timestamp="1608864510821">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510821" />
+    <state width="1695" height="333" key="GridCell.Tab.1.bottom/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974499" />
+    <state width="1750" height="356" key="GridCell.Tab.1.center" timestamp="1608864510820">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510820" />
+    <state width="1695" height="333" key="GridCell.Tab.1.center/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
+    <state width="1750" height="356" key="GridCell.Tab.1.left" timestamp="1608864510819">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510819" />
+    <state width="1695" height="333" key="GridCell.Tab.1.left/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
+    <state width="1750" height="356" key="GridCell.Tab.1.right" timestamp="1608864510820">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="356" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608864510820" />
+    <state width="1695" height="333" key="GridCell.Tab.1.right/55.25.1737.1095@55.25.1737.1095" timestamp="1608629974498" />
+    <state x="461" y="231" key="Maven.ArtifactSearchDialog" timestamp="1608620391535">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="461" y="231" key="Maven.ArtifactSearchDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608620391535" />
+    <state x="525" y="211" key="SettingsEditor" timestamp="1608626322971">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="525" y="211" key="SettingsEditor/55.25.1737.1095@55.25.1737.1095" timestamp="1608626322971" />
+    <state width="896" height="560" key="XDebugger.FullValuePopup" timestamp="1608687782848">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="896" height="560" key="XDebugger.FullValuePopup/0.0.1792.1120@0.0.1792.1120" timestamp="1608687782848" />
+    <state width="868" height="547" key="XDebugger.FullValuePopup/55.25.1737.1095@55.25.1737.1095" timestamp="1608615620447" />
+    <state x="155" y="125" width="1536" height="895" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1608616895915">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="155" y="125" width="1536" height="895" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608616895915" />
+    <state x="155" y="125" width="1536" height="895" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608531520880">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="155" y="125" width="1536" height="895" key="com.intellij.history.integration.ui.views.FileHistoryDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608531520880" />
+    <state x="624" y="327" width="649" height="548" key="find.popup" timestamp="1608621081236">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="624" y="327" width="649" height="548" key="find.popup/55.25.1737.1095@55.25.1737.1095" timestamp="1608621081236" />
+    <state x="798" y="433" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1608616660307">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="798" y="433" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/55.25.1737.1095@55.25.1737.1095" timestamp="1608616660307" />
+    <state x="558" y="232" key="new project wizard" timestamp="1608616448819">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="558" y="232" key="new project wizard/55.25.1737.1095@55.25.1737.1095" timestamp="1608616448819" />
+    <state x="637" y="383" width="797" height="514" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1608620875179">
+      <screen x="55" y="25" width="1737" height="1095" />
+    </state>
+    <state x="600" y="249" width="716" height="400" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1608620216213" />
+    <state x="637" y="383" width="797" height="514" key="org.intellij.images.editor.actions.BackgroundImageDialog/55.25.1737.1095@55.25.1737.1095" timestamp="1608620875179" />
+    <state x="550" y="250" width="692" height="692" key="search.everywhere.popup" timestamp="1608861184267">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="550" y="250" width="692" height="692" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1608861184267" />
+    <state x="588" y="269" width="670" height="676" key="search.everywhere.popup/55.25.1737.1095@55.25.1737.1095" timestamp="1608629142501" />
+  </component>
+</project>
