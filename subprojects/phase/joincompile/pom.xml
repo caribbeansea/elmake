@@ -11,5 +11,12 @@
 
     <artifactId>joincompile</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.dahan</groupId>
+            <artifactId>dsl</artifactId>
+            <version>1.0.0.BETA</version>
+        </dependency>
+    </dependencies>
 
 </project>

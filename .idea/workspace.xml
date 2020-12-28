@@ -20,10 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a774946-2d52-4267-817e-b8d49f08688c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/subprojects/phase/verifymod/src/main/java/com/dahan/elmake/verifymod/VerifyModules.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subprojects/phase/joincompile/src/main/java/com/dahan/elmake/joincompiler/JoinCompiler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake/AutoconfResolve.kt" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/main/src/main/java/com/dahan/elmake/AutoconfResolve.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subprojects/phase/verifymod/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/phase/verifymod/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/phase/joincompile/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/phase/joincompile/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subprojects/phase/joincompile/src/main/java/com/dahan/elmake/verifymod/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/subprojects/phase/joincompile/src/main/java/com/dahan/elmake/joincompiler/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +38,9 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -272,7 +272,7 @@
       <workItem from="1608617083584" duration="2906000" />
       <workItem from="1608620065399" duration="529000" />
       <workItem from="1608620695721" duration="19493000" />
-      <workItem from="1608901468804" duration="244000" />
+      <workItem from="1608901468804" duration="589000" />
     </task>
     <servers />
   </component>
