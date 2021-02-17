@@ -28,7 +28,8 @@ import com.dahan.elmake.dsl.Makefile;
 import java.util.List;
 
 /**
- * 联合编译
+ * 联合编译, 用于编译多种支持JVM语言的应用。能够在一个项目中同时使用如，
+ * Java、Groovy、Scala等语言。
  *
  * @author tiansheng
  */
